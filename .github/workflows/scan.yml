@@ -15,22 +15,27 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-        with:
-          token: <LaTex>${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-python@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install requests beautifulsoup4 lxml
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 lxml
+
       - name: Run scanner
         env:
-          SMTP_USER: $</LaTex>{{ secrets.SMTP_USER }}
-          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_USER: <LaTex>${{ secrets.SMTP_USER }}
+          SMTP_PASS: $</LaTex>{{ secrets.SMTP_PASS }}
         run: python scanner.py
-      - name: Commit results
+
+      - name: Commit and push results
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "Housing Scanner Bot"
           git add availability_results.json
-          git diff --staged --quiet || git commit -m "chore: scan $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git push
+          git diff --staged --quiet || git commit -m "chore: scan <LaTex>$(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push https://x-access-token:$</LaTex>{{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
