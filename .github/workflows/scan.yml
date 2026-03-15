@@ -38,4 +38,5 @@ jobs:
           git config user.name "Housing Scanner Bot"
           git add availability_results.json
           git diff --staged --quiet || git commit -m "chore: scan <LaTex>$(date -u '+%Y-%m-%d %H:%M UTC')"
-          git push https://x-access-token:$</LaTex>{{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:main
+          git push origin HEAD:main
+
