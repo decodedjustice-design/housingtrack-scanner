@@ -1,0 +1,49 @@
+name: Housing Availability Scanner
+
+on:
+  # Run 3x daily: 7am, 12pm, 6pm Pacific Time (UTC-7 in summer / UTC-8 in winter)
+  # Using UTC: 14:00, 19:00, 01:00 (covers both PDT and PST)
+  schedule:
+    - cron: "0 14 * * *"   # 7am PDT / 6am PST
+    - cron: "0 19 * * *"   # 12pm PDT / 11am PST
+    - cron: "0 1 * * *"    # 6pm PDT / 5pm PST
+  # Allow manual trigger from GitHub Actions tab
+  workflow_dispatch:
+
+permissions:
+  contents: write   # needed to commit availability_results.json back to repo
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 lxml
+
+      - name: Run availability scanner
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: python scanner.py
+
+      - name: Commit updated results
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "Housing Scanner Bot"
+          git add availability_results.json
+          # Only commit if there are changes
+          git diff --staged --quiet || git commit -m "chore: update availability scan $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
