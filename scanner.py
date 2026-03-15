@@ -24,6 +24,10 @@ ALERT_EMAIL = "DecodedJustice@gmail.com"
 RESULTS_FILE = Path("availability_results.json")
 PROPERTIES_FILE = Path("properties.json")
 
+# Budget thresholds
+MAX_RENT_NO_UTILITIES = 2662
+MAX_RENT_WITH_UTILITIES = 2772
+
 # Keywords that strongly suggest a unit is available NOW
 AVAILABLE_KEYWORDS = [
     "available now",
@@ -48,6 +52,23 @@ AVAILABLE_KEYWORDS = [
     r"\d+ available",
     r"\d+ unit[s]? available",
     r"available.*\d+ bed",
+]
+
+# Keywords indicating a 2BR+den/loft/bonus/office/studio-den unit
+DEN_KEYWORDS = [
+    "den", "with den", "+ den", "w/den",
+    "loft", "with loft", "+ loft",
+    "office", "home office", "bonus room",
+    "flex room", "flex space",
+    "attached garage", "townhome", "townhouse",
+    "2 bed 2 bath den", "2br den", "2bd den",
+]
+
+# Keywords indicating a 3-bedroom unit
+THREE_BR_KEYWORDS = [
+    "3 bedroom", "3-bedroom", "3br", "3 br",
+    "three bedroom", "three-bedroom",
+    "3 bed", "3-bed",
 ]
 
 # Keywords that suggest waitlist / not available
@@ -106,6 +127,9 @@ def check_property(prop):
         "details": "",
         "checked_at": datetime.now(timezone.utc).isoformat(),
         "error": None,
+        "has_3br": False,
+        "has_den": False,
+        "in_budget": True,
     }
     
     try:
@@ -127,10 +151,35 @@ def check_property(prop):
             if kw in page_text:
                 found_waitlist.append(kw)
         
+        # Check for 3BR and den/loft unit types
+        found_3br = [kw for kw in THREE_BR_KEYWORDS if kw in page_text]
+        found_den = [kw for kw in DEN_KEYWORDS if kw in page_text]
+        result["has_3br"] = len(found_3br) > 0
+        result["has_den"] = len(found_den) > 0
+        
+        # Check for rent prices to see if in budget
+        rent_matches = re.findall(r'\$([\d,]+)(?:/mo|\.?\s*per month|\s*month)?', page_text)
+        rents = []
+        for m in rent_matches:
+            try:
+                rents.append(int(m.replace(',', '')))
+            except ValueError:
+                pass
+        # Filter to plausible apartment rents (800-6000)
+        rents = [r for r in rents if 800 <= r <= 6000]
+        if rents:
+            min_rent = min(rents)
+            result["in_budget"] = min_rent <= MAX_RENT_WITH_UTILITIES
+            result["min_rent_found"] = min_rent
+        
         if found_available and not found_waitlist:
             result["status"] = "available"
             result["signal"] = "strong"
-            result["details"] = f"Keywords found: {', '.join(found_available[:3])}"
+            unit_notes = []
+            if found_3br: unit_notes.append("3BR")
+            if found_den: unit_notes.append("den/loft")
+            unit_str = f" [{', '.join(unit_notes)}]" if unit_notes else ""
+            result["details"] = f"Keywords: {', '.join(found_available[:2])}{unit_str}"
         elif found_available and found_waitlist:
             result["status"] = "waitlist_or_limited"
             result["signal"] = "mixed"
@@ -142,7 +191,10 @@ def check_property(prop):
         else:
             result["status"] = "unknown"
             result["signal"] = "none"
-            result["details"] = "No clear availability signal found"
+            type_notes = []
+            if found_3br: type_notes.append("3BR detected")
+            if found_den: type_notes.append("den/loft detected")
+            result["details"] = "No clear availability signal" + (f" | {', '.join(type_notes)}" if type_notes else "")
             
     except requests.exceptions.Timeout:
         result["error"] = "timeout"
@@ -186,9 +238,14 @@ def send_email_alert(new_available, newly_gone, smtp_user, smtp_pass):
         </tr>
         """ % len(new_available))
         for p in new_available:
+            tags = []
+            if p.get('has_3br'): tags.append('<span style="background:#ede9fe;color:#4c1d95;padding:2px 6px;border-radius:4px;font-size:11px;">3BR</span>')
+            if p.get('has_den'): tags.append('<span style="background:#fef3c7;color:#92400e;padding:2px 6px;border-radius:4px;font-size:11px;">den/loft</span>')
+            if not p.get('in_budget', True): tags.append('<span style="background:#fee2e2;color:#991b1b;padding:2px 6px;border-radius:4px;font-size:11px;">over budget</span>')
+            tag_str = ' '.join(tags)
             html_parts.append(f"""
         <tr>
-            <td style="padding:8px; border:1px solid #d1fae5;"><strong>{p['name']}</strong></td>
+            <td style="padding:8px; border:1px solid #d1fae5;"><strong>{p['name']}</strong><br>{tag_str}</td>
             <td style="padding:8px; border:1px solid #d1fae5;">{p['city']}</td>
             <td style="padding:8px; border:1px solid #d1fae5; font-size:12px; color:#6b7280;">{p.get('details','')}</td>
             <td style="padding:8px; border:1px solid #d1fae5;"><a href="{p['url']}">Visit →</a></td>
