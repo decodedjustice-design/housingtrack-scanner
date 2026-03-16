@@ -1,15 +1,12 @@
 name: Housing Availability Scanner
-
 on:
   schedule:
     - cron: "0 14 * * *"
     - cron: "0 19 * * *"
     - cron: "0 1 * * *"
   workflow_dispatch:
-
 permissions:
   contents: write
-
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -19,22 +16,17 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-
       - name: Install dependencies
         run: pip install requests beautifulsoup4 lxml
-
-      -       - name: Run scanner
+      - name: Run scanner
         env:
           SMTP_USER: <LaTex>${{ secrets.SMTP_USER }}
           SMTP_PASS: $</LaTex>{{ secrets.SMTP_PASS }}
         run: python scanner.py
-
-
       - name: Commit and push results
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
