@@ -28,11 +28,12 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4 lxml
 
-      - name: Run scanner
+      -       - name: Run scanner
         env:
           SMTP_USER: <LaTex>${{ secrets.SMTP_USER }}
           SMTP_PASS: $</LaTex>{{ secrets.SMTP_PASS }}
         run: python scanner.py
+
 
       - name: Commit and push results
         run: |
