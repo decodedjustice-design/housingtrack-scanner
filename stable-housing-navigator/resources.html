@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources — Stable Housing Navigator</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .filter-bar { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5); margin-bottom: var(--space-6); }
+    .filter-bar h3 { font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-secondary); margin-bottom: var(--space-3); font-weight: 700; }
+    .filter-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    .filter-chip { padding: var(--space-2) var(--space-3); border: 2px solid var(--color-border); border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: 600; cursor: pointer; transition: all var(--transition-fast); background: white; color: var(--color-text-secondary); }
+    .filter-chip:hover, .filter-chip.active { border-color: var(--color-primary); background: var(--color-primary-faint); color: var(--color-primary); }
+    .search-bar { position: relative; margin-bottom: var(--space-4); }
+    .search-bar input { padding-left: 2.75rem; }
+    .search-icon { position: absolute; left: var(--space-3); top: 50%; transform: translateY(-50%); color: var(--color-text-muted); pointer-events: none; }
+    .resource-count { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-4); }
+    .needs-verify-badge { display: inline-flex; align-items: center; gap: 4px; font-size: var(--font-size-xs); background: #FFF3E0; color: #E65100; border: 1px solid #FFB74D; border-radius: var(--radius-full); padding: 2px 10px; font-weight: 700; }
+    .resource-phone a { font-weight: 700; color: var(--color-primary-dark); text-decoration: none; font-size: var(--font-size-base); }
+    .resource-phone a:hover { text-decoration: underline; }
+    .urgent-section { margin-bottom: var(--space-8); }
+    .urgent-section-header { background: var(--color-danger); color: white; border-radius: var(--radius-md) var(--radius-md) 0 0; padding: var(--space-3) var(--space-5); font-weight: 700; }
+    .section-label { font-size: var(--font-size-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-text-muted); margin: var(--space-6) 0 var(--space-3); border-bottom: 1px solid var(--color-border-light); padding-bottom: var(--space-2); }
+  </style>
+</head>
+<body>
+<a href="https://weather.com" id="safetyExit" class="safety-exit">✕ Quick Exit</a>
+<nav class="site-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="nav-brand-text"><span class="nav-brand-name">Stable Housing Navigator</span><span class="nav-brand-sub">King County, Washington</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="triage.html">Get Help Now</a></li>
+      <li><a href="plan.html">My Plan</a></li><li><a href="resources.html" class="active">Resources</a></li>
+      <li><a href="rights.html">My Rights</a></li><li><a href="documents.html">Documents</a></li><li><a href="letters.html">Letters</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">🏠 Home</a><a href="triage.html">🆘 Get Help Now</a><a href="plan.html">📋 My Plan</a>
+    <a href="resources.html">📞 Resources</a><a href="rights.html">⚖️ My Rights</a>
+    <a href="documents.html">📁 Documents</a><a href="letters.html">✉️ Letters</a>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-eyebrow">King County, Washington</span>
+      <h1>Housing Resources Directory</h1>
+      <p>Verified resources for housing crisis, legal help, rental assistance, utilities, shelter, and more. Items marked <span class="needs-verify-badge">⚠ Verify</span> should be confirmed before use — programs change.</p>
+    </div>
+
+    <!-- Emergency Strip -->
+    <div class="alert alert-urgent mb-6">
+      <span class="alert-icon">🚨</span>
+      <div class="alert-content">
+        <h4>Need help right now?</h4>
+        <p><strong>Call 211</strong> — free, 24/7, connects you to current available resources. | <strong>DV Crisis:</strong> <a href="tel:18005626025">1-800-562-6025</a> | <strong>Legal Aid:</strong> <a href="tel:18882011014">1-888-201-1014</a></p>
+      </div>
+    </div>
+
+    <!-- Search + Filter -->
+    <div class="filter-bar">
+      <div class="search-bar">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input type="text" class="form-input" id="resourceSearch" placeholder="Search resources..." aria-label="Search resources" oninput="filterResources()">
+      </div>
+      <h3>Filter by need</h3>
+      <div class="filter-chips" role="group" aria-label="Filter by category">
+        <button class="filter-chip active" data-cat="all" onclick="setFilter('all', this)">All Resources</button>
+        <button class="filter-chip" data-cat="crisis" onclick="setFilter('crisis', this)">🚨 Crisis &amp; Hotlines</button>
+        <button class="filter-chip" data-cat="shelter" onclick="setFilter('shelter', this)">🏠 Shelter</button>
+        <button class="filter-chip" data-cat="safety" onclick="setFilter('safety', this)">🛡️ Safety &amp; DV</button>
+        <button class="filter-chip" data-cat="legal" onclick="setFilter('legal', this)">⚖️ Legal Aid</button>
+        <button class="filter-chip" data-cat="rental-assistance" onclick="setFilter('rental-assistance', this)">💰 Rental Assistance</button>
+        <button class="filter-chip" data-cat="utilities" onclick="setFilter('utilities', this)">💡 Utilities</button>
+        <button class="filter-chip" data-cat="affordable-housing" onclick="setFilter('affordable-housing', this)">🏘️ Affordable Housing</button>
+        <button class="filter-chip" data-cat="disability" onclick="setFilter('disability', this)">♿ Disability / Fair Housing</button>
+        <button class="filter-chip" data-cat="family" onclick="setFilter('family', this)">👨‍👩‍👧 Family &amp; Children</button>
+        <button class="filter-chip" data-cat="food" onclick="setFilter('food', this)">🥗 Food &amp; Basic Needs</button>
+        <button class="filter-chip" data-cat="health" onclick="setFilter('health', this)">🏥 Health</button>
+        <button class="filter-chip" data-cat="transportation" onclick="setFilter('transportation', this)">🚌 Transportation</button>
+        <button class="filter-chip" data-cat="documents" onclick="setFilter('documents', this)">🪪 ID &amp; Documents</button>
+      </div>
+    </div>
+
+    <div class="resource-count" id="resourceCount" aria-live="polite"></div>
+
+    <!-- Resource List -->
+    <div id="resourceList" role="list" aria-label="Housing resources"></div>
+
+    <!-- No results -->
+    <div id="noResults" style="display:none; text-align:center; padding: var(--space-12); color:var(--color-text-secondary);">
+      <p style="font-size:2rem; margin-bottom:var(--space-4);">🔍</p>
+      <p>No resources match your search. Try a different filter or search term.</p>
+      <p>You can also <a href="tel:211">call 211</a> for personalized resource referrals.</p>
+    </div>
+
+    <!-- Legal Notice -->
+    <div class="legal-notice mt-8" role="note">
+      <strong>Important:</strong> Program availability, phone numbers, eligibility, and hours change frequently. Items marked <span class="needs-verify-badge">⚠ Needs Verification</span> require current confirmation. Always call ahead to confirm. For urgent help, call 211 first — specialists know what has current funding.
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">Resource information only. Programs change. Verify current availability. Not legal advice.</p>
+      <p style="font-size:var(--font-size-xs);color:var(--color-text-muted);">© <span id="currentYear"></span> Stable Housing Navigator</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+<script type="module">
+import { resources, matchResources } from './js/resources-data.js';
+
+let activeFilter = 'all';
+let searchText = '';
+
+function renderResources(list) {
+  const container = document.getElementById('resourceList');
+  const noResults = document.getElementById('noResults');
+  const count = document.getElementById('resourceCount');
+
+  if (list.length === 0) {
+    container.innerHTML = '';
+    noResults.style.display = 'block';
+    count.textContent = '';
+    return;
+  }
+
+  noResults.style.display = 'none';
+  count.textContent = `Showing ${list.length} resource${list.length !== 1 ? 's' : ''}`;
+
+  container.innerHTML = list.map(r => `
+    <div class="resource-card" role="listitem">
+      <div class="resource-card-header">
+        <div>
+          <div class="resource-name">${r.name}</div>
+          ${r.needsVerification ? `<span class="needs-verify-badge mt-2">⚠ Needs Verification</span>` : ''}
+        </div>
+        ${r.urgentFlag ? `<span class="badge badge-urgent">Urgent Resource</span>` : ''}
+      </div>
+      <div class="resource-desc">${r.description}</div>
+
+      <div class="resource-meta">
+        ${r.phone ? `<div class="resource-meta-item resource-phone">📞 <a href="tel:${r.phone.replace(/[^0-9+]/g,'')}">${r.phone}</a></div>` : ''}
+        ${r.phone_alt ? `<div class="resource-meta-item resource-phone">📱 <a href="tel:${r.phone_alt.replace(/[^0-9+]/g,'')}">${r.phone_alt}</a></div>` : ''}
+        ${r.hours ? `<div class="resource-meta-item">🕐 ${r.hours}</div>` : ''}
+        ${r.cost ? `<div class="resource-meta-item">💲 ${r.cost}</div>` : ''}
+        ${r.languages ? `<div class="resource-meta-item">🗣️ ${r.languages}</div>` : ''}
+      </div>
+
+      ${r.eligibility ? `<div style="font-size:var(--font-size-sm); color:var(--color-text-secondary); margin-top:var(--space-2);"><strong>Eligibility:</strong> ${r.eligibility}</div>` : ''}
+      ${r.notes ? `<div style="font-size:var(--font-size-sm); color:var(--color-text-secondary); margin-top:var(--space-2); background:var(--color-bg); padding:var(--space-3); border-radius:var(--radius-sm);"><strong>Note:</strong> ${r.notes}</div>` : ''}
+      ${r.needsVerification && r.verifyNote ? `<div style="font-size:var(--font-size-xs); color:#E65100; margin-top:var(--space-2); padding:var(--space-2) var(--space-3); background:#FFF3E0; border-radius:var(--radius-sm); border-left: 3px solid #FF9800;"><strong>Verify:</strong> ${r.verifyNote}</div>` : ''}
+
+      <div class="resource-tags">
+        <span class="badge badge-primary">${r.category}</span>
+        ${r.citySpecific ? `<span class="badge badge-neutral">${r.citySpecific} only</span>` : ''}
+      </div>
+
+      <div class="resource-actions">
+        ${r.phone ? `<a href="tel:${r.phone.replace(/[^0-9+]/g,'')}" class="btn btn-primary btn-sm">📞 Call ${r.phone}</a>` : ''}
+        <button class="btn btn-ghost btn-sm" onclick="trackContact('${r.name}', '${r.phone || ''}')">+ Track This Contact</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+window.setFilter = function(cat, btn) {
+  activeFilter = cat;
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilters();
+};
+
+window.filterResources = function() {
+  searchText = document.getElementById('resourceSearch').value.toLowerCase();
+  applyFilters();
+};
+
+function applyFilters() {
+  let filtered = resources;
+  if (activeFilter !== 'all') {
+    filtered = filtered.filter(r => r.category === activeFilter);
+  }
+  if (searchText) {
+    filtered = filtered.filter(r =>
+      r.name.toLowerCase().includes(searchText) ||
+      r.description.toLowerCase().includes(searchText) ||
+      r.tags.some(t => t.includes(searchText))
+    );
+  }
+  renderResources(filtered);
+}
+
+window.trackContact = function(name, phone) {
+  try {
+    const session = JSON.parse(localStorage.getItem('shn_session') || '{}');
+    if (!session.contacts) session.contacts = [];
+    session.contacts.push({
+      id: Date.now().toString(),
+      name,
+      phone,
+      date: new Date().toISOString().split('T')[0],
+      notes: 'Found via Resources page',
+    });
+    session.updatedAt = new Date().toISOString();
+    localStorage.setItem('shn_session', JSON.stringify(session));
+    alert(`${name} added to your contact log in My Plan.`);
+  } catch(e) {}
+};
+
+// Check for personalized matches from triage
+function loadPersonalizedMatches() {
+  try {
+    const session = JSON.parse(localStorage.getItem('shn_session') || '{}');
+    const barriers = session.triage?.answers?.barriers || [];
+    const profile = session.profile || {};
+    if (barriers.length > 0 || profile.hasChildren || profile.hasDisability) {
+      const matched = matchResources(barriers, profile);
+      const note = document.createElement('div');
+      note.className = 'alert alert-success mb-4';
+      note.innerHTML = `<span class="alert-icon">✨</span><div class="alert-content"><p><strong>Personalized matches:</strong> Based on your assessment, we found ${matched.length} resources that may help. These appear first when searching.</p></div>`;
+      document.getElementById('resourceList').before(note);
+    }
+  } catch(e) {}
+}
+
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+renderResources(resources);
+loadPersonalizedMatches();
+</script>
+</body>
+</html>

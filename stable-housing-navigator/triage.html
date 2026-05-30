@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Help Now — Stable Housing Navigator</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .triage-wrapper { max-width: 640px; margin: 0 auto; padding: 0 var(--space-4); }
+    .triage-header { text-align: center; margin-bottom: var(--space-8); }
+    .triage-header h1 { font-size: var(--font-size-2xl); margin-bottom: var(--space-3); }
+    .triage-header p { color: var(--color-text-secondary); }
+    .step-panel { display: none; }
+    .step-panel.active { display: block; }
+    .step-nav { display: flex; justify-content: space-between; align-items: center; margin-top: var(--space-8); gap: var(--space-3); }
+    .skip-link { font-size: var(--font-size-sm); color: var(--color-text-muted); background: none; padding: var(--space-2) var(--space-3); }
+    .skip-link:hover { color: var(--color-text-secondary); text-decoration: underline; }
+    .results-section { display: none; }
+    .results-section.active { display: block; }
+    .urgency-banner { border-radius: var(--radius-lg); padding: var(--space-6); margin-bottom: var(--space-6); text-align: center; }
+    .urgency-banner.crisis { background: var(--color-danger-faint); border: 2px solid var(--color-danger); }
+    .urgency-banner.urgent { background: var(--color-warn-faint); border: 2px solid var(--color-warn); }
+    .urgency-banner.moderate { background: var(--color-primary-faint); border: 2px solid var(--color-primary-light); }
+    .urgency-banner.planning { background: var(--color-success-faint); border: 2px solid var(--color-secondary-light); }
+    .urgency-banner h2 { font-size: var(--font-size-xl); margin-bottom: var(--space-2); }
+    .urgency-banner p { margin: 0; color: var(--color-text-secondary); }
+    .actions-grid { display: flex; flex-direction: column; gap: var(--space-3); }
+    .action-step { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5); display: flex; gap: var(--space-4); align-items: flex-start; }
+    .action-step.urgent-action { border-left: 4px solid var(--color-danger); }
+    .action-step.soon-action { border-left: 4px solid var(--color-warn); }
+    .action-step.normal-action { border-left: 4px solid var(--color-primary-light); }
+    .action-num { width: 32px; height: 32px; border-radius: 50%; background: var(--color-primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: var(--font-size-sm); flex-shrink: 0; }
+    .action-step.urgent-action .action-num { background: var(--color-danger); }
+    .action-step.soon-action .action-num { background: var(--color-warn); }
+    .barriers-found { background: var(--color-surface-alt); border-radius: var(--radius-lg); padding: var(--space-5); margin-bottom: var(--space-6); }
+    .barriers-found h3 { margin-bottom: var(--space-3); font-size: var(--font-size-base); color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.05em; font-size: var(--font-size-xs); }
+    .barrier-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+    .barrier-tag { background: white; border: 1px solid var(--color-border); border-radius: var(--radius-full); padding: var(--space-1) var(--space-3); font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+    .next-steps-cta { display: grid; gap: var(--space-3); grid-template-columns: 1fr 1fr; margin-top: var(--space-8); }
+    @media (max-width: 480px) { .next-steps-cta { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- Safety Exit -->
+<a href="https://weather.com" id="safetyExit" class="safety-exit">✕ Quick Exit</a>
+
+<!-- Nav -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">Stable Housing Navigator</span>
+        <span class="nav-brand-sub">King County, Washington</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="triage.html" class="active">Get Help Now</a></li>
+      <li><a href="plan.html">My Plan</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="rights.html">My Rights</a></li>
+      <li><a href="documents.html">Documents</a></li>
+      <li><a href="letters.html">Letters</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">🏠 Home</a>
+    <a href="triage.html">🆘 Get Help Now</a>
+    <a href="plan.html">📋 My Plan</a>
+    <a href="resources.html">📞 Resources</a>
+    <a href="rights.html">⚖️ My Rights</a>
+    <a href="documents.html">📁 Documents</a>
+    <a href="letters.html">✉️ Letters &amp; Scripts</a>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="triage-wrapper">
+
+    <!-- Triage Header -->
+    <div class="triage-header">
+      <span class="section-eyebrow">Housing Assessment</span>
+      <h1>Let's figure out the right help for you</h1>
+      <p>Answer a few calm questions. No judgment. No wrong answers. We'll show you your next steps.</p>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-bar-wrap" aria-label="Assessment progress" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar-labels">
+        <span id="progressLabel">Step 1 of 10</span>
+        <span id="progressPercent">10%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-bar-fill" id="progressFill" style="width: 10%"></div>
+      </div>
+    </div>
+
+    <!-- Step dots -->
+    <div class="step-dots" aria-hidden="true" id="stepDots"></div>
+
+    <!-- ============ STEP 1: SAFETY ============ -->
+    <div class="step-panel active" id="step-1" data-step="1">
+      <div class="triage-step">
+        <div class="alert alert-info mb-6" role="note">
+          <span class="alert-icon" aria-hidden="true">💙</span>
+          <div class="alert-content"><p>You can skip any question. We only ask what helps us find the right support for you. Nothing here is shared.</p></div>
+        </div>
+        <h2 class="triage-question">Are you in immediate danger right now, or do you need to leave your home for safety?</h2>
+        <p class="triage-subtext">This includes domestic violence, threats, or an unsafe living situation. There is help available right now — you are not alone.</p>
+        <div class="choice-grid choice-grid--1" role="radiogroup" aria-labelledby="q1-label">
+          <span id="q1-label" class="sr-only">Safety situation</span>
+          <label class="choice-card">
+            <input type="radio" name="safety" value="yes_danger">
+            <div>
+              <span class="choice-card-label">Yes — I need safety help right now</span>
+              <span class="choice-card-desc">You don't have to stay. There is emergency shelter and support available today.</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="safety" value="leaving_soon">
+            <div>
+              <span class="choice-card-label">I may need to leave soon for safety</span>
+              <span class="choice-card-desc">We can help you plan and find safe options before you need to move.</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="safety" value="unsafe_housing">
+            <div>
+              <span class="choice-card-label">My housing is unsafe (not violence-related)</span>
+              <span class="choice-card-desc">Mold, no heat, pest infestation, broken systems, or other dangerous conditions.</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="safety" value="no">
+            <div>
+              <span class="choice-card-label">No — I am not in immediate danger</span>
+              <span class="choice-card-desc"></span>
+            </div>
+          </label>
+        </div>
+        <div class="step-nav">
+          <span></span>
+          <button class="btn btn-primary" id="step1Next" onclick="nextStep()">Continue <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="triage-skip"><a href="#" onclick="skipQuestion(); return false;">Skip this question</a></p>
+      </div>
+    </div>
+
+    <!-- ============ STEP 2: HOUSING STATUS ============ -->
+    <div class="step-panel" id="step-2" data-step="2">
+      <div class="triage-step">
+        <h2 class="triage-question">What is your current housing situation?</h2>
+        <p class="triage-subtext">Choose the option that best describes where you are right now.</p>
+        <div class="choice-grid choice-grid--1" role="radiogroup" aria-labelledby="q2-label">
+          <span id="q2-label" class="sr-only">Current housing status</span>
+          <label class="choice-card">
+            <input type="radio" name="housing_status" value="homeless_outside">
+            <div>
+              <span class="choice-card-label">I have no place to sleep tonight</span>
+              <span class="choice-card-desc">Outside, in a car, or nowhere to go.</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="housing_status" value="shelter">
+            <div>
+              <span class="choice-card-label">I am in a shelter or emergency housing</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="housing_status" value="doubled_up">
+            <div>
+              <span class="choice-card-label">I'm staying with family or friends (not my own place)</span>
+              <span class="choice-card-desc">Doubled up temporarily due to housing or economic hardship.</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="housing_status" value="motel">
+            <div>
+              <span class="choice-card-label">I'm in a motel, hotel, or transitional housing</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="housing_status" value="renting_at_risk">
+            <div>
+              <span class="choice-card-label">I have a home but am at risk of losing it</span>
+              <span class="choice-card-desc">Eviction notice, behind on rent, or threatened with losing housing.</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="housing_status" value="renting_stable">
+            <div>
+              <span class="choice-card-label">I have housing and am not in immediate risk</span>
+              <span class="choice-card-desc">Working on longer-term stability or planning ahead.</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="housing_status" value="looking">
+            <div>
+              <span class="choice-card-label">I am looking for housing but not in crisis</span>
+            </div>
+          </label>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-ghost" onclick="prevStep()"><span aria-hidden="true">←</span> Back</button>
+          <button class="btn btn-primary" onclick="nextStep()">Continue <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="triage-skip"><a href="#" onclick="skipQuestion(); return false;">Skip this question</a></p>
+      </div>
+    </div>
+
+    <!-- ============ STEP 3: EVICTION ============ -->
+    <div class="step-panel" id="step-3" data-step="3">
+      <div class="triage-step">
+        <h2 class="triage-question">Have you received eviction-related notices or court papers?</h2>
+        <p class="triage-subtext">This includes pay-or-vacate notices, comply-or-vacate notices, or a summons to eviction court.</p>
+        <div class="alert alert-warn mb-6">
+          <span class="alert-icon" aria-hidden="true">⚠️</span>
+          <div class="alert-content"><p>If you have a court date, call <strong>Northwest Justice Project at 1-888-201-1014</strong> TODAY. Free legal help is available.</p></div>
+        </div>
+        <div class="choice-grid choice-grid--1" role="radiogroup" aria-labelledby="q3-label">
+          <span id="q3-label" class="sr-only">Eviction status</span>
+          <label class="choice-card">
+            <input type="radio" name="eviction" value="court_date">
+            <div>
+              <span class="choice-card-label">Yes — I have an eviction court date</span>
+              <span class="choice-card-desc">I received a summons with a court date.</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="eviction" value="notice_served">
+            <div>
+              <span class="choice-card-label">Yes — I received a notice, but no court date yet</span>
+              <span class="choice-card-desc">A pay-or-vacate, comply-or-vacate, or other written notice.</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="eviction" value="verbal_warning">
+            <div>
+              <span class="choice-card-label">My landlord threatened eviction verbally</span>
+              <span class="choice-card-desc">No written notice yet.</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="eviction" value="no">
+            <div>
+              <span class="choice-card-label">No — no eviction notices</span>
+            </div>
+          </label>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-ghost" onclick="prevStep()"><span aria-hidden="true">←</span> Back</button>
+          <button class="btn btn-primary" onclick="nextStep()">Continue <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="triage-skip"><a href="#" onclick="skipQuestion(); return false;">Skip this question</a></p>
+      </div>
+    </div>
+
+    <!-- ============ STEP 4: RENT ============ -->
+    <div class="step-panel" id="step-4" data-step="4">
+      <div class="triage-step">
+        <h2 class="triage-question">Are you behind on rent?</h2>
+        <div class="choice-grid choice-grid--1" role="radiogroup" aria-labelledby="q4-label">
+          <span id="q4-label" class="sr-only">Rent status</span>
+          <label class="choice-card">
+            <input type="radio" name="rent_behind" value="yes_3plus">
+            <div><span class="choice-card-label">Yes — 3 or more months behind</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="rent_behind" value="yes_1to2">
+            <div><span class="choice-card-label">Yes — 1 to 2 months behind</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="rent_behind" value="partial">
+            <div><span class="choice-card-label">I can pay some but not all of this month's rent</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="rent_behind" value="current">
+            <div><span class="choice-card-label">I am current on rent</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="rent_behind" value="na">
+            <div><span class="choice-card-label">Not applicable</span></div>
+          </label>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-ghost" onclick="prevStep()"><span aria-hidden="true">←</span> Back</button>
+          <button class="btn btn-primary" onclick="nextStep()">Continue <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="triage-skip"><a href="#" onclick="skipQuestion(); return false;">Skip this question</a></p>
+      </div>
+    </div>
+
+    <!-- ============ STEP 5: UTILITIES ============ -->
+    <div class="step-panel" id="step-5" data-step="5">
+      <div class="triage-step">
+        <h2 class="triage-question">Are you facing a utility shutoff or have past-due utility bills?</h2>
+        <div class="choice-grid choice-grid--1" role="radiogroup" aria-labelledby="q5-label">
+          <span id="q5-label" class="sr-only">Utility situation</span>
+          <label class="choice-card">
+            <input type="radio" name="utility_crisis" value="shutoff_notice">
+            <div><span class="choice-card-label">Yes — I have received a shutoff notice</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="utility_crisis" value="behind_utilities">
+            <div><span class="choice-card-label">Yes — I am behind on utilities, no shutoff notice yet</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="utility_crisis" value="no">
+            <div><span class="choice-card-label">No utility problems</span></div>
+          </label>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-ghost" onclick="prevStep()"><span aria-hidden="true">←</span> Back</button>
+          <button class="btn btn-primary" onclick="nextStep()">Continue <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="triage-skip"><a href="#" onclick="skipQuestion(); return false;">Skip this question</a></p>
+      </div>
+    </div>
+
+    <!-- ============ STEP 6: CHILDREN ============ -->
+    <div class="step-panel" id="step-6" data-step="6">
+      <div class="triage-step">
+        <h2 class="triage-question">Do you have children under 18 living with you or in your care?</h2>
+        <div class="choice-grid choice-grid--1" role="radiogroup" aria-labelledby="q6-label">
+          <span id="q6-label" class="sr-only">Children in household</span>
+          <label class="choice-card">
+            <input type="radio" name="children" value="yes_minor">
+            <div>
+              <span class="choice-card-label">Yes — minor children in my household</span>
+              <span class="choice-card-desc">Children have special housing protections. We'll make sure to include them.</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="children" value="yes_sometimes">
+            <div><span class="choice-card-label">My children stay with me part-time</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="children" value="no">
+            <div><span class="choice-card-label">No children in the household</span></div>
+          </label>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-ghost" onclick="prevStep()"><span aria-hidden="true">←</span> Back</button>
+          <button class="btn btn-primary" onclick="nextStep()">Continue <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="triage-skip"><a href="#" onclick="skipQuestion(); return false;">Skip this question</a></p>
+      </div>
+    </div>
+
+    <!-- ============ STEP 7: DISABILITY ============ -->
+    <div class="step-panel" id="step-7" data-step="7">
+      <div class="triage-step">
+        <h2 class="triage-question">Do you or anyone in your household have a disability that affects your housing?</h2>
+        <p class="triage-subtext">Physical, mental health, developmental, or other. You do not have to share details — this helps us find accommodation rights and accessible housing options.</p>
+        <div class="choice-grid choice-grid--1" role="radiogroup" aria-labelledby="q7-label">
+          <span id="q7-label" class="sr-only">Disability status</span>
+          <label class="choice-card">
+            <input type="radio" name="disability" value="yes_affects_housing">
+            <div><span class="choice-card-label">Yes — it affects my housing search or situation</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="disability" value="yes_accommodation">
+            <div><span class="choice-card-label">Yes — I may need a housing accommodation</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="disability" value="yes_no_housing_impact">
+            <div><span class="choice-card-label">Yes — but it doesn't affect my housing currently</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="disability" value="no">
+            <div><span class="choice-card-label">No</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="disability" value="prefer_not">
+            <div><span class="choice-card-label">Prefer not to say</span></div>
+          </label>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-ghost" onclick="prevStep()"><span aria-hidden="true">←</span> Back</button>
+          <button class="btn btn-primary" onclick="nextStep()">Continue <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="triage-skip"><a href="#" onclick="skipQuestion(); return false;">Skip this question</a></p>
+      </div>
+    </div>
+
+    <!-- ============ STEP 8: BARRIERS ============ -->
+    <div class="step-panel" id="step-8" data-step="8">
+      <div class="triage-step">
+        <h2 class="triage-question">What barriers are you facing?</h2>
+        <p class="triage-subtext">Select all that apply. Every single barrier listed here has pathways past it. None of these mean you cannot be helped.</p>
+        <div class="choice-grid choice-grid--1" role="group" aria-labelledby="q8-label">
+          <span id="q8-label" class="sr-only">Housing barriers</span>
+          <label class="choice-card">
+            <input type="checkbox" name="barriers" value="eviction_history">
+            <div>
+              <span class="choice-card-label">Past eviction on my record</span>
+              <span class="choice-card-desc">Landlords are finding a prior eviction in my background check</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="checkbox" name="barriers" value="criminal_background">
+            <div>
+              <span class="choice-card-label">Criminal background</span>
+              <span class="choice-card-desc">A prior arrest, charge, or conviction is affecting my applications</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="checkbox" name="barriers" value="credit_issues">
+            <div>
+              <span class="choice-card-label">Credit problems or collections</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="checkbox" name="barriers" value="rental_debt">
+            <div>
+              <span class="choice-card-label">Unpaid rent or rental debt</span>
+              <span class="choice-card-desc">Money owed to a past landlord or sent to collections</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="checkbox" name="barriers" value="no_income">
+            <div>
+              <span class="choice-card-label">No income currently</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="checkbox" name="barriers" value="low_income">
+            <div>
+              <span class="choice-card-label">Income too low for market rents</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="checkbox" name="barriers" value="missing_id">
+            <div>
+              <span class="choice-card-label">Missing ID or key documents</span>
+              <span class="choice-card-desc">No state ID, birth certificate, Social Security card, or similar</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="checkbox" name="barriers" value="voucher_discrimination">
+            <div>
+              <span class="choice-card-label">Landlords won't accept my voucher</span>
+              <span class="choice-card-desc">"We don't accept Section 8" — this may be illegal discrimination</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="checkbox" name="barriers" value="utility_arrears">
+            <div><span class="choice-card-label">Utility debt</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="checkbox" name="barriers" value="family_size_mismatch">
+            <div><span class="choice-card-label">Can't find housing big enough for my family</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="checkbox" name="barriers" value="language_barrier">
+            <div><span class="choice-card-label">Language or communication barriers</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="checkbox" name="barriers" value="overwhelm">
+            <div>
+              <span class="choice-card-label">Overwhelmed by the process</span>
+              <span class="choice-card-desc">The paperwork and phone calls feel impossible to manage</span>
+            </div>
+          </label>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-ghost" onclick="prevStep()"><span aria-hidden="true">←</span> Back</button>
+          <button class="btn btn-primary" onclick="nextStep()">Continue <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="triage-skip"><a href="#" onclick="skipQuestion(); return false;">Skip this question</a></p>
+      </div>
+    </div>
+
+    <!-- ============ STEP 9: VOUCHER ============ -->
+    <div class="step-panel" id="step-9" data-step="9">
+      <div class="triage-step">
+        <h2 class="triage-question">Do you currently have a housing voucher?</h2>
+        <p class="triage-subtext">Section 8, HCV, or other rental assistance voucher.</p>
+        <div class="choice-grid choice-grid--1" role="radiogroup" aria-labelledby="q9-label">
+          <span id="q9-label" class="sr-only">Voucher status</span>
+          <label class="choice-card">
+            <input type="radio" name="voucher" value="yes_active">
+            <div><span class="choice-card-label">Yes — active and looking for housing</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="voucher" value="yes_expiring">
+            <div>
+              <span class="choice-card-label">Yes — but it's expiring soon</span>
+              <span class="choice-card-desc">We'll help you request an extension right away.</span>
+            </div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="voucher" value="yes_in_unit">
+            <div><span class="choice-card-label">Yes — I'm in a unit with a voucher</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="voucher" value="applied">
+            <div><span class="choice-card-label">I've applied but don't have one yet</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="voucher" value="no">
+            <div><span class="choice-card-label">No voucher</span></div>
+          </label>
+          <label class="choice-card">
+            <input type="radio" name="voucher" value="not_sure">
+            <div><span class="choice-card-label">I'm not sure</span></div>
+          </label>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-ghost" onclick="prevStep()"><span aria-hidden="true">←</span> Back</button>
+          <button class="btn btn-primary" onclick="nextStep()">Continue <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="triage-skip"><a href="#" onclick="skipQuestion(); return false;">Skip this question</a></p>
+      </div>
+    </div>
+
+    <!-- ============ STEP 10: SUPPORT NEEDED ============ -->
+    <div class="step-panel" id="step-10" data-step="10">
+      <div class="triage-step">
+        <h2 class="triage-question">What additional support would help you most?</h2>
+        <p class="triage-subtext">Select all that apply.</p>
+        <div class="choice-grid choice-grid--1" role="group" aria-labelledby="q10-label">
+          <span id="q10-label" class="sr-only">Support needed</span>
+          <label class="choice-card"><input type="checkbox" name="support" value="legal_help"><div><span class="choice-card-label">Legal help or advice</span></div></label>
+          <label class="choice-card"><input type="checkbox" name="support" value="rental_assistance"><div><span class="choice-card-label">Money for rent</span></div></label>
+          <label class="choice-card"><input type="checkbox" name="support" value="utility_help"><div><span class="choice-card-label">Help with utility bills</span></div></label>
+          <label class="choice-card"><input type="checkbox" name="support" value="housing_applications"><div><span class="choice-card-label">Help applying for affordable housing</span></div></label>
+          <label class="choice-card"><input type="checkbox" name="support" value="documents"><div><span class="choice-card-label">Help getting documents together</span></div></label>
+          <label class="choice-card"><input type="checkbox" name="support" value="caseworker"><div><span class="choice-card-label">A case manager to help navigate everything</span></div></label>
+          <label class="choice-card"><input type="checkbox" name="support" value="childcare"><div><span class="choice-card-label">Childcare</span></div></label>
+          <label class="choice-card"><input type="checkbox" name="support" value="food"><div><span class="choice-card-label">Food or basic needs</span></div></label>
+          <label class="choice-card"><input type="checkbox" name="support" value="mental_health"><div><span class="choice-card-label">Mental health or counseling support</span></div></label>
+          <label class="choice-card"><input type="checkbox" name="support" value="benefits"><div><span class="choice-card-label">Help applying for benefits (SNAP, TANF, Medicaid)</span></div></label>
+        </div>
+        <div class="step-nav">
+          <button class="btn btn-ghost" onclick="prevStep()"><span aria-hidden="true">←</span> Back</button>
+          <button class="btn btn-success btn-lg" onclick="submitTriage()">
+            See My Plan &amp; Next Steps <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ RESULTS ============ -->
+    <div class="results-section" id="results" role="region" aria-labelledby="results-heading" aria-live="polite">
+
+      <h2 id="results-heading" class="sr-only">Your Housing Assessment Results</h2>
+
+      <!-- Urgency Banner -->
+      <div class="urgency-banner" id="urgencyBanner" role="status"></div>
+
+      <!-- DV Safety Alert (shown if applicable) -->
+      <div id="dvAlert" style="display:none;">
+        <div class="alert alert-urgent mb-6">
+          <span class="alert-icon" aria-hidden="true">🛡️</span>
+          <div class="alert-content">
+            <h4>Safety resources are available right now</h4>
+            <p>You can leave whenever you are ready. An advocate can help you plan safely.
+              <strong>DAWN: <a href="tel:4256568423">425-656-8423</a></strong> |
+              <strong>WA DV: <a href="tel:18005626025">1-800-562-6025</a></strong> |
+              <strong>National: <a href="tel:18007997233">1-800-799-7233</a></strong>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Immediate Actions -->
+      <div class="card mb-6">
+        <div class="card-header">
+          <h3 style="font-size: var(--font-size-lg); margin:0; display:flex; align-items:center; gap:var(--space-2);">
+            <span aria-hidden="true">🎯</span> Your Immediate Next Steps
+          </h3>
+        </div>
+        <div class="card-body">
+          <div class="actions-grid" id="actionsGrid"></div>
+        </div>
+      </div>
+
+      <!-- Barriers Found -->
+      <div class="barriers-found" id="barriersFound" style="display:none;">
+        <h3>Barriers we identified</h3>
+        <p class="text-small text-muted mb-4">Every barrier listed has options. Your plan includes paths around each one.</p>
+        <div class="barrier-tags" id="barrierTagsContainer"></div>
+      </div>
+
+      <!-- Rights Triggered -->
+      <div id="rightsTriggerSection" style="display:none;">
+        <div class="alert alert-info mb-6">
+          <span class="alert-icon" aria-hidden="true">⚖️</span>
+          <div class="alert-content">
+            <h4>Possible legal protections for your situation</h4>
+            <p>Based on what you shared, there may be legal protections that apply to you. <a href="rights.html">Review your rights →</a></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Next Steps CTA -->
+      <div class="next-steps-cta">
+        <a href="plan.html" class="btn btn-primary btn-block">
+          <span aria-hidden="true">📋</span> Go to My Full Plan
+        </a>
+        <a href="resources.html" class="btn btn-secondary btn-block">
+          <span aria-hidden="true">📞</span> Browse All Resources
+        </a>
+        <a href="rights.html" class="btn btn-secondary btn-block">
+          <span aria-hidden="true">⚖️</span> Review My Rights
+        </a>
+        <a href="letters.html" class="btn btn-secondary btn-block">
+          <span aria-hidden="true">✉️</span> Generate a Letter
+        </a>
+      </div>
+
+      <!-- Never Give Up -->
+      <div class="mission-box mt-8" style="background: var(--color-secondary-faint); border-radius: var(--radius-lg); padding: var(--space-6);">
+        <p style="font-size: var(--font-size-base); color: var(--color-secondary-dark); margin:0;">
+          <strong>We don't give up.</strong> If one option fails, your plan shows the next one. Always a backup. Always another path. We stay with you through every step.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        This tool provides general housing information, not legal advice. Laws change. For free legal help: <a href="tel:18882011014">Northwest Justice Project: 1-888-201-1014</a>.
+      </p>
+      <p style="font-size: var(--font-size-xs); color: var(--color-text-muted);">© <span id="currentYear"></span> Stable Housing Navigator</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+<script>
+  // Triage flow state
+  let currentStep = 1;
+  const TOTAL_STEPS = 10;
+  const answers = {};
+
+  function initDots() {
+    const container = document.getElementById('stepDots');
+    container.innerHTML = '';
+    for (let i = 1; i <= TOTAL_STEPS; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'step-dot' + (i === 1 ? ' active' : '');
+      dot.setAttribute('aria-hidden', 'true');
+      container.appendChild(dot);
+    }
+  }
+
+  function updateProgress(step) {
+    const pct = Math.round((step / TOTAL_STEPS) * 100);
+    const fill = document.getElementById('progressFill');
+    const label = document.getElementById('progressLabel');
+    const pctEl = document.getElementById('progressPercent');
+    if (fill) fill.style.width = pct + '%';
+    if (label) label.textContent = `Step ${step} of ${TOTAL_STEPS}`;
+    if (pctEl) pctEl.textContent = pct + '%';
+
+    const prog = document.querySelector('[role="progressbar"]');
+    if (prog) prog.setAttribute('aria-valuenow', pct);
+
+    document.querySelectorAll('.step-dot').forEach((dot, i) => {
+      dot.className = 'step-dot';
+      if (i + 1 < step) dot.classList.add('completed');
+      if (i + 1 === step) dot.classList.add('active');
+    });
+  }
+
+  function collectCurrentAnswers() {
+    const panel = document.getElementById('step-' + currentStep);
+    if (!panel) return;
+
+    panel.querySelectorAll('input[type="radio"]:checked').forEach(input => {
+      answers[input.name] = input.value;
+    });
+
+    const checkboxGroups = {};
+    panel.querySelectorAll('input[type="checkbox"]:checked').forEach(input => {
+      if (!checkboxGroups[input.name]) checkboxGroups[input.name] = [];
+      checkboxGroups[input.name].push(input.value);
+    });
+    Object.assign(answers, checkboxGroups);
+  }
+
+  function nextStep() {
+    collectCurrentAnswers();
+
+    // Early exit for DV safety
+    if (currentStep === 1 && answers.safety === 'yes_danger') {
+      showDVCrisisPanel();
+      return;
+    }
+
+    if (currentStep >= TOTAL_STEPS) {
+      submitTriage();
+      return;
+    }
+
+    document.getElementById('step-' + currentStep).classList.remove('active');
+    currentStep++;
+    document.getElementById('step-' + currentStep).classList.add('active');
+    updateProgress(currentStep);
+    window.scrollTo(0, 0);
+  }
+
+  function prevStep() {
+    if (currentStep <= 1) return;
+    document.getElementById('step-' + currentStep).classList.remove('active');
+    currentStep--;
+    document.getElementById('step-' + currentStep).classList.add('active');
+    updateProgress(currentStep);
+    window.scrollTo(0, 0);
+  }
+
+  function skipQuestion() {
+    if (currentStep >= TOTAL_STEPS) {
+      submitTriage();
+      return;
+    }
+    document.getElementById('step-' + currentStep).classList.remove('active');
+    currentStep++;
+    document.getElementById('step-' + currentStep).classList.add('active');
+    updateProgress(currentStep);
+    window.scrollTo(0, 0);
+  }
+
+  function showDVCrisisPanel() {
+    // Jump straight to results with DV pathway
+    answers.pathway = 'dv_safety';
+    submitTriage();
+  }
+
+  function submitTriage() {
+    collectCurrentAnswers();
+
+    // Save to localStorage
+    try {
+      const session = JSON.parse(localStorage.getItem('shn_session') || '{}');
+      session.triage = { answers, completed: true, completedAt: new Date().toISOString() };
+      session.updatedAt = new Date().toISOString();
+      localStorage.setItem('shn_session', JSON.stringify(session));
+    } catch(e) {}
+
+    // Hide all steps, show results
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('results').classList.add('active');
+    updateProgress(TOTAL_STEPS);
+
+    renderResults();
+    window.scrollTo(0, 0);
+  }
+
+  function calculateUrgency(a) {
+    if (a.safety === 'yes_danger' || a.housing_status === 'homeless_outside' || a.eviction === 'court_date') return 'crisis';
+    if (a.safety === 'leaving_soon' || ['shelter','doubled_up','motel'].includes(a.housing_status) || a.eviction === 'notice_served' || a.rent_behind === 'yes_3plus' || a.utility_crisis === 'shutoff_notice' || a.voucher === 'yes_expiring') return 'urgent';
+    if (a.rent_behind === 'yes_1to2' || a.rent_behind === 'partial' || a.housing_status === 'renting_at_risk') return 'moderate';
+    return 'planning';
+  }
+
+  const BARRIER_LABELS = {
+    eviction_history: 'Past eviction',
+    criminal_background: 'Criminal background',
+    credit_issues: 'Credit issues',
+    rental_debt: 'Unpaid rental debt',
+    no_income: 'No income',
+    low_income: 'Low income',
+    missing_id: 'Missing ID/documents',
+    voucher_discrimination: 'Voucher discrimination',
+    utility_arrears: 'Utility debt',
+    family_size_mismatch: 'Family size barrier',
+    language_barrier: 'Language barrier',
+    overwhelm: 'Process overwhelm',
+    disability_barrier: 'Disability barrier',
+    domestic_violence: 'Safety/DV',
+    unsafe_housing: 'Unsafe housing',
+  };
+
+  function renderResults() {
+    const urgency = calculateUrgency(answers);
+
+    // Urgency banner
+    const bannerEl = document.getElementById('urgencyBanner');
+    const bannerData = {
+      crisis: { text: '🚨 Urgent — You need help right now', sub: 'The steps below are your top priority. Start with the first one.', cls: 'crisis' },
+      urgent: { text: '⚠️ Important — Take action soon', sub: 'Your situation needs attention in the next few days. Here is where to start.', cls: 'urgent' },
+      moderate: { text: '📋 You have time — but let\'s get started', sub: 'Your situation is manageable with the right steps. Here is your plan.', cls: 'moderate' },
+      planning: { text: '✅ Good thinking — planning ahead', sub: 'You are being proactive. Here are the best steps to stay ahead of any issues.', cls: 'planning' },
+    };
+    const bd = bannerData[urgency];
+    bannerEl.className = 'urgency-banner ' + bd.cls;
+    bannerEl.innerHTML = `<h2>${bd.text}</h2><p>${bd.sub}</p>`;
+
+    // DV alert
+    if (answers.safety === 'yes_danger' || answers.safety === 'leaving_soon') {
+      document.getElementById('dvAlert').style.display = 'block';
+    }
+
+    // Generate actions
+    const actions = generateActions(urgency, answers);
+    const grid = document.getElementById('actionsGrid');
+    grid.innerHTML = actions.map((a, i) => `
+      <div class="action-step ${a.urgency}-action">
+        <div class="action-num">${i + 1}</div>
+        <div>
+          <div style="font-weight:700; margin-bottom:4px;">${a.title}</div>
+          <div style="font-size:0.9rem; color:var(--color-text-secondary);">${a.desc}</div>
+          ${a.deadline ? `<div style="font-size:0.8rem; font-weight:700; margin-top:6px; color:${a.urgency==='urgent'?'var(--color-danger)':'var(--color-warn)'};">⏰ ${a.deadline}</div>` : ''}
+        </div>
+      </div>
+    `).join('');
+
+    // Barriers
+    const barriers = [...(answers.barriers || [])];
+    if (answers.safety === 'yes_danger' || answers.safety === 'leaving_soon') barriers.push('domestic_violence');
+    if (answers.safety === 'unsafe_housing') barriers.push('unsafe_housing');
+    if (answers.disability && answers.disability.startsWith('yes')) barriers.push('disability_barrier');
+    if (answers.rent_behind && !['current','na'].includes(answers.rent_behind)) barriers.push('rental_debt');
+
+    const uniqueBarriers = [...new Set(barriers)];
+    if (uniqueBarriers.length > 0) {
+      document.getElementById('barriersFound').style.display = 'block';
+      document.getElementById('barrierTagsContainer').innerHTML = uniqueBarriers.map(b =>
+        `<span class="barrier-tag">${BARRIER_LABELS[b] || b}</span>`
+      ).join('');
+    }
+
+    // Rights trigger
+    const rightsTriggered = answers.eviction !== 'no' || answers.disability?.startsWith('yes') || answers.safety === 'yes_danger' || (answers.barriers || []).includes('voucher_discrimination');
+    if (rightsTriggered) {
+      document.getElementById('rightsTriggerSection').style.display = 'block';
+    }
+  }
+
+  function generateActions(urgency, a) {
+    const actions = [];
+
+    if (a.safety === 'yes_danger' || a.safety === 'leaving_soon') {
+      actions.push({ title: 'Call the DV crisis line', desc: 'DAWN: 425-656-8423 | WA Hotline: 1-800-562-6025 | National: 1-800-799-7233', deadline: 'Right now', urgency: 'urgent' });
+      actions.push({ title: 'Call 211 for emergency shelter', desc: 'Tell them you need DV emergency housing. Available 24/7.', deadline: 'Today', urgency: 'urgent' });
+    }
+
+    if (a.housing_status === 'homeless_outside') {
+      actions.push({ title: 'Call 211 for emergency shelter tonight', desc: 'Say "I need emergency shelter tonight." Available 24/7.', deadline: 'Right now', urgency: 'urgent' });
+    }
+
+    if (a.eviction === 'court_date') {
+      actions.push({ title: 'Call Northwest Justice Project NOW', desc: 'Free legal help: 1-888-201-1014. Tell them you have an eviction court date.', deadline: 'Today — before your court date', urgency: 'urgent' });
+      actions.push({ title: 'Do NOT miss your court date', desc: 'Even without a lawyer, showing up is better than not showing up. The court can issue a default judgment against you if you don\'t appear.', deadline: 'Your court date', urgency: 'urgent' });
+    }
+
+    if (a.eviction === 'notice_served') {
+      actions.push({ title: 'Call Northwest Justice Project', desc: 'Free legal advice: 1-888-201-1014. You may have defenses — call before you respond.', deadline: 'Within 24-48 hours', urgency: 'urgent' });
+      actions.push({ title: 'Apply for emergency rental assistance', desc: 'Call 211 and ask for emergency rental assistance programs. Mention you have an eviction notice.', deadline: 'Today', urgency: 'urgent' });
+    }
+
+    if (a.utility_crisis === 'shutoff_notice') {
+      actions.push({ title: 'Call your utility company today', desc: 'Ask for a payment plan, extension, or assistance program. They cannot shut you off immediately after a shutoff notice in most cases.', deadline: 'Today', urgency: 'urgent' });
+      actions.push({ title: 'Apply for LIHEAP/utility assistance', desc: 'Call 211 and say you have a shutoff notice and need emergency utility assistance.', deadline: 'Today', urgency: 'urgent' });
+    }
+
+    if (a.rent_behind === 'yes_3plus' || a.rent_behind === 'yes_1to2') {
+      if (!actions.find(ac => ac.title.includes('211'))) {
+        actions.push({ title: 'Call 211 for rental assistance programs', desc: 'Ask specifically for rental assistance and eviction prevention. Tell them how many months behind you are.', deadline: 'This week', urgency: 'soon' });
+      }
+    }
+
+    if ((a.barriers || []).includes('voucher_discrimination')) {
+      actions.push({ title: 'Report voucher discrimination', desc: 'In WA State, refusing to rent solely because of a voucher may be illegal. Contact the WA Human Rights Commission: 1-800-233-3247.', deadline: 'This week', urgency: 'soon' });
+    }
+
+    if ((a.barriers || []).includes('missing_id')) {
+      actions.push({ title: 'Get help obtaining ID', desc: 'Call 211 and ask about ID assistance programs for people experiencing housing instability.', deadline: 'This week', urgency: 'soon' });
+    }
+
+    if (a.children === 'yes_minor' && ['homeless_outside','shelter','doubled_up'].includes(a.housing_status)) {
+      actions.push({ title: 'Contact your child\'s school McKinney-Vento liaison', desc: 'Your child has the right to stay in their school even if your housing has changed. The school district must provide transportation.', deadline: 'This week', urgency: 'soon' });
+    }
+
+    if ((a.disability || '').startsWith('yes_') && ['yes_accommodation','yes_affects_housing'].includes(a.disability)) {
+      actions.push({ title: 'Request a reasonable accommodation in writing', desc: 'Use our letter generator to create a formal accommodation request. Landlords must respond to reasonable accommodation requests.', deadline: 'This week', urgency: 'soon' });
+    }
+
+    // Universal
+    if (!actions.find(ac => ac.title.includes('211'))) {
+      actions.push({ title: 'Call 211 — free resource specialist', desc: 'Available 24/7. They know what programs have current funding and availability in your area.', deadline: 'This week', urgency: 'normal' });
+    }
+
+    actions.push({ title: 'Build your document list', desc: 'Go to your Document Vault and note what you have and what\'s missing. This speeds up every application.', deadline: 'This week', urgency: 'normal' });
+
+    return actions.slice(0, 6);
+  }
+
+  // URL param pre-selection
+  function initFromURL() {
+    const params = new URLSearchParams(location.search);
+    const start = params.get('start');
+    const preselect = {
+      eviction: { name: 'eviction', value: 'notice_served' },
+      safety: { name: 'safety', value: 'leaving_soon' },
+      homeless: { name: 'housing_status', value: 'homeless_outside' },
+      voucher: { name: 'voucher', value: 'yes_active' },
+      barriers: null,
+      utilities: { name: 'utility_crisis', value: 'shutoff_notice' },
+      disability: { name: 'disability', value: 'yes_affects_housing' },
+      family: { name: 'children', value: 'yes_minor' },
+    };
+    if (start && preselect[start]) {
+      const ps = preselect[start];
+      if (ps) {
+        const input = document.querySelector(`input[name="${ps.name}"][value="${ps.value}"]`);
+        if (input) {
+          input.checked = true;
+          input.closest('.choice-card')?.classList.add('selected');
+        }
+      }
+    }
+  }
+
+  initDots();
+  initFromURL();
+</script>
+</body>
+</html>

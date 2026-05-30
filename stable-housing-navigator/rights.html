@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Rights — Stable Housing Navigator</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .rights-category-header { font-size: var(--font-size-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); margin: var(--space-8) 0 var(--space-3); padding-bottom: var(--space-2); border-bottom: 2px solid var(--color-border-light); }
+    .rights-card { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); margin-bottom: var(--space-4); overflow: hidden; }
+    .rights-card-header { display: flex; gap: var(--space-3); align-items: center; justify-content: space-between; padding: var(--space-4) var(--space-5); cursor: pointer; }
+    .rights-card-header h3 { font-size: var(--font-size-base); color: var(--color-text); margin: 0; flex: 1; }
+    .rights-card-header:hover { background: var(--color-bg); }
+    .rights-card-body { display: none; padding: var(--space-5); border-top: 1px solid var(--color-border-light); }
+    .rights-card-body.open { display: block; }
+    .rights-card-body p { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-3); white-space: pre-line; }
+    .rights-card-body ul { padding-left: var(--space-5); }
+    .rights-card-body ul li { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-bottom: var(--space-2); }
+    .needs-verify-inline { display: inline-flex; align-items: center; gap: 4px; font-size: var(--font-size-xs); background: #FFF3E0; color: #E65100; border: 1px solid #FFB74D; border-radius: var(--radius-full); padding: 2px 8px; font-weight: 700; margin-left: var(--space-2); }
+    .expand-icon { font-size: var(--font-size-lg); transition: transform 0.2s ease; color: var(--color-text-muted); flex-shrink: 0; }
+    .rights-card-header.expanded .expand-icon { transform: rotate(180deg); }
+    .what-to-do { background: var(--color-success-faint); border: 1px solid var(--color-secondary-light); border-radius: var(--radius-md); padding: var(--space-4); margin-top: var(--space-4); }
+    .what-to-do h4 { color: var(--color-secondary-dark); font-size: var(--font-size-sm); margin-bottom: var(--space-2); }
+    .source-cite { font-size: var(--font-size-xs); color: var(--color-text-muted); font-style: italic; margin-top: var(--space-4); padding-top: var(--space-3); border-top: 1px solid var(--color-border-light); }
+    .triggered-badge { background: var(--color-primary-faint); color: var(--color-primary-dark); border: 1px solid var(--color-primary-light); font-size: var(--font-size-xs); font-weight: 700; padding: 2px 8px; border-radius: var(--radius-full); }
+    .urgency-high .rights-card-header { border-left: 4px solid var(--color-danger); }
+    .urgency-medium .rights-card-header { border-left: 4px solid var(--color-warn); }
+    .urgency-low .rights-card-header { border-left: 4px solid var(--color-border); }
+  </style>
+</head>
+<body>
+<a href="https://weather.com" id="safetyExit" class="safety-exit">✕ Quick Exit</a>
+<nav class="site-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="nav-brand-text"><span class="nav-brand-name">Stable Housing Navigator</span><span class="nav-brand-sub">King County, Washington</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="triage.html">Get Help Now</a></li>
+      <li><a href="plan.html">My Plan</a></li><li><a href="resources.html">Resources</a></li>
+      <li><a href="rights.html" class="active">My Rights</a></li><li><a href="documents.html">Documents</a></li><li><a href="letters.html">Letters</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">🏠 Home</a><a href="triage.html">🆘 Get Help Now</a><a href="plan.html">📋 My Plan</a>
+    <a href="resources.html">📞 Resources</a><a href="rights.html">⚖️ My Rights</a>
+    <a href="documents.html">📁 Documents</a><a href="letters.html">✉️ Letters</a>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="container container--md">
+
+    <div class="section-header">
+      <span class="section-eyebrow">Legal Information</span>
+      <h1>Your Housing Rights</h1>
+      <p>Know your rights in Washington State and King County. When you know your rights, you can protect them.</p>
+    </div>
+
+    <!-- Legal Disclaimer -->
+    <div class="legal-notice" role="note">
+      <strong>Legal Information — Not Legal Advice:</strong> This page provides general information about housing laws. Laws change. Items marked <span style="background:#FFF3E0;color:#E65100;padding:1px 8px;border-radius:99px;font-size:0.75rem;font-weight:700;">⚠ Needs Verification</span> require current confirmation. For advice about your specific situation, contact <a href="tel:18882011014">Northwest Justice Project (1-888-201-1014)</a> or another licensed attorney. Filing deadlines apply to most legal claims.
+    </div>
+
+    <!-- Personalized alert -->
+    <div id="triggeredAlert" style="display:none;">
+      <div class="alert alert-info mb-6">
+        <span class="alert-icon">⚖️</span>
+        <div class="alert-content">
+          <h4>Rights that may apply to your situation</h4>
+          <p>Based on your housing assessment, the protections marked <span class="triggered-badge">May Apply to You</span> may be relevant. Click each one to learn more.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="tabs-wrapper">
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" role="tab" aria-selected="true" onclick="showCategory('all', this)">All Rights</button>
+        <button class="tab-btn" role="tab" onclick="showCategory('eviction', this)">Eviction</button>
+        <button class="tab-btn" role="tab" onclick="showCategory('fair-housing', this)">Fair Housing</button>
+        <button class="tab-btn" role="tab" onclick="showCategory('disability', this)">Disability</button>
+        <button class="tab-btn" role="tab" onclick="showCategory('safety', this)">DV &amp; Safety</button>
+        <button class="tab-btn" role="tab" onclick="showCategory('family', this)">Family</button>
+        <button class="tab-btn" role="tab" onclick="showCategory('voucher', this)">Vouchers</button>
+        <button class="tab-btn" role="tab" onclick="showCategory('tenancy', this)">Tenancy</button>
+      </div>
+    </div>
+
+    <!-- Rights List -->
+    <div id="rightsList" role="list"></div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">Legal information only — not legal advice. For free legal help: <a href="tel:18882011014">Northwest Justice Project: 1-888-201-1014</a>.</p>
+      <p style="font-size:var(--font-size-xs);color:var(--color-text-muted);">© <span id="currentYear"></span> Stable Housing Navigator</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+<script type="module">
+import { rights, getRightsByTrigger } from './js/rights-data.js';
+
+let activeCategory = 'all';
+let triggeredIds = new Set();
+
+function getTriggeredRights() {
+  try {
+    const session = JSON.parse(localStorage.getItem('shn_session') || '{}');
+    const answers = session.triage?.answers || {};
+    const barriers = answers.barriers || [];
+    const triggers = [];
+
+    if (['court_date','notice_served'].includes(answers.eviction)) triggers.push('eviction_notice', 'eviction_served');
+    if (['yes_danger','leaving_soon'].includes(answers.safety)) triggers.push('domestic_violence', 'fleeing_safety');
+    if (answers.disability?.startsWith('yes')) triggers.push('disability_barrier', 'accommodation_needed');
+    if (barriers.includes('voucher_discrimination')) triggers.push('voucher_discrimination', 'voucher_holder');
+    if (barriers.includes('criminal_background')) triggers.push('criminal_background', 'denied_for_background');
+    if (answers.voucher && !['no','not_sure'].includes(answers.voucher)) triggers.push('has_voucher', 'voucher_holder');
+    if (answers.children === 'yes_minor') triggers.push('has_children');
+    if (['homeless_outside','shelter','doubled_up'].includes(answers.housing_status)) triggers.push('homeless');
+    if (answers.safety === 'unsafe_housing') triggers.push('unsafe_housing', 'repairs_needed');
+
+    if (triggers.length > 0) {
+      document.getElementById('triggeredAlert').style.display = 'block';
+      const triggered = getRightsByTrigger(triggers);
+      triggered.forEach(r => triggeredIds.add(r.id));
+    }
+  } catch(e) {}
+}
+
+function renderRights(list) {
+  const container = document.getElementById('rightsList');
+
+  if (list.length === 0) {
+    container.innerHTML = `<div style="text-align:center;padding:var(--space-12);color:var(--color-text-secondary);">No rights information found for this category.</div>`;
+    return;
+  }
+
+  // Group by category
+  const groups = {};
+  list.forEach(r => {
+    if (!groups[r.category]) groups[r.category] = [];
+    groups[r.category].push(r);
+  });
+
+  const catLabels = {
+    eviction: '🏠 Eviction Protections',
+    'fair-housing': '⚖️ Fair Housing & Anti-Discrimination',
+    disability: '♿ Disability Rights & Accommodations',
+    safety: '🛡️ Domestic Violence & Safety',
+    family: '👨‍👩‍👧 Family & Children',
+    voucher: '🎫 Housing Voucher Rights',
+    tenancy: '📋 Tenancy & Lease Rights',
+    habitability: '🏗️ Habitability & Repairs',
+  };
+
+  let html = '';
+
+  Object.entries(groups).forEach(([cat, items]) => {
+    const isAll = activeCategory === 'all';
+    if (!isAll) {
+      items.forEach(r => html += renderRightsCard(r));
+    } else {
+      html += `<div class="rights-category-header">${catLabels[cat] || cat}</div>`;
+      items.forEach(r => html += renderRightsCard(r));
+    }
+  });
+
+  container.innerHTML = html;
+
+  // Attach toggle listeners
+  container.querySelectorAll('.rights-card-header').forEach(header => {
+    header.addEventListener('click', () => {
+      header.classList.toggle('expanded');
+      const body = header.nextElementSibling;
+      if (body) body.classList.toggle('open');
+    });
+  });
+
+  // Auto-expand triggered rights
+  container.querySelectorAll('.rights-card[data-triggered="true"] .rights-card-header').forEach(h => {
+    h.classList.add('expanded');
+    h.nextElementSibling?.classList.add('open');
+  });
+}
+
+function renderRightsCard(r) {
+  const isTriggered = triggeredIds.has(r.id);
+  const whatToDo = r.whatToDoc?.map(w => `<li>${w}</li>`).join('') || '';
+  const contacts = r.contacts?.join(' | ') || '';
+
+  return `
+    <div class="rights-card urgency-${r.urgency}" role="listitem" data-triggered="${isTriggered}">
+      <div class="rights-card-header" tabindex="0" role="button" aria-expanded="false">
+        <div>
+          <h3>${r.title}
+            ${r.needsVerification ? `<span class="needs-verify-inline">⚠ Needs Verification</span>` : ''}
+            ${isTriggered ? `<span class="triggered-badge ml-2">May Apply to You</span>` : ''}
+          </h3>
+          <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);margin-top:4px;">${r.summary}</div>
+        </div>
+        <span class="expand-icon" aria-hidden="true">▾</span>
+      </div>
+      <div class="rights-card-body">
+        <p>${r.details}</p>
+
+        ${whatToDo ? `
+          <div class="what-to-do">
+            <h4>✅ What to document</h4>
+            <ul>${whatToDo}</ul>
+          </div>
+        ` : ''}
+
+        ${contacts ? `
+          <div style="margin-top:var(--space-4);">
+            <strong style="font-size:var(--font-size-sm);">Who to contact:</strong>
+            <p style="font-size:var(--font-size-sm);">${contacts}</p>
+          </div>
+        ` : ''}
+
+        ${r.needsVerification && r.verifyNote ? `
+          <div style="font-size:var(--font-size-xs); color:#E65100; margin-top:var(--space-4); padding:var(--space-3); background:#FFF3E0; border-radius:var(--radius-sm); border-left:3px solid #FF9800;">
+            <strong>⚠ Verification needed:</strong> ${r.verifyNote}
+          </div>
+        ` : ''}
+
+        <div class="source-cite">Source: ${r.source} (${r.lawCitation})${r.citySpecific ? ` — Applies in ${r.citySpecific} only` : ''}</div>
+
+        <div style="margin-top:var(--space-4);">
+          <a href="letters.html" class="btn btn-sm btn-secondary">Generate a letter about this →</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+window.showCategory = function(cat, btn) {
+  activeCategory = cat;
+  document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+
+  const filtered = cat === 'all' ? rights : rights.filter(r => r.category === cat);
+  renderRights(filtered);
+};
+
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+getTriggeredRights();
+renderRights(rights);
+</script>
+</body>
+</html>

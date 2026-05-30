@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Vault — Stable Housing Navigator</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .doc-category { margin-bottom: var(--space-5); }
+    .doc-cat-toggle { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-4) var(--space-5); background: var(--color-surface-alt); border-radius: var(--radius-md); cursor: pointer; border: 1px solid var(--color-border-light); width: 100%; text-align: left; }
+    .doc-cat-toggle:hover { background: var(--color-primary-faint); border-color: var(--color-primary-light); }
+    .doc-cat-icon { font-size: 1.5rem; }
+    .doc-cat-name { font-weight: 700; flex: 1; }
+    .doc-cat-status { font-size: var(--font-size-sm); }
+    .doc-cat-body { display: none; padding: var(--space-4) 0 0; }
+    .doc-cat-body.open { display: block; }
+    .doc-checklist-item { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-3) var(--space-4); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); margin-bottom: var(--space-2); background: var(--color-surface); }
+    .doc-checklist-item.have { border-left: 3px solid var(--color-success); background: var(--color-success-faint); }
+    .doc-checklist-item.missing { border-left: 3px solid var(--color-danger-faint); }
+    .doc-status-toggle { flex-shrink: 0; margin-top: 2px; }
+    .doc-status-toggle input { width: 18px; height: 18px; accent-color: var(--color-secondary); }
+    .doc-item-label { font-weight: 600; font-size: var(--font-size-sm); }
+    .doc-item-desc { font-size: var(--font-size-xs); color: var(--color-text-secondary); margin-top: 2px; }
+    .doc-item-note { font-size: var(--font-size-xs); color: var(--color-text-muted); margin-top: var(--space-1); font-style: italic; }
+    .doc-actions { display: flex; gap: var(--space-2); margin-top: var(--space-2); }
+    .overall-status { display: flex; gap: var(--space-5); flex-wrap: wrap; margin-bottom: var(--space-8); }
+    .status-box { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: var(--space-5); text-align: center; flex: 1; min-width: 120px; }
+    .status-box .num { font-size: var(--font-size-3xl); font-weight: 800; line-height: 1; }
+    .status-box .lbl { font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-secondary); margin-top: var(--space-1); font-weight: 600; }
+    .status-box.green .num { color: var(--color-success); }
+    .status-box.red .num { color: var(--color-danger); }
+    .status-box.yellow .num { color: var(--color-warn); }
+  </style>
+</head>
+<body>
+<a href="https://weather.com" id="safetyExit" class="safety-exit">✕ Quick Exit</a>
+<nav class="site-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="nav-brand-text"><span class="nav-brand-name">Stable Housing Navigator</span><span class="nav-brand-sub">King County, Washington</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="triage.html">Get Help Now</a></li>
+      <li><a href="plan.html">My Plan</a></li><li><a href="resources.html">Resources</a></li>
+      <li><a href="rights.html">My Rights</a></li><li><a href="documents.html" class="active">Documents</a></li><li><a href="letters.html">Letters</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">🏠 Home</a><a href="triage.html">🆘 Get Help Now</a><a href="plan.html">📋 My Plan</a>
+    <a href="resources.html">📞 Resources</a><a href="rights.html">⚖️ My Rights</a>
+    <a href="documents.html">📁 Documents</a><a href="letters.html">✉️ Letters</a>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="container container--md">
+
+    <div class="section-header">
+      <span class="section-eyebrow">Document Vault</span>
+      <h1>Your Documents</h1>
+      <p>Track what you have, what you need, and what's missing. Having the right documents speeds up every application and protects your rights.</p>
+    </div>
+
+    <!-- Privacy Notice -->
+    <div class="alert alert-info mb-6">
+      <span class="alert-icon">🔒</span>
+      <div class="alert-content">
+        <h4>Your privacy matters</h4>
+        <p>Your document checklist is saved only on this device. Nothing is uploaded to a server. For added privacy, you can clear your data at any time from the bottom of this page.</p>
+      </div>
+    </div>
+
+    <!-- Overall status -->
+    <div class="overall-status" id="overallStatus">
+      <div class="status-box green"><div class="num" id="docHaveCount">0</div><div class="lbl">Documents I have</div></div>
+      <div class="status-box red"><div class="num" id="docMissingCount">0</div><div class="lbl">Still needed</div></div>
+      <div class="status-box yellow"><div class="num" id="docPercentage">0%</div><div class="lbl">Complete</div></div>
+    </div>
+
+    <!-- Missing documents alert -->
+    <div id="missingAlert" style="display:none;" class="alert alert-warn mb-6">
+      <span class="alert-icon">📋</span>
+      <div class="alert-content">
+        <h4>Documents still needed</h4>
+        <p id="missingAlertText">You have missing documents that are needed for housing applications. See the checklist below.</p>
+      </div>
+    </div>
+
+    <!-- Document categories -->
+    <div id="docCategories"></div>
+
+    <!-- Notes area -->
+    <div class="card mt-8">
+      <div class="card-header"><h3 style="margin:0; font-size:var(--font-size-base);">📝 Document Notes</h3></div>
+      <div class="card-body">
+        <label class="form-label" for="docNotes">Notes about your documents</label>
+        <span class="form-sublabel">Where are they stored? What needs to be obtained? Dates, case numbers, etc.</span>
+        <textarea class="form-textarea" id="docNotes" rows="4" placeholder="e.g., Lease is in my email. Birth certificate at my mom's house. Need to get a new ID..." oninput="saveNotes()"></textarea>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-3 mt-8" style="justify-content:center;">
+      <button class="btn btn-primary" onclick="printDocList()">Print Document Checklist</button>
+      <a href="letters.html" class="btn btn-secondary">Generate Letters</a>
+      <button class="btn btn-ghost" onclick="clearDocData()">Clear Document Data</button>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom">
+  <p class="footer-disclaimer">Document checklist only. Not legal advice. Keep originals in a safe place.</p>
+  <p style="font-size:var(--font-size-xs);color:var(--color-text-muted);">© <span id="currentYear"></span> Stable Housing Navigator</p>
+</div></div></footer>
+
+<script type="module" src="js/app.js"></script>
+<script>
+const DOC_CATEGORIES = [
+  {
+    id: 'identity',
+    icon: '🪪',
+    name: 'Identity & Personal Documents',
+    priority: 'Required for most housing applications',
+    items: [
+      { id: 'state_id', label: 'State ID or Driver\'s License', desc: 'Current government-issued photo ID', note: 'Most programs require this. Get help at 211 if you need ID assistance.' },
+      { id: 'passport', label: 'Passport (if available)', desc: 'US or foreign passport' },
+      { id: 'birth_cert', label: 'Birth Certificate', desc: 'Original or certified copy' },
+      { id: 'ssn_card', label: 'Social Security Card', desc: 'Or SSA letter confirming your SSN' },
+      { id: 'itin', label: 'ITIN Letter (if no SSN)', desc: 'IRS Individual Taxpayer ID Number', note: 'Some programs accept ITIN for identification.' },
+    ]
+  },
+  {
+    id: 'housing',
+    icon: '🏠',
+    name: 'Housing & Lease Documents',
+    priority: 'Needed for eviction defense and rental applications',
+    items: [
+      { id: 'lease', label: 'Current Lease or Rental Agreement', desc: 'Signed copy of your lease', note: 'Keep every page including addendums.' },
+      { id: 'lease_prev', label: 'Previous Lease(s)', desc: 'Prior leases if applying for housing', note: 'Landlords often ask for rental history.' },
+      { id: 'rent_receipts', label: 'Rent Receipts or Payment Records', desc: 'Proof of rent payments', note: 'Especially important if landlord claims non-payment.' },
+      { id: 'rental_ledger', label: 'Rental Ledger (from landlord)', desc: 'Record of rent charges and payments' },
+      { id: 'move_in_inspection', label: 'Move-In Inspection Report', desc: 'Documents the condition of unit at move-in' },
+    ]
+  },
+  {
+    id: 'notices',
+    icon: '📨',
+    name: 'Notices & Legal Papers',
+    priority: 'Critical for eviction defense — do NOT discard',
+    items: [
+      { id: 'eviction_notice', label: 'Eviction Notice(s)', desc: 'Pay-or-vacate, comply-or-vacate, or no-cause notice', note: 'KEEP THE ORIGINAL. Note the date you received it.' },
+      { id: 'court_summons', label: 'Eviction Court Summons / Summons and Complaint', desc: 'Court papers with your hearing date', note: 'Call legal aid IMMEDIATELY if you have this: 1-888-201-1014.' },
+      { id: 'court_judgment', label: 'Court Judgment (if any)', desc: 'Any court decision in a housing case' },
+      { id: 'lockout_notice', label: 'Lockout or Lock Change Notice', desc: 'Any notice about being locked out' },
+      { id: 'denial_letter', label: 'Housing Denial Letters', desc: 'Letters denying housing applications', note: 'Keep denial letters — they may have appeal rights.' },
+      { id: 'landlord_comm', label: 'Landlord Communications', desc: 'Letters, texts, emails from landlord', note: 'Screenshot text messages. Keep all written communications.' },
+    ]
+  },
+  {
+    id: 'income',
+    icon: '💵',
+    name: 'Income & Employment',
+    priority: 'Required for rental assistance and housing applications',
+    items: [
+      { id: 'pay_stubs', label: 'Recent Pay Stubs (last 2–3 months)', desc: 'Employment income verification' },
+      { id: 'employer_letter', label: 'Employer Verification Letter', desc: 'Letter from employer confirming income', note: 'Ask HR or your manager for this.' },
+      { id: 'tax_return', label: 'Most Recent Tax Return', desc: 'Previous year federal tax return' },
+      { id: 'benefits_award', label: 'Benefits Award Letters', desc: 'SSA, DSHS, unemployment, or other benefit letters', note: 'Must show the monthly amount and dates.' },
+      { id: 'bank_statements', label: 'Bank Statements (2–3 months)', desc: 'May be required by some programs' },
+      { id: 'self_employment', label: 'Self-Employment Documentation', desc: 'Business records, invoices, or tax documents' },
+    ]
+  },
+  {
+    id: 'disability',
+    icon: '♿',
+    name: 'Disability Documentation',
+    priority: 'Needed for accommodations and some housing preferences',
+    items: [
+      { id: 'disability_letter', label: 'Healthcare Provider Letter', desc: 'Letter confirming you have a disability affecting housing', note: 'Does NOT need to include your diagnosis. Just confirmation of disability and need for accommodation.' },
+      { id: 'ssi_ssdi', label: 'SSI/SSDI Award Letter', desc: 'Social Security disability benefit letter' },
+      { id: 'section504', label: 'Section 504 or ADA Documentation', desc: 'Existing disability documentation from school or employer' },
+    ]
+  },
+  {
+    id: 'voucher',
+    icon: '🎫',
+    name: 'Voucher & Housing Authority',
+    priority: 'Required for voucher housing programs',
+    items: [
+      { id: 'voucher_letter', label: 'Voucher Award Letter', desc: 'Your Housing Choice Voucher or other rental subsidy' },
+      { id: 'voucher_briefing', label: 'Voucher Briefing Packet', desc: 'Materials from your housing authority briefing' },
+      { id: 'housing_authority_correspondence', label: 'Housing Authority Correspondence', desc: 'Any letters or notices from KCHA or SHA' },
+      { id: 'rta', label: 'Request for Tenancy Approval (RFTA)', desc: 'Form completed by landlord for voucher approval' },
+    ]
+  },
+  {
+    id: 'utilities',
+    icon: '💡',
+    name: 'Utility Documents',
+    priority: 'Needed for utility assistance programs',
+    items: [
+      { id: 'utility_bills', label: 'Recent Utility Bills', desc: 'Last 2–3 months of utility statements' },
+      { id: 'shutoff_notice', label: 'Utility Shutoff Notice', desc: 'Any shut-off or disconnection notice', note: 'Keep this — required to access emergency utility assistance.' },
+      { id: 'utility_arrears_letter', label: 'Past-Due Amount Letter', desc: 'Written confirmation of amount owed to utility company' },
+    ]
+  },
+  {
+    id: 'safety',
+    icon: '🛡️',
+    name: 'Safety & DV Documents',
+    priority: 'Handle with care — store securely',
+    items: [
+      { id: 'police_report', label: 'Police Report', desc: 'If applicable — not required for DV protections' },
+      { id: 'protective_order', label: 'Protective Order or Restraining Order', desc: 'Keep copies — may be needed for housing preferences' },
+      { id: 'dv_certification', label: 'DV Self-Certification or Third-Party Certification', desc: 'For VAWA housing protections' },
+      { id: 'relocation_docs', label: 'Relocation or Emergency Transfer Request', desc: 'For VAWA emergency transfer from subsidized housing' },
+    ]
+  },
+  {
+    id: 'family',
+    icon: '👨‍👩‍👧',
+    name: 'Family & Children',
+    priority: 'Needed for family-size unit applications and school stability',
+    items: [
+      { id: 'birth_certs_kids', label: "Children's Birth Certificates", desc: 'Proof of children in household' },
+      { id: 'custody_order', label: 'Custody Order (if applicable)', desc: 'Court custody order', note: 'Landlords may ask about household composition.' },
+      { id: 'school_records', label: "Children's School Enrollment", desc: 'Proof of school enrollment — helpful for McKinney-Vento rights' },
+      { id: 'mckinney_letter', label: 'McKinney-Vento Homeless Designation', desc: 'From school district — confirms housing instability for school rights' },
+    ]
+  },
+  {
+    id: 'applications',
+    icon: '📋',
+    name: 'Applications & References',
+    priority: 'Build your application packet',
+    items: [
+      { id: 'rental_applications', label: 'Rental Applications (copies)', desc: 'Keep copies of every application you submit' },
+      { id: 'reference_letters', label: 'Reference or Character Letters', desc: 'Letters from employers, pastors, former landlords, or others' },
+      { id: 'screening_results', label: 'Background/Credit Screening Results', desc: 'Copy of your own screening report', note: 'You can request your own report from tenant screening companies.' },
+      { id: 'explanation_letters', label: 'Application Explanation Letters', desc: 'Letters explaining past eviction, background, or other barriers' },
+    ]
+  },
+];
+
+let docState = {};
+
+function loadDocState() {
+  try {
+    const raw = localStorage.getItem('shn_docs');
+    if (raw) docState = JSON.parse(raw);
+    const notes = localStorage.getItem('shn_doc_notes');
+    if (notes) document.getElementById('docNotes').value = notes;
+  } catch(e) {}
+}
+
+function saveDocState() {
+  try {
+    localStorage.setItem('shn_docs', JSON.stringify(docState));
+    updateStats();
+  } catch(e) {}
+}
+
+function saveNotes() {
+  try {
+    localStorage.setItem('shn_doc_notes', document.getElementById('docNotes').value);
+  } catch(e) {}
+}
+
+function renderCategories() {
+  const container = document.getElementById('docCategories');
+  container.innerHTML = DOC_CATEGORIES.map(cat => {
+    const items = cat.items;
+    const haveCount = items.filter(i => docState[i.id] === 'have').length;
+
+    return `
+      <div class="doc-category">
+        <button class="doc-cat-toggle" onclick="toggleCat('cat-${cat.id}', this)" aria-expanded="false">
+          <span class="doc-cat-icon">${cat.icon}</span>
+          <span class="doc-cat-name">${cat.name}</span>
+          <span class="doc-cat-status" style="color:${haveCount === items.length ? 'var(--color-success)' : haveCount > 0 ? 'var(--color-warn)' : 'var(--color-text-muted)'};">
+            ${haveCount}/${items.length}
+          </span>
+          <span style="color:var(--color-text-muted); font-size:1.2rem;">▾</span>
+        </button>
+        <div class="doc-cat-body" id="cat-${cat.id}">
+          <div style="font-size:var(--font-size-sm);color:var(--color-text-secondary);padding:var(--space-2) var(--space-4) var(--space-3); font-style:italic;">${cat.priority}</div>
+          ${items.map(item => renderDocItem(item)).join('')}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderDocItem(item) {
+  const status = docState[item.id] || 'unknown';
+  const cls = status === 'have' ? 'have' : status === 'missing' ? 'missing' : '';
+  return `
+    <div class="doc-checklist-item ${cls}" id="doc-${item.id}">
+      <div class="doc-status-toggle">
+        <input type="checkbox" id="chk-${item.id}" ${status === 'have' ? 'checked' : ''} onchange="toggleDocStatus('${item.id}', this.checked)" aria-label="${item.label}">
+      </div>
+      <div style="flex:1;">
+        <div class="doc-item-label" for="chk-${item.id}">${item.label}</div>
+        <div class="doc-item-desc">${item.desc}</div>
+        ${item.note ? `<div class="doc-item-note">💡 ${item.note}</div>` : ''}
+        <div class="doc-actions">
+          <select style="font-size:0.8rem;padding:3px 8px;border-radius:6px;border:1px solid var(--color-border);" onchange="setDocStatus('${item.id}', this.value)" aria-label="Status for ${item.label}">
+            <option value="unknown" ${status==='unknown'?'selected':''}>Status unknown</option>
+            <option value="have" ${status==='have'?'selected':''}>✅ I have this</option>
+            <option value="missing" ${status==='missing'?'selected':''}>❌ I need this</option>
+            <option value="not_applicable" ${status==='not_applicable'?'selected':''}>— Not applicable</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function toggleCat(id, btn) {
+  const body = document.getElementById(id);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open');
+  btn.setAttribute('aria-expanded', !isOpen);
+  const arrow = btn.querySelector('span:last-child');
+  if (arrow) arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+}
+
+function toggleDocStatus(id, checked) {
+  docState[id] = checked ? 'have' : 'missing';
+  saveDocState();
+  // Update the select
+  const sel = document.querySelector(`[onchange="setDocStatus('${id}', this.value)"]`);
+  if (sel) sel.value = docState[id];
+  // Update classes
+  updateItemClass(id);
+}
+
+function setDocStatus(id, value) {
+  docState[id] = value;
+  const chk = document.getElementById(`chk-${id}`);
+  if (chk) chk.checked = value === 'have';
+  saveDocState();
+  updateItemClass(id);
+}
+
+function updateItemClass(id) {
+  const el = document.getElementById(`doc-${id}`);
+  if (!el) return;
+  el.className = 'doc-checklist-item';
+  if (docState[id] === 'have') el.classList.add('have');
+  if (docState[id] === 'missing') el.classList.add('missing');
+}
+
+function updateStats() {
+  let have = 0, missing = 0, total = 0;
+  DOC_CATEGORIES.forEach(cat => {
+    cat.items.forEach(item => {
+      total++;
+      if (docState[item.id] === 'have') have++;
+      if (docState[item.id] === 'missing') missing++;
+    });
+  });
+  const pct = total > 0 ? Math.round(have / total * 100) : 0;
+  document.getElementById('docHaveCount').textContent = have;
+  document.getElementById('docMissingCount').textContent = missing;
+  document.getElementById('docPercentage').textContent = pct + '%';
+
+  if (missing > 0) {
+    document.getElementById('missingAlert').style.display = 'flex';
+    document.getElementById('missingAlertText').textContent = `You still need ${missing} document${missing !== 1 ? 's' : ''}. Check the categories below to see what's needed.`;
+  } else if (have > 0) {
+    document.getElementById('missingAlert').style.display = 'none';
+  }
+
+  // Save to main session
+  try {
+    const session = JSON.parse(localStorage.getItem('shn_session') || '{}');
+    session.documents = Object.entries(docState).map(([id, status]) => ({id, status}));
+    localStorage.setItem('shn_session', JSON.stringify(session));
+  } catch(e) {}
+}
+
+function printDocList() {
+  window.print();
+}
+
+function clearDocData() {
+  if (confirm('Clear all document status data? This cannot be undone.')) {
+    docState = {};
+    localStorage.removeItem('shn_docs');
+    localStorage.removeItem('shn_doc_notes');
+    renderCategories();
+    updateStats();
+    document.getElementById('docNotes').value = '';
+  }
+}
+
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+loadDocState();
+renderCategories();
+updateStats();
+</script>
+</body>
+</html>

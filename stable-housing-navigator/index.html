@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stable Housing Navigator — King County, Washington</title>
+  <meta name="description" content="A trauma-informed digital housing navigator helping King County residents prevent eviction, access housing, and remain stably housed.">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* Landing-specific styles */
+    .intro-section { padding: var(--space-16) 0; }
+    .feature-grid { display: grid; gap: var(--space-5); grid-template-columns: 1fr; }
+    .feature-card { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: var(--space-6); }
+    .feature-icon { font-size: 2rem; margin-bottom: var(--space-3); }
+    .feature-card h3 { font-size: var(--font-size-lg); margin-bottom: var(--space-2); color: var(--color-primary-dark); }
+    .feature-card p { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0; }
+    .mission-box { background: var(--color-primary-faint); border-radius: var(--radius-xl); padding: var(--space-10) var(--space-8); text-align: center; }
+    .mission-box p { font-size: var(--font-size-xl); color: var(--color-primary-dark); font-weight: 500; max-width: 60ch; margin: 0 auto; line-height: var(--line-height-relaxed); }
+    .user-types { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; margin-top: var(--space-6); }
+    .user-type-tag { background: white; border: 1px solid var(--color-primary-light); color: var(--color-primary-dark); padding: var(--space-2) var(--space-3); border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: 500; }
+    @media (min-width: 640px) { .feature-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .feature-grid { grid-template-columns: 1fr 1fr 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- Safety Exit Button -->
+<a href="https://weather.com" id="safetyExit" class="safety-exit" title="Quick exit — click to leave this page immediately">
+  ✕ Quick Exit
+</a>
+
+<!-- Navigation -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="Stable Housing Navigator home">
+      <div class="nav-brand-icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">Stable Housing Navigator</span>
+        <span class="nav-brand-sub">King County, Washington</span>
+      </div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="triage.html">Get Help Now</a></li>
+      <li><a href="plan.html">My Plan</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="rights.html">My Rights</a></li>
+      <li><a href="documents.html">Documents</a></li>
+      <li><a href="letters.html">Letters</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" role="menu">
+    <a href="index.html" role="menuitem">🏠 Home</a>
+    <a href="triage.html" role="menuitem">🆘 Get Help Now</a>
+    <a href="plan.html" role="menuitem">📋 My Plan</a>
+    <a href="resources.html" role="menuitem">📞 Resources</a>
+    <a href="rights.html" role="menuitem">⚖️ My Rights</a>
+    <a href="documents.html" role="menuitem">📁 Documents</a>
+    <a href="letters.html" role="menuitem">✉️ Letters &amp; Scripts</a>
+  </div>
+</nav>
+
+<!-- Crisis Strip -->
+<div class="crisis-strip" role="alert">
+  <strong>In immediate danger?</strong> Call <a href="tel:911">911</a> | DV Crisis: <a href="tel:18005626025">1-800-562-6025</a> | Housing Crisis: <a href="tel:211">211</a>
+</div>
+
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container">
+    <h1 id="hero-heading">You deserve a place to call home.<br>We will not give up on you.</h1>
+    <p>A free, trauma-informed navigator for King County residents facing eviction, homelessness, housing barriers, or housing instability. We help you find the right path — and keep going if one door closes.</p>
+    <div class="hero-actions">
+      <a href="triage.html" class="btn btn-primary btn-lg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Start Here — Get Help Now
+      </a>
+      <a href="resources.html" class="btn btn-secondary btn-lg">Browse Resources</a>
+    </div>
+  </div>
+</section>
+
+<main class="main-content" id="main">
+
+  <!-- Immediate Pathways -->
+  <section class="intro-section" aria-labelledby="pathways-heading">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">Where do you need help?</span>
+        <h2 id="pathways-heading">Tell us what's happening</h2>
+        <p>Choose the situation that fits best. Each path leads to specific help, not a general list.</p>
+      </div>
+
+      <div class="pathway-grid">
+
+        <a href="triage.html?start=eviction" class="pathway-card urgent" aria-label="I received an eviction notice — start emergency pathway">
+          <div class="pathway-icon" aria-hidden="true">🚨</div>
+          <div class="pathway-content">
+            <div class="pathway-title">I received an eviction notice</div>
+            <div class="pathway-desc">Immediate legal steps, emergency rental assistance, and eviction defense support.</div>
+          </div>
+        </a>
+
+        <a href="triage.html?start=safety" class="pathway-card urgent" aria-label="I need to leave my home for safety — start safety pathway">
+          <div class="pathway-icon" aria-hidden="true">🛡️</div>
+          <div class="pathway-content">
+            <div class="pathway-title">I need to leave for safety</div>
+            <div class="pathway-desc">Immediate shelter, DV safety planning, confidential support.</div>
+          </div>
+        </a>
+
+        <a href="triage.html?start=homeless" class="pathway-card urgent" aria-label="I have no place to sleep — start shelter pathway">
+          <div class="pathway-icon" aria-hidden="true">🏠</div>
+          <div class="pathway-content">
+            <div class="pathway-title">I have no place to sleep</div>
+            <div class="pathway-desc">Emergency shelter, coordinated entry, and immediate housing crisis support.</div>
+          </div>
+        </a>
+
+        <a href="triage.html?start=voucher" class="pathway-card">
+          <div class="pathway-icon" aria-hidden="true">🎫</div>
+          <div class="pathway-content">
+            <div class="pathway-title">I have a voucher and can't find housing</div>
+            <div class="pathway-desc">Voucher search help, landlord discrimination support, deadline tracking.</div>
+          </div>
+        </a>
+
+        <a href="triage.html?start=barriers" class="pathway-card">
+          <div class="pathway-icon" aria-hidden="true">🔓</div>
+          <div class="pathway-content">
+            <div class="pathway-title">I keep getting denied for housing</div>
+            <div class="pathway-desc">Barrier analysis, rights information, appeal help, and alternative pathways.</div>
+          </div>
+        </a>
+
+        <a href="triage.html?start=utilities" class="pathway-card">
+          <div class="pathway-icon" aria-hidden="true">💡</div>
+          <div class="pathway-content">
+            <div class="pathway-title">My utilities may be shut off</div>
+            <div class="pathway-desc">Utility assistance, payment arrangement letters, prevention steps.</div>
+          </div>
+        </a>
+
+        <a href="triage.html?start=disability" class="pathway-card">
+          <div class="pathway-icon" aria-hidden="true">♿</div>
+          <div class="pathway-content">
+            <div class="pathway-title">I need a housing accommodation for a disability</div>
+            <div class="pathway-desc">Accommodation requests, rights, fair housing complaints.</div>
+          </div>
+        </a>
+
+        <a href="triage.html?start=family" class="pathway-card">
+          <div class="pathway-icon" aria-hidden="true">👨‍👩‍👧</div>
+          <div class="pathway-content">
+            <div class="pathway-title">I have children and need stable housing</div>
+            <div class="pathway-desc">Family housing, school stability, childcare, child-focused resources.</div>
+          </div>
+        </a>
+
+        <a href="triage.html" class="pathway-card">
+          <div class="pathway-icon" aria-hidden="true">🧭</div>
+          <div class="pathway-content">
+            <div class="pathway-title">I'm not sure where to start</div>
+            <div class="pathway-desc">Take a short triage assessment. We'll figure out the right path together.</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Mission statement -->
+  <section class="intro-section" aria-labelledby="mission-heading">
+    <div class="container container--md">
+      <div class="mission-box">
+        <h2 id="mission-heading" class="mb-4" style="color: var(--color-primary-dark);">Our commitment to you</h2>
+        <p>"We will not give up on you. If one path closes, we find another. Another program. Another option. Another letter. Another right. Another step forward. There is always a next move."</p>
+        <div class="user-types" role="list" aria-label="People we serve">
+          <span class="user-type-tag" role="listitem">Families with children</span>
+          <span class="user-type-tag" role="listitem">Single parents</span>
+          <span class="user-type-tag" role="listitem">People facing eviction</span>
+          <span class="user-type-tag" role="listitem">People experiencing homelessness</span>
+          <span class="user-type-tag" role="listitem">Voucher holders</span>
+          <span class="user-type-tag" role="listitem">People with disabilities</span>
+          <span class="user-type-tag" role="listitem">Trauma survivors</span>
+          <span class="user-type-tag" role="listitem">Domestic violence survivors</span>
+          <span class="user-type-tag" role="listitem">Low-income renters</span>
+          <span class="user-type-tag" role="listitem">People with screening barriers</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="intro-section" aria-labelledby="features-heading" style="background: var(--color-surface-alt); padding: var(--space-16) 0;">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">What this navigator does</span>
+        <h2 id="features-heading">Built to guide you through every step</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🎯</div>
+          <h3>Smart Triage</h3>
+          <p>Calm, plain-language questions identify your most urgent needs first and sort you into the right support pathway — no wrong door.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🔍</div>
+          <h3>Barrier Detection</h3>
+          <p>Every barrier has a workaround. We identify eviction history, credit issues, voucher problems, disability needs, and more — then show you the path past them.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📋</div>
+          <h3>Your Stability Plan</h3>
+          <p>A personalized plan with today's top 3 actions, upcoming deadlines, documents needed, backup options, and who to call.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⚖️</div>
+          <h3>Rights & Protections</h3>
+          <p>When your situation triggers a legal protection — eviction rules, fair housing, disability accommodation, DV rights — we explain it clearly and tell you what to do.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">✉️</div>
+          <h3>Letters & Scripts</h3>
+          <p>Ready-to-use letters for landlord accommodation requests, rental assistance, eviction responses, utility shutoff prevention, and more.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📁</div>
+          <h3>Document Vault</h3>
+          <p>Organize your lease, notices, IDs, income proof, and more. Know what you have and what's missing. Never lose a critical document.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">👨‍👩‍👧</div>
+          <h3>Family Module</h3>
+          <p>Special support for families — school stability rights, childcare, child-safe housing needs, and keeping children connected to services.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🔄</div>
+          <h3>Follow-Through System</h3>
+          <p>Track applications, caseworker calls, deadlines, and next steps. Never lose track of where things stand. Always know what to do if something doesn't work.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🔒</div>
+          <h3>Private & Secure</h3>
+          <p>Everything stays on your device. Nothing is sent to a server. Sensitive sections have privacy warnings. DV safety features built in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Notice -->
+  <section style="padding: var(--space-12) 0;">
+    <div class="container container--md">
+      <div class="legal-notice" role="note">
+        <strong>Important:</strong> This tool provides housing information, not legal advice. Laws and program details change. Information marked "Needs Verification" requires current confirmation. Always consult a qualified attorney for legal advice about your specific situation. For free legal help, contact <a href="tel:18882011014">Northwest Justice Project: 1-888-201-1014</a>.
+      </div>
+      <div style="text-align: center; margin-top: var(--space-8);">
+        <a href="triage.html" class="btn btn-primary btn-lg">
+          Start Your Housing Assessment
+        </a>
+        <p class="text-muted text-small mt-4">Takes about 5–8 minutes. Save and continue anytime.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <strong style="color: var(--color-primary-dark);">Stable Housing Navigator</strong>
+        <p>A trauma-informed housing navigation platform for King County, Washington. We help residents find housing stability, understand their rights, and access the support they deserve.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Get Help</h4>
+        <ul>
+          <li><a href="triage.html">Start Here</a></li>
+          <li><a href="plan.html">My Plan</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="letters.html">Letters</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Information</h4>
+        <ul>
+          <li><a href="rights.html">My Rights</a></li>
+          <li><a href="documents.html">Documents</a></li>
+          <li><a href="family.html">Family Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Crisis Lines</h4>
+        <ul>
+          <li><a href="tel:211">211 — Resources</a></li>
+          <li><a href="tel:18005626025">DV Hotline</a></li>
+          <li><a href="tel:8664274747">Crisis Line</a></li>
+          <li><a href="tel:18882011014">Legal Aid</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">
+        This tool provides general housing information for King County, Washington. It is not legal advice and does not create an attorney-client relationship. Program availability, eligibility, and legal rules change. Items marked "Needs Verification" require confirmation. For legal advice, contact a licensed attorney or free legal aid.
+      </p>
+      <p style="font-size: var(--font-size-xs); color: var(--color-text-muted);">© <span id="currentYear"></span> Stable Housing Navigator</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

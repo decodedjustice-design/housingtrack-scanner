@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family &amp; Children — Stable Housing Navigator</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .family-module { max-width: var(--container-md); margin: 0 auto; }
+    .topic-card { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: var(--space-6); margin-bottom: var(--space-5); }
+    .topic-card h2 { color: var(--color-primary-dark); margin-bottom: var(--space-3); font-size: var(--font-size-xl); display: flex; align-items: center; gap: var(--space-3); }
+    .topic-card p, .topic-card li { font-size: var(--font-size-base); color: var(--color-text-secondary); line-height: var(--line-height-relaxed); }
+    .topic-card ul { margin-top: var(--space-3); }
+    .topic-card li { margin-bottom: var(--space-2); }
+    .action-box { background: var(--color-primary-faint); border-left: 4px solid var(--color-primary); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5); margin-top: var(--space-4); }
+    .action-box h4 { color: var(--color-primary-dark); margin-bottom: var(--space-2); font-size: var(--font-size-sm); }
+    .action-box p { font-size: var(--font-size-sm); margin: 0; }
+    .needs-verify { font-size: var(--font-size-xs); background: #FFF3E0; color: #E65100; padding: 2px 8px; border-radius: 99px; font-weight: 700; }
+  </style>
+</head>
+<body>
+<a href="https://weather.com" id="safetyExit" class="safety-exit">✕ Quick Exit</a>
+<nav class="site-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="nav-brand-text"><span class="nav-brand-name">Stable Housing Navigator</span><span class="nav-brand-sub">King County, Washington</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="triage.html">Get Help Now</a></li>
+      <li><a href="plan.html">My Plan</a></li><li><a href="resources.html">Resources</a></li>
+      <li><a href="rights.html">My Rights</a></li><li><a href="documents.html">Documents</a></li><li><a href="letters.html">Letters</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">🏠 Home</a><a href="triage.html">🆘 Get Help Now</a><a href="plan.html">📋 My Plan</a>
+    <a href="resources.html">📞 Resources</a><a href="rights.html">⚖️ My Rights</a>
+    <a href="documents.html">📁 Documents</a><a href="letters.html">✉️ Letters</a>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="container">
+    <div class="family-module">
+
+      <div class="section-header">
+        <span class="section-eyebrow">Family &amp; Child Support</span>
+        <h1>Family &amp; Children's Housing Needs</h1>
+        <p>Families face unique barriers — and unique protections. This page helps you navigate school stability, childcare, safety, and keeping your family connected to services.</p>
+      </div>
+
+      <!-- School stability -->
+      <div class="topic-card" id="school">
+        <h2>🏫 School Stability</h2>
+        <p>When families face housing instability, children's education is often disrupted — but federal law protects them.</p>
+        <p><strong>Under the McKinney-Vento Homeless Assistance Act (42 U.S.C. § 11431):</strong></p>
+        <ul>
+          <li>Children experiencing homelessness have the right to stay enrolled in their <strong>school of origin</strong> (the school they were attending before housing loss)</li>
+          <li>Schools must enroll children <strong>immediately</strong> — even without immunization records, proof of residency, school records, or a guardian's ID</li>
+          <li>Transportation to the school of origin must be provided</li>
+          <li>Children cannot be separated or segregated based on homeless status</li>
+          <li>"Homeless" includes: staying with others (doubled up), shelters, motels, cars, or other inadequate housing</li>
+        </ul>
+        <p><strong>What to do:</strong> Contact your school district's McKinney-Vento homeless liaison. Every district must have one. If your child is being denied enrollment or told to wait, the liaison must act.</p>
+        <div class="action-box">
+          <h4>Next step</h4>
+          <p>Call your school district's main office and ask: "I need to speak with the McKinney-Vento liaison." King County has multiple school districts — Seattle, Bellevue, Kent, Renton, Federal Way, Auburn, and others each have their own liaison.</p>
+        </div>
+        <p class="mt-4" style="font-size:var(--font-size-xs); color:var(--color-text-muted);">Source: McKinney-Vento Homeless Assistance Act, 42 U.S.C. § 11431</p>
+      </div>
+
+      <!-- Childcare -->
+      <div class="topic-card">
+        <h2>🧒 Childcare</h2>
+        <p>Childcare can be a critical piece of housing stability — you can't work to pay rent if you can't afford childcare.</p>
+        <ul>
+          <li><strong>DSHS Childcare Assistance Program (CCAP):</strong> Subsidized childcare for working families and families in job training. <span class="needs-verify">Verify eligibility</span></li>
+          <li><strong>ECEAP (Early Childhood Education &amp; Assistance Program):</strong> Preschool and childcare for income-qualified families — a Head Start alternative in Washington State</li>
+          <li><strong>Head Start / Early Head Start:</strong> Federal program for children under 5 from low-income families. Contact your local Head Start program</li>
+          <li><strong>Emergency childcare programs:</strong> Call 211 to ask about emergency or sliding-scale childcare in your area</li>
+        </ul>
+        <div class="action-box">
+          <h4>Apply for childcare assistance</h4>
+          <p>Call DSHS at 1-844-626-8687 or apply online through WashingtonConnection.org. Note: waitlists may apply — apply as early as possible.</p>
+        </div>
+        <p class="mt-4"><strong>Tip:</strong> Some shelters and housing programs include on-site childcare or can help arrange emergency childcare. Ask when contacting any program.</p>
+      </div>
+
+      <!-- Safe housing for families -->
+      <div class="topic-card">
+        <h2>🏠 Finding Safe Housing for Your Family</h2>
+        <p>Families with children have additional housing rights and some priority preferences:</p>
+        <ul>
+          <li><strong>Fair Housing Act familial status protection:</strong> Landlords generally cannot discriminate against families with children under 18. You cannot be refused housing solely because you have children (with narrow exceptions like senior housing)</li>
+          <li><strong>Bedroom requirements:</strong> Many affordable housing programs have minimum bedroom standards. A family should not be required to fit 2+ children in an unsafe single room</li>
+          <li><strong>Larger unit vouchers:</strong> If you have a voucher, your bedroom size is determined by family composition. Ensure your housing authority has the correct family size on file</li>
+          <li><strong>Habitability and children:</strong> If your current housing has lead paint, mold, pests, or other hazards that affect children, document it and contact the Tenants Union or legal aid</li>
+        </ul>
+        <div class="action-box">
+          <h4>Family housing preference programs</h4>
+          <p>Some housing authorities have preferences for families with children in certain programs. Call KCHA (206-214-1300) or SHA (206-615-3300) and ask about any family preferences for currently open programs. <span class="needs-verify">Verify current preferences</span></p>
+        </div>
+      </div>
+
+      <!-- Food and basic needs -->
+      <div class="topic-card">
+        <h2>🥗 Food, Diapers, and Basic Needs</h2>
+        <ul>
+          <li><strong>SNAP/Basic Food:</strong> Apply through DSHS at 1-877-501-2233 or WashingtonConnection.org. Emergency benefits may be available within 7 days for families in extreme hardship</li>
+          <li><strong>WIC (Women, Infants, Children):</strong> Food and nutrition support for pregnant women, new mothers, infants, and children under 5. Call 1-800-841-1410 or contact King County Public Health <span class="needs-verify">Verify</span></li>
+          <li><strong>Diapers:</strong> Some food banks and community programs provide diapers. Call 211 and ask specifically about diaper programs</li>
+          <li><strong>School meals:</strong> Children in schools may qualify for free or reduced-price meals. Contact your school district's food services</li>
+          <li><strong>Summer food programs:</strong> Available in many King County parks and community sites when school is not in session</li>
+        </ul>
+      </div>
+
+      <!-- Safety and DV with children -->
+      <div class="topic-card">
+        <h2>🛡️ Safety with Children</h2>
+        <p>If you and your children need to leave an unsafe home:</p>
+        <ul>
+          <li>You can leave — and you can take your children</li>
+          <li>DV emergency shelters welcome children in most cases — call ahead to confirm</li>
+          <li>Under VAWA, your housing assistance generally cannot be terminated solely because of domestic violence</li>
+          <li>If CPS (Child Protective Services) is involved, contact an attorney or legal aid immediately to understand your rights</li>
+          <li>YWCA and DAWN both serve families with children</li>
+        </ul>
+        <div class="action-box">
+          <h4>DV Crisis with children — call now</h4>
+          <p>DAWN: <a href="tel:4256568423">425-656-8423</a> | YWCA: <a href="tel:2064614882">206-461-4882</a> | WA DV Hotline: <a href="tel:18005626025">1-800-562-6025</a></p>
+        </div>
+      </div>
+
+      <!-- Benefits for families -->
+      <div class="topic-card">
+        <h2>💳 Benefits for Families</h2>
+        <ul>
+          <li><strong>TANF (Temporary Assistance for Needy Families):</strong> Cash assistance for families with children. Apply through DSHS</li>
+          <li><strong>Medicaid / Apple Health for Kids:</strong> Free or low-cost health coverage for children and families. Apply through Washington Healthplanfinder</li>
+          <li><strong>CHIP:</strong> Children's Health Insurance Program — for children who don't qualify for Medicaid but can't afford private insurance <span class="needs-verify">Verify current WA program</span></li>
+          <li><strong>SSI for children with disabilities:</strong> If your child has a qualifying disability, they may be eligible for SSI income</li>
+          <li><strong>Child support enforcement:</strong> DSHS Division of Child Support can help collect support if owed — 1-800-442-KIDS</li>
+        </ul>
+        <div class="action-box">
+          <h4>Apply for family benefits</h4>
+          <p>Apply at WashingtonConnection.org or call DSHS: 1-877-501-2233. A benefits counselor can help you apply for multiple programs at once.</p>
+        </div>
+      </div>
+
+      <!-- Transportation for families -->
+      <div class="topic-card">
+        <h2>🚌 Transportation with Children</h2>
+        <ul>
+          <li><strong>ORCA LIFT:</strong> Reduced-fare transit for low-income riders. Children under 6 typically ride free on King County Metro <span class="needs-verify">Verify current rules</span></li>
+          <li><strong>School transportation:</strong> McKinney-Vento requires school districts to provide transportation to the school of origin for homeless children</li>
+          <li><strong>Medical transport:</strong> DSHS clients may qualify for medical transport assistance — ask your caseworker</li>
+          <li><strong>Program-specific transport:</strong> Some housing and DV programs can provide transportation assistance. Ask every program you contact</li>
+        </ul>
+      </div>
+
+      <!-- After housing is obtained -->
+      <div class="topic-card" style="background: var(--color-success-faint); border-color: var(--color-secondary-light);">
+        <h2>✅ Keeping Your Family Connected After Housing is Obtained</h2>
+        <p>Getting housed is the beginning — these steps help families stay stable after placement:</p>
+        <ul>
+          <li>Update your address with your school district to continue receiving services</li>
+          <li>Notify your children's school and update enrollment records</li>
+          <li>Update your address with DSHS for benefits continuity</li>
+          <li>Connect with a case manager or family support program for ongoing support</li>
+          <li>Apply for or continue childcare assistance</li>
+          <li>Set up utility accounts in your name and apply for utility assistance programs</li>
+          <li>Set a reminder to review your lease 60 days before renewal</li>
+          <li>Keep documenting — maintain records of your new lease, utility bills, and income</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-wrap gap-3" style="justify-content:center; margin-top:var(--space-8);">
+        <a href="triage.html?start=family" class="btn btn-primary">Start Family Assessment</a>
+        <a href="resources.html" class="btn btn-secondary">Browse Family Resources</a>
+        <a href="rights.html" class="btn btn-secondary">Review My Rights</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom">
+  <p class="footer-disclaimer">General information only. Laws and programs change. Not legal advice. Free legal help: <a href="tel:18882011014">1-888-201-1014</a>.</p>
+  <p style="font-size:var(--font-size-xs);color:var(--color-text-muted);">© <span id="currentYear"></span> Stable Housing Navigator</p>
+</div></div></footer>
+
+<script type="module" src="js/app.js"></script>
+<script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+</body>
+</html>

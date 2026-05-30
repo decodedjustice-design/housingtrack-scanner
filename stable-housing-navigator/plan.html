@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Stability Plan — Stable Housing Navigator</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .plan-header { margin-bottom: var(--space-8); }
+    .plan-header h1 { margin-bottom: var(--space-2); }
+    .weekly-check { background: var(--color-primary-faint); border-radius: var(--radius-lg); padding: var(--space-5); margin-bottom: var(--space-6); }
+    .tracker-table { width: 100%; border-collapse: collapse; font-size: var(--font-size-sm); }
+    .tracker-table th, .tracker-table td { padding: var(--space-3) var(--space-4); text-align: left; border-bottom: 1px solid var(--color-border-light); }
+    .tracker-table th { background: var(--color-surface-alt); font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-text-secondary); font-weight: 700; }
+    .tracker-table tbody tr:hover { background: var(--color-bg); }
+    .status-badge { padding: 2px 10px; border-radius: var(--radius-full); font-size: var(--font-size-xs); font-weight: 700; }
+    .status-pending { background: var(--color-warn-faint); color: var(--color-warn); }
+    .status-submitted { background: var(--color-primary-faint); color: var(--color-primary); }
+    .status-approved { background: var(--color-success-faint); color: var(--color-success); }
+    .status-denied { background: var(--color-danger-faint); color: var(--color-danger); }
+    .empty-state { text-align: center; padding: var(--space-12) var(--space-6); color: var(--color-text-secondary); }
+    .empty-state .empty-icon { font-size: 3rem; margin-bottom: var(--space-4); display: block; }
+    .deadline-item { display: flex; gap: var(--space-4); align-items: flex-start; padding: var(--space-4); border: 1px solid var(--color-border-light); border-radius: var(--radius-md); margin-bottom: var(--space-3); }
+    .deadline-date { text-align: center; min-width: 56px; }
+    .deadline-month { font-size: var(--font-size-xs); font-weight: 700; text-transform: uppercase; color: var(--color-text-secondary); }
+    .deadline-day { font-size: var(--font-size-2xl); font-weight: 800; color: var(--color-primary); line-height: 1; }
+    .deadline-title { font-weight: 600; }
+    .deadline-desc { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--space-1); }
+    .scorecard { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); overflow: hidden; }
+    .scorecard-row { display: flex; padding: var(--space-3) var(--space-5); border-bottom: 1px solid var(--color-border-light); align-items: center; gap: var(--space-3); }
+    .scorecard-row:last-child { border-bottom: none; }
+    .scorecard-label { flex: 1; font-size: var(--font-size-sm); }
+    .scorecard-bar { flex: 2; height: 8px; background: var(--color-border-light); border-radius: var(--radius-full); overflow: hidden; }
+    .scorecard-bar-fill { height: 100%; border-radius: var(--radius-full); background: var(--color-primary); transition: width 0.6s ease; }
+    .add-form { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: var(--space-5); margin-bottom: var(--space-5); }
+    .table-scroll { overflow-x: auto; }
+    .backup-plan { background: var(--color-secondary-faint); border: 1px solid var(--color-secondary-light); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5); margin-bottom: var(--space-3); }
+    .backup-plan h4 { color: var(--color-secondary-dark); margin-bottom: var(--space-2); font-size: var(--font-size-sm); }
+    .backup-plan p { font-size: var(--font-size-sm); color: var(--color-text-secondary); margin: 0; }
+  </style>
+</head>
+<body>
+<a href="https://weather.com" id="safetyExit" class="safety-exit">✕ Quick Exit</a>
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="nav-brand-text"><span class="nav-brand-name">Stable Housing Navigator</span><span class="nav-brand-sub">King County, Washington</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="triage.html">Get Help Now</a></li>
+      <li><a href="plan.html" class="active">My Plan</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="rights.html">My Rights</a></li>
+      <li><a href="documents.html">Documents</a></li>
+      <li><a href="letters.html">Letters</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">🏠 Home</a><a href="triage.html">🆘 Get Help Now</a><a href="plan.html">📋 My Plan</a>
+    <a href="resources.html">📞 Resources</a><a href="rights.html">⚖️ My Rights</a>
+    <a href="documents.html">📁 Documents</a><a href="letters.html">✉️ Letters</a>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="plan-header">
+      <span class="section-eyebrow">Your Dashboard</span>
+      <h1>My Housing Stability Plan</h1>
+      <p class="text-muted">Track your actions, deadlines, and progress. Updated as you go. <span id="lastUpdated"></span></p>
+      <div id="noTriageAlert" style="display:none;">
+        <div class="alert alert-info mt-4">
+          <span class="alert-icon">💡</span>
+          <div class="alert-content">
+            <p>Start with the <a href="triage.html">Housing Assessment</a> to get a personalized plan with your specific next steps.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat Row -->
+    <div class="stat-row mb-8">
+      <div class="stat-card"><div class="stat-number" id="statActions">0</div><div class="stat-label">Actions Done</div></div>
+      <div class="stat-card"><div class="stat-number" id="statApps">0</div><div class="stat-label">Applications</div></div>
+      <div class="stat-card"><div class="stat-number" id="statDocs">0</div><div class="stat-label">Documents</div></div>
+      <div class="stat-card"><div class="stat-number" id="statDeadlines">0</div><div class="stat-label">Upcoming Deadlines</div></div>
+    </div>
+
+    <!-- Weekly Check-In -->
+    <div class="weekly-check">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--space-3);">
+        <div>
+          <strong>📅 Weekly Check-In</strong>
+          <p style="font-size:var(--font-size-sm); color:var(--color-text-secondary); margin:var(--space-1) 0 0;">What changed this week? Quick update keeps your plan current.</p>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="document.getElementById('checkInModal').classList.add('open')">
+          Add Update
+        </button>
+      </div>
+      <div id="checkInHistory" style="margin-top: var(--space-4);"></div>
+    </div>
+
+    <!-- Dashboard Grid -->
+    <div class="dashboard-grid">
+
+      <!-- Today's Actions -->
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">🎯 Today's Top Actions</div>
+          <button class="btn btn-sm btn-ghost" onclick="document.getElementById('addActionModal').classList.add('open')">+ Add</button>
+        </div>
+        <div class="widget-body">
+          <ul class="action-list" id="actionList">
+            <li>
+              <div class="empty-state"><span class="empty-icon">📋</span>
+                <p>Complete the <a href="triage.html">Housing Assessment</a> to generate your personalized action list.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Deadlines -->
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">⏰ Deadlines &amp; Reminders</div>
+          <button class="btn btn-sm btn-ghost" onclick="document.getElementById('addDeadlineModal').classList.add('open')">+ Add</button>
+        </div>
+        <div class="widget-body" id="deadlineList">
+          <div class="empty-state"><span class="empty-icon">📅</span><p>No deadlines tracked yet. Add important dates here.</p></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="dashboard-grid mt-5">
+
+      <!-- Application Tracker -->
+      <div class="widget" style="grid-column: 1 / -1;">
+        <div class="widget-header">
+          <div class="widget-title">📨 Application Tracker</div>
+          <button class="btn btn-sm btn-ghost" onclick="document.getElementById('addAppModal').classList.add('open')">+ Add Application</button>
+        </div>
+        <div class="widget-body">
+          <div class="table-scroll">
+            <table class="tracker-table">
+              <thead>
+                <tr>
+                  <th>Program / Landlord</th>
+                  <th>Type</th>
+                  <th>Date Applied</th>
+                  <th>Status</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody id="appTrackerBody">
+                <tr><td colspan="5" style="text-align:center; color:var(--color-text-muted); padding:var(--space-8);">No applications tracked yet. Add your first one above.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="dashboard-grid mt-5">
+
+      <!-- Barrier Scorecard -->
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">🔍 Barrier Scorecard</div>
+        </div>
+        <div class="widget-body">
+          <p class="text-small text-muted mb-4">Each bar shows how much work remains on each barrier type. Complete your assessment to populate this.</p>
+          <div class="scorecard" id="scorecardContent">
+            <div class="scorecard-row">
+              <span class="scorecard-label">Financial</span>
+              <div class="scorecard-bar"><div class="scorecard-bar-fill" style="width:0%; background:var(--color-warn)"></div></div>
+            </div>
+            <div class="scorecard-row">
+              <span class="scorecard-label">Legal/Eviction</span>
+              <div class="scorecard-bar"><div class="scorecard-bar-fill" style="width:0%; background:var(--color-danger)"></div></div>
+            </div>
+            <div class="scorecard-row">
+              <span class="scorecard-label">Documentation</span>
+              <div class="scorecard-bar"><div class="scorecard-bar-fill" style="width:0%"></div></div>
+            </div>
+            <div class="scorecard-row">
+              <span class="scorecard-label">Discrimination</span>
+              <div class="scorecard-bar"><div class="scorecard-bar-fill" style="width:0%; background:var(--color-accent)"></div></div>
+            </div>
+            <div class="scorecard-row">
+              <span class="scorecard-label">Access Needs</span>
+              <div class="scorecard-bar"><div class="scorecard-bar-fill" style="width:0%; background:var(--color-secondary)"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backup Plans -->
+      <div class="widget">
+        <div class="widget-header">
+          <div class="widget-title">🔄 Backup Plans</div>
+          <button class="btn btn-sm btn-ghost" onclick="document.getElementById('addBackupModal').classList.add('open')">+ Add</button>
+        </div>
+        <div class="widget-body">
+          <p class="text-small text-muted mb-4">If the current plan doesn't work, here's what to try next.</p>
+          <div id="backupPlansList">
+            <div class="backup-plan">
+              <h4>If rental assistance is denied or out of funding</h4>
+              <p>Try: Catholic Community Services (206-323-6336), Salvation Army (211), other 211-listed programs.</p>
+            </div>
+            <div class="backup-plan">
+              <h4>If eviction proceeds despite assistance</h4>
+              <p>Call Northwest Justice Project (1-888-201-1014) immediately for eviction defense representation.</p>
+            </div>
+            <div class="backup-plan">
+              <h4>If you must leave your current housing</h4>
+              <p>Call 211 for emergency shelter. Contact Coordinated Entry for housing programs. McKinney-Vento protects your children's school enrollment.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Contacts Tracked -->
+    <div class="widget mt-5">
+      <div class="widget-header">
+        <div class="widget-title">📞 People I've Contacted</div>
+        <button class="btn btn-sm btn-ghost" onclick="document.getElementById('addContactModal').classList.add('open')">+ Add Contact</button>
+      </div>
+      <div class="widget-body">
+        <div class="table-scroll">
+          <table class="tracker-table">
+            <thead>
+              <tr><th>Name / Organization</th><th>Phone/Email</th><th>Date</th><th>Outcome / Notes</th></tr>
+            </thead>
+            <tbody id="contactTrackerBody">
+              <tr><td colspan="4" style="text-align:center; color:var(--color-text-muted); padding:var(--space-6);">No contacts logged yet.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Auto-generated Case Summary -->
+    <div class="widget mt-5">
+      <div class="widget-header">
+        <div class="widget-title">📄 Case Summary (for Advocates)</div>
+        <button class="btn btn-sm btn-ghost" onclick="copyCaseSummary()">Copy</button>
+        <button class="btn btn-sm btn-ghost ml-2" onclick="window.print()">Print</button>
+      </div>
+      <div class="widget-body">
+        <p class="text-small text-muted mb-4">A human-readable summary of your situation. Use this when talking to caseworkers, lawyers, or housing programs so you don't have to repeat your story every time.</p>
+        <div id="caseSummary" style="background:var(--color-bg); border-radius:var(--radius-md); padding:var(--space-5); font-size:var(--font-size-sm); line-height:var(--line-height-relaxed); white-space:pre-wrap; border: 1px solid var(--color-border-light);">
+Loading your case summary...
+        </div>
+      </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="flex flex-wrap gap-3 mt-8" style="justify-content:center;">
+      <a href="triage.html" class="btn btn-secondary">Retake Assessment</a>
+      <a href="resources.html" class="btn btn-secondary">Browse Resources</a>
+      <a href="documents.html" class="btn btn-secondary">Document Vault</a>
+      <button class="btn btn-ghost" onclick="exportPlan()">Export My Plan</button>
+    </div>
+
+  </div>
+</main>
+
+<!-- Modals -->
+<!-- Add Action Modal -->
+<div class="modal-overlay" id="addActionModal">
+  <div class="modal">
+    <div class="modal-header"><h3>Add Action Step</h3><button onclick="closeModal('addActionModal')" class="btn btn-ghost btn-sm">✕</button></div>
+    <div class="modal-body">
+      <div class="form-group"><label class="form-label">Action<span class="optional">Required</span></label><input type="text" class="form-input" id="newActionTitle" placeholder="e.g., Call 211 for rental assistance"></div>
+      <div class="form-group"><label class="form-label">Details<span class="optional">Optional</span></label><textarea class="form-textarea" id="newActionDesc" rows="3" placeholder="Phone number, notes, what to say..."></textarea></div>
+      <div class="form-group"><label class="form-label">Deadline<span class="optional">Optional</span></label><input type="text" class="form-input" id="newActionDeadline" placeholder="e.g., Today, This week, Jan 15"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('addActionModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="addAction()">Add Action</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Application Modal -->
+<div class="modal-overlay" id="addAppModal">
+  <div class="modal">
+    <div class="modal-header"><h3>Track an Application</h3><button onclick="closeModal('addAppModal')" class="btn btn-ghost btn-sm">✕</button></div>
+    <div class="modal-body">
+      <div class="form-group"><label class="form-label">Program or Landlord</label><input type="text" class="form-input" id="newAppName" placeholder="e.g., Solid Ground rental assistance"></div>
+      <div class="form-group"><label class="form-label">Type</label>
+        <select class="form-select" id="newAppType">
+          <option value="rental-assistance">Rental Assistance</option>
+          <option value="housing">Housing Program / Unit</option>
+          <option value="voucher">Voucher</option>
+          <option value="utility">Utility Assistance</option>
+          <option value="benefits">Benefits / DSHS</option>
+          <option value="legal">Legal Aid</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label class="form-label">Date Applied</label><input type="date" class="form-input" id="newAppDate"></div>
+      <div class="form-group"><label class="form-label">Notes<span class="optional">Optional</span></label><input type="text" class="form-input" id="newAppNotes" placeholder="Contact name, confirmation #, etc."></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('addAppModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="addApplication()">Add Application</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Contact Modal -->
+<div class="modal-overlay" id="addContactModal">
+  <div class="modal">
+    <div class="modal-header"><h3>Log a Contact</h3><button onclick="closeModal('addContactModal')" class="btn btn-ghost btn-sm">✕</button></div>
+    <div class="modal-body">
+      <div class="form-group"><label class="form-label">Name / Organization</label><input type="text" class="form-input" id="newContactName" placeholder="e.g., Northwest Justice Project"></div>
+      <div class="form-group"><label class="form-label">Phone or Email<span class="optional">Optional</span></label><input type="text" class="form-input" id="newContactPhone"></div>
+      <div class="form-group"><label class="form-label">Date Contacted</label><input type="date" class="form-input" id="newContactDate"></div>
+      <div class="form-group"><label class="form-label">Outcome / Notes</label><textarea class="form-textarea" id="newContactNotes" rows="3" placeholder="What happened, what they said, what the next step is..."></textarea></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('addContactModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="addContact()">Save Contact</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Deadline Modal -->
+<div class="modal-overlay" id="addDeadlineModal">
+  <div class="modal">
+    <div class="modal-header"><h3>Add Deadline</h3><button onclick="closeModal('addDeadlineModal')" class="btn btn-ghost btn-sm">✕</button></div>
+    <div class="modal-body">
+      <div class="form-group"><label class="form-label">What is due</label><input type="text" class="form-input" id="newDeadlineTitle" placeholder="e.g., Voucher expires, Court date, Application due"></div>
+      <div class="form-group"><label class="form-label">Date</label><input type="date" class="form-input" id="newDeadlineDate"></div>
+      <div class="form-group"><label class="form-label">Notes<span class="optional">Optional</span></label><input type="text" class="form-input" id="newDeadlineNotes"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('addDeadlineModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="addDeadline()">Add Deadline</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Backup Plan Modal -->
+<div class="modal-overlay" id="addBackupModal">
+  <div class="modal">
+    <div class="modal-header"><h3>Add Backup Plan</h3><button onclick="closeModal('addBackupModal')" class="btn btn-ghost btn-sm">✕</button></div>
+    <div class="modal-body">
+      <div class="form-group"><label class="form-label">If this fails...</label><input type="text" class="form-input" id="newBackupTrigger" placeholder="e.g., If the rental assistance application is denied"></div>
+      <div class="form-group"><label class="form-label">Then do this</label><textarea class="form-textarea" id="newBackupPlan" rows="3" placeholder="The alternative action to take..."></textarea></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('addBackupModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="addBackup()">Save Backup Plan</button>
+    </div>
+  </div>
+</div>
+
+<!-- Weekly Check-In Modal -->
+<div class="modal-overlay" id="checkInModal">
+  <div class="modal">
+    <div class="modal-header"><h3>Weekly Check-In</h3><button onclick="closeModal('checkInModal')" class="btn btn-ghost btn-sm">✕</button></div>
+    <div class="modal-body">
+      <p class="text-small text-muted mb-4">A quick update keeps your plan accurate. What changed this week?</p>
+      <div class="form-group"><label class="form-label">What happened this week?</label><textarea class="form-textarea" id="checkInNote" rows="4" placeholder="e.g., Applied to 3 programs, called legal aid, landlord responded to my letter..."></textarea></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('checkInModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveCheckIn()">Save Update</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p class="footer-disclaimer">Housing information only — not legal advice. For free legal help: <a href="tel:18882011014">Northwest Justice Project: 1-888-201-1014</a>.</p>
+      <p style="font-size:var(--font-size-xs);color:var(--color-text-muted);">© <span id="currentYear"></span> Stable Housing Navigator</p>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="js/app.js"></script>
+<script>
+  // Local state
+  let state = {
+    actions: [],
+    applications: [],
+    contacts: [],
+    deadlines: [],
+    backups: [],
+    checkIns: [],
+    triage: null,
+  };
+
+  function loadState() {
+    try {
+      const raw = localStorage.getItem('shn_session');
+      if (raw) {
+        const session = JSON.parse(raw);
+        state.actions = session.plan?.actions || [];
+        state.applications = session.applications || [];
+        state.contacts = session.contacts || [];
+        state.deadlines = session.deadlines || [];
+        state.backups = session.backups || [];
+        state.checkIns = session.checkIns || [];
+        state.triage = session.triage || null;
+        const updated = session.updatedAt ? new Date(session.updatedAt).toLocaleDateString() : '';
+        if (updated) document.getElementById('lastUpdated').textContent = `Last updated: ${updated}`;
+      }
+    } catch(e) {}
+
+    if (!state.triage?.completed) {
+      document.getElementById('noTriageAlert').style.display = 'block';
+    }
+
+    renderAll();
+  }
+
+  function saveState() {
+    try {
+      const raw = localStorage.getItem('shn_session') || '{}';
+      const session = JSON.parse(raw);
+      session.plan = { actions: state.actions };
+      session.applications = state.applications;
+      session.contacts = state.contacts;
+      session.deadlines = state.deadlines;
+      session.backups = state.backups;
+      session.checkIns = state.checkIns;
+      session.updatedAt = new Date().toISOString();
+      localStorage.setItem('shn_session', JSON.stringify(session));
+    } catch(e) {}
+  }
+
+  function renderAll() {
+    renderStats();
+    renderActions();
+    renderApplications();
+    renderContacts();
+    renderDeadlines();
+    renderCheckIns();
+    renderCaseSummary();
+    renderBarrierScorecard();
+  }
+
+  function renderStats() {
+    document.getElementById('statActions').textContent = state.actions.filter(a => a.completed).length;
+    document.getElementById('statApps').textContent = state.applications.length;
+    document.getElementById('statDocs').textContent = (() => {
+      try { const s = JSON.parse(localStorage.getItem('shn_session') || '{}'); return (s.documents || []).length; } catch { return 0; }
+    })();
+    document.getElementById('statDeadlines').textContent = state.deadlines.filter(d => !d.completed && new Date(d.date) >= new Date()).length;
+  }
+
+  function renderActions() {
+    const list = document.getElementById('actionList');
+    if (state.actions.length === 0) {
+      // Load from triage if available
+      const session = (() => { try { return JSON.parse(localStorage.getItem('shn_session') || '{}'); } catch { return {}; } })();
+      if (!session.triage?.completed) {
+        list.innerHTML = `<li><div class="empty-state"><span class="empty-icon">📋</span><p>Complete the <a href="triage.html">Housing Assessment</a> to generate your personalized action list.</p></div></li>`;
+        return;
+      }
+    }
+
+    if (state.actions.length === 0) {
+      list.innerHTML = `<li><div class="empty-state"><span class="empty-icon">✅</span><p>No actions yet. Add some or <a href="triage.html">retake your assessment</a>.</p></div></li>`;
+      return;
+    }
+
+    list.innerHTML = state.actions.map(a => `
+      <li class="action-item ${a.completed ? 'completed' : ''}">
+        <div class="action-checkbox"><input type="checkbox" ${a.completed ? 'checked' : ''} onchange="toggleAction('${a.id}')" aria-label="Mark ${a.title} complete"></div>
+        <div class="action-content">
+          <div class="action-title">${a.title}</div>
+          ${a.desc ? `<div class="action-desc">${a.desc}</div>` : ''}
+          ${a.deadline ? `<div class="action-deadline ${a.urgency || 'normal'}">⏰ ${a.deadline}</div>` : ''}
+        </div>
+      </li>
+    `).join('');
+  }
+
+  function renderApplications() {
+    const tbody = document.getElementById('appTrackerBody');
+    if (state.applications.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;color:var(--color-text-muted);padding:var(--space-8);">No applications tracked yet.</td></tr>`;
+      return;
+    }
+    tbody.innerHTML = state.applications.map(app => `
+      <tr>
+        <td><strong>${app.name}</strong></td>
+        <td><span class="badge badge-neutral">${app.type}</span></td>
+        <td>${app.date || '—'}</td>
+        <td>
+          <select class="form-select" style="padding:4px 8px;height:auto;font-size:0.8rem;" onchange="updateAppStatus('${app.id}', this.value)">
+            <option ${app.status==='pending'?'selected':''} value="pending">Pending</option>
+            <option ${app.status==='submitted'?'selected':''} value="submitted">Submitted</option>
+            <option ${app.status==='approved'?'selected':''} value="approved">Approved ✓</option>
+            <option ${app.status==='denied'?'selected':''} value="denied">Denied</option>
+            <option ${app.status==='waitlist'?'selected':''} value="waitlist">Waitlist</option>
+          </select>
+        </td>
+        <td style="font-size:0.85rem;color:var(--color-text-secondary);">${app.notes || '—'}</td>
+      </tr>
+    `).join('');
+  }
+
+  function renderContacts() {
+    const tbody = document.getElementById('contactTrackerBody');
+    if (state.contacts.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="4" style="text-align:center;color:var(--color-text-muted);padding:var(--space-6);">No contacts logged yet.</td></tr>`;
+      return;
+    }
+    tbody.innerHTML = state.contacts.map(c => `
+      <tr>
+        <td><strong>${c.name}</strong></td>
+        <td>${c.phone || '—'}</td>
+        <td>${c.date || '—'}</td>
+        <td style="font-size:0.85rem;">${c.notes || '—'}</td>
+      </tr>
+    `).join('');
+  }
+
+  function renderDeadlines() {
+    const list = document.getElementById('deadlineList');
+    const upcoming = state.deadlines.filter(d => !d.completed).sort((a,b) => new Date(a.date) - new Date(b.date));
+    if (upcoming.length === 0) {
+      list.innerHTML = `<div class="empty-state"><span class="empty-icon">📅</span><p>No deadlines tracked. Add important dates.</p></div>`;
+      return;
+    }
+    list.innerHTML = upcoming.map(d => {
+      const dt = d.date ? new Date(d.date + 'T12:00:00') : null;
+      const month = dt ? dt.toLocaleDateString('en-US', {month: 'short'}) : '';
+      const day = dt ? dt.getDate() : '?';
+      const past = dt && dt < new Date();
+      return `
+        <div class="deadline-item" style="${past ? 'opacity:0.5;' : ''}">
+          <div class="deadline-date">
+            <div class="deadline-month">${month}</div>
+            <div class="deadline-day" style="${past ? 'color:var(--color-danger);' : ''}">${day}</div>
+          </div>
+          <div>
+            <div class="deadline-title">${d.title} ${past ? '⚠️ Past due' : ''}</div>
+            ${d.notes ? `<div class="deadline-desc">${d.notes}</div>` : ''}
+          </div>
+          <button class="btn btn-ghost btn-sm" onclick="completeDeadline('${d.id}')" title="Mark done">✓</button>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderCheckIns() {
+    const el = document.getElementById('checkInHistory');
+    if (state.checkIns.length === 0) { el.innerHTML = ''; return; }
+    const last = state.checkIns[state.checkIns.length - 1];
+    el.innerHTML = `<div style="font-size:var(--font-size-sm); color:var(--color-text-secondary);">
+      <strong>Latest update (${new Date(last.date).toLocaleDateString()}):</strong> ${last.note}
+    </div>`;
+  }
+
+  function renderBarrierScorecard() {
+    const session = (() => { try { return JSON.parse(localStorage.getItem('shn_session') || '{}'); } catch { return {}; } })();
+    const barriers = session.triage?.answers?.barriers || [];
+    if (barriers.length === 0) return;
+
+    const financial = ['rental_debt', 'no_income', 'low_income', 'utility_arrears', 'credit_issues'];
+    const legal = ['eviction_history', 'criminal_background'];
+    const docs = ['missing_id', 'missing_documents'];
+    const disc = ['voucher_discrimination', 'disability_barrier'];
+    const access = ['language_barrier', 'transportation_barrier', 'overwhelm', 'family_size_mismatch'];
+
+    function score(group) {
+      return Math.round(group.filter(b => barriers.includes(b)).length / group.length * 100);
+    }
+
+    const rows = document.querySelectorAll('.scorecard-row .scorecard-bar-fill');
+    const scores = [score(financial), score(legal), score(docs), score(disc), score(access)];
+    rows.forEach((fill, i) => { fill.style.width = scores[i] + '%'; });
+  }
+
+  function renderCaseSummary() {
+    const session = (() => { try { return JSON.parse(localStorage.getItem('shn_session') || '{}'); } catch { return {}; } })();
+    const t = session.triage?.answers || {};
+    const profile = session.profile || {};
+    const today = new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
+
+    const statusMap = {
+      homeless_outside: 'currently homeless (no shelter)',
+      shelter: 'staying in emergency shelter',
+      doubled_up: 'staying with family/friends temporarily',
+      motel: 'staying in a motel/transitional housing',
+      renting_at_risk: 'renting but at risk of losing housing',
+      renting_stable: 'renting with stable housing',
+      looking: 'looking for housing',
+    };
+
+    const evMap = {
+      court_date: 'has an eviction court date',
+      notice_served: 'has received an eviction notice',
+      verbal_warning: 'has been verbally threatened with eviction',
+      no: 'has not received an eviction notice',
+    };
+
+    const barriers = (t.barriers || []).join(', ') || 'None identified';
+    const housingStatus = statusMap[t.housing_status] || 'status unknown';
+    const eviction = evMap[t.eviction] || 'eviction status unknown';
+
+    const summary = `HOUSING STABILITY CASE SUMMARY
+Generated: ${today}
+--------------------------------------
+HOUSING STATUS: This person is ${housingStatus}.
+
+EVICTION: ${eviction.charAt(0).toUpperCase() + eviction.slice(1)}.
+
+RENT: ${t.rent_behind === 'yes_3plus' ? '3+ months behind on rent' : t.rent_behind === 'yes_1to2' ? '1-2 months behind on rent' : t.rent_behind === 'partial' ? 'Partially behind on rent' : t.rent_behind === 'current' ? 'Current on rent' : 'Rent status unknown'}.
+
+UTILITIES: ${t.utility_crisis === 'shutoff_notice' ? 'Has received a utility shutoff notice' : t.utility_crisis === 'behind_utilities' ? 'Behind on utilities' : 'No utility crisis reported'}.
+
+CHILDREN: ${t.children === 'yes_minor' ? 'Has minor children in the household' : t.children === 'yes_sometimes' ? 'Children stay part-time' : 'No children reported'}.
+
+DISABILITY: ${(t.disability || '').startsWith('yes') ? 'Has a disability that affects housing' : 'No disability barrier reported'}.
+
+SAFETY: ${t.safety === 'yes_danger' ? 'In immediate danger — DV or safety crisis' : t.safety === 'leaving_soon' ? 'May need to leave for safety' : t.safety === 'unsafe_housing' ? 'Housing is unsafe' : 'No immediate safety concern'}.
+
+VOUCHER: ${t.voucher === 'yes_active' ? 'Has active housing voucher' : t.voucher === 'yes_expiring' ? 'Has expiring voucher (urgent)' : t.voucher === 'yes_in_unit' ? 'Has voucher (in unit)' : t.voucher === 'applied' ? 'Applied for voucher' : 'No voucher'}.
+
+BARRIERS IDENTIFIED: ${barriers}
+
+APPLICATIONS: ${state.applications.length} tracked.
+CONTACTS MADE: ${state.contacts.length} logged.
+--------------------------------------
+This summary was generated by Stable Housing Navigator for King County, WA.
+For legal help: Northwest Justice Project 1-888-201-1014
+For housing crisis: Call 211`;
+
+    document.getElementById('caseSummary').textContent = summary;
+  }
+
+  // Action handlers
+  function toggleAction(id) {
+    const action = state.actions.find(a => a.id === id);
+    if (action) {
+      action.completed = !action.completed;
+      saveState();
+      renderAll();
+    }
+  }
+
+  function updateAppStatus(id, status) {
+    const app = state.applications.find(a => a.id === id);
+    if (app) {
+      app.status = status;
+      saveState();
+      renderStats();
+    }
+  }
+
+  function completeDeadline(id) {
+    const d = state.deadlines.find(d => d.id === id);
+    if (d) { d.completed = true; saveState(); renderAll(); }
+  }
+
+  function addAction() {
+    const title = document.getElementById('newActionTitle').value.trim();
+    if (!title) return;
+    state.actions.push({
+      id: Date.now().toString(),
+      title,
+      desc: document.getElementById('newActionDesc').value,
+      deadline: document.getElementById('newActionDeadline').value,
+      completed: false,
+    });
+    saveState();
+    closeModal('addActionModal');
+    renderAll();
+    document.getElementById('newActionTitle').value = '';
+    document.getElementById('newActionDesc').value = '';
+    document.getElementById('newActionDeadline').value = '';
+  }
+
+  function addApplication() {
+    const name = document.getElementById('newAppName').value.trim();
+    if (!name) return;
+    state.applications.push({
+      id: Date.now().toString(),
+      name,
+      type: document.getElementById('newAppType').value,
+      date: document.getElementById('newAppDate').value,
+      notes: document.getElementById('newAppNotes').value,
+      status: 'pending',
+    });
+    saveState();
+    closeModal('addAppModal');
+    renderAll();
+  }
+
+  function addContact() {
+    const name = document.getElementById('newContactName').value.trim();
+    if (!name) return;
+    state.contacts.push({
+      id: Date.now().toString(),
+      name,
+      phone: document.getElementById('newContactPhone').value,
+      date: document.getElementById('newContactDate').value,
+      notes: document.getElementById('newContactNotes').value,
+    });
+    saveState();
+    closeModal('addContactModal');
+    renderAll();
+  }
+
+  function addDeadline() {
+    const title = document.getElementById('newDeadlineTitle').value.trim();
+    if (!title) return;
+    state.deadlines.push({
+      id: Date.now().toString(),
+      title,
+      date: document.getElementById('newDeadlineDate').value,
+      notes: document.getElementById('newDeadlineNotes').value,
+      completed: false,
+    });
+    saveState();
+    closeModal('addDeadlineModal');
+    renderAll();
+  }
+
+  function addBackup() {
+    const trigger = document.getElementById('newBackupTrigger').value.trim();
+    const plan = document.getElementById('newBackupPlan').value.trim();
+    if (!trigger || !plan) return;
+    const list = document.getElementById('backupPlansList');
+    const div = document.createElement('div');
+    div.className = 'backup-plan';
+    div.innerHTML = `<h4>${trigger}</h4><p>${plan}</p>`;
+    list.appendChild(div);
+    closeModal('addBackupModal');
+    document.getElementById('newBackupTrigger').value = '';
+    document.getElementById('newBackupPlan').value = '';
+  }
+
+  function saveCheckIn() {
+    const note = document.getElementById('checkInNote').value.trim();
+    if (!note) return;
+    state.checkIns.push({ id: Date.now().toString(), date: new Date().toISOString(), note });
+    saveState();
+    closeModal('checkInModal');
+    renderCheckIns();
+    document.getElementById('checkInNote').value = '';
+  }
+
+  function copyCaseSummary() {
+    const text = document.getElementById('caseSummary').textContent;
+    navigator.clipboard.writeText(text).then(() => alert('Case summary copied to clipboard.'));
+  }
+
+  function exportPlan() {
+    const summary = document.getElementById('caseSummary').textContent;
+    const blob = new Blob([summary], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `housing-plan-${new Date().toISOString().split('T')[0]}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function closeModal(id) {
+    document.getElementById(id)?.classList.remove('open');
+  }
+
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal-overlay')) closeModal(e.target.id);
+  });
+
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+  loadState();
+</script>
+</body>
+</html>
