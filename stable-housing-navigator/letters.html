@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letters &amp; Scripts — Stable Housing Navigator</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .template-grid { display: grid; gap: var(--space-4); grid-template-columns: 1fr; }
+    .template-card { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: var(--space-5); cursor: pointer; transition: all var(--transition-fast); }
+    .template-card:hover { border-color: var(--color-primary); box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .template-card.selected { border-color: var(--color-primary); background: var(--color-primary-faint); box-shadow: var(--shadow-focus); }
+    .template-cat { font-size: var(--font-size-xs); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: var(--space-2); }
+    .template-title { font-weight: 700; font-size: var(--font-size-base); color: var(--color-text); margin-bottom: var(--space-2); }
+    .template-desc { font-size: var(--font-size-sm); color: var(--color-text-secondary); }
+    .generator-panel { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-xl); padding: var(--space-6); }
+    .letter-output { background: white; border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-8); font-family: 'Georgia', serif; font-size: var(--font-size-base); line-height: var(--line-height-relaxed); white-space: pre-wrap; min-height: 320px; margin-bottom: var(--space-4); position: relative; }
+    .letter-output .placeholder { color: var(--color-accent); font-style: italic; }
+    .letter-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+    .script-card { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: var(--space-5); margin-bottom: var(--space-4); }
+    .script-card h3 { font-size: var(--font-size-base); color: var(--color-primary-dark); margin-bottom: var(--space-3); }
+    .script-body { background: var(--color-bg); border-radius: var(--radius-md); padding: var(--space-4); font-size: var(--font-size-sm); line-height: var(--line-height-relaxed); white-space: pre-line; }
+    .generator-layout { display: grid; gap: var(--space-6); }
+    @media (min-width: 768px) { .generator-layout { grid-template-columns: 280px 1fr; } .template-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<a href="https://weather.com" id="safetyExit" class="safety-exit">✕ Quick Exit</a>
+<nav class="site-nav" role="navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-brand-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <div class="nav-brand-text"><span class="nav-brand-name">Stable Housing Navigator</span><span class="nav-brand-sub">King County, Washington</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="triage.html">Get Help Now</a></li>
+      <li><a href="plan.html">My Plan</a></li><li><a href="resources.html">Resources</a></li>
+      <li><a href="rights.html">My Rights</a></li><li><a href="documents.html">Documents</a></li>
+      <li><a href="letters.html" class="active">Letters</a></li>
+    </ul>
+    <button class="nav-mobile-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">🏠 Home</a><a href="triage.html">🆘 Get Help Now</a><a href="plan.html">📋 My Plan</a>
+    <a href="resources.html">📞 Resources</a><a href="rights.html">⚖️ My Rights</a>
+    <a href="documents.html">📁 Documents</a><a href="letters.html">✉️ Letters</a>
+  </div>
+</nav>
+
+<main class="main-content">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-eyebrow">Letter &amp; Script Generator</span>
+      <h1>Letters, Emails &amp; Phone Scripts</h1>
+      <p>Choose a template, fill in your details, and get a ready-to-send letter or phone script. Review everything before sending.</p>
+    </div>
+
+    <!-- Legal notice -->
+    <div class="legal-notice mb-6">
+      <strong>Important:</strong> These are templates to help you communicate — they are not legal documents or legal advice. Review every letter before sending. For eviction or legal matters, also contact <a href="tel:18882011014">Northwest Justice Project: 1-888-201-1014</a>.
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs-wrapper">
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" role="tab" onclick="showTab('letters', this)">✉️ Letters &amp; Emails</button>
+        <button class="tab-btn" role="tab" onclick="showTab('scripts', this)">📞 Phone Scripts</button>
+      </div>
+    </div>
+
+    <!-- Letters Tab -->
+    <div id="lettersTab">
+      <div class="generator-layout">
+
+        <!-- Template selector -->
+        <div>
+          <h3 style="font-size:var(--font-size-sm); text-transform:uppercase; letter-spacing:0.06em; color:var(--color-text-secondary); margin-bottom:var(--space-3);">Choose a template</h3>
+          <div class="template-grid" id="templateList" role="list"></div>
+        </div>
+
+        <!-- Generator panel -->
+        <div class="generator-panel" id="generatorPanel">
+          <div id="noTemplateSelected" style="text-align:center; padding:var(--space-16) var(--space-8); color:var(--color-text-secondary);">
+            <div style="font-size:3rem;margin-bottom:var(--space-4);">✉️</div>
+            <p>Select a template from the left to get started.</p>
+          </div>
+
+          <div id="templateForm" style="display:none;">
+            <h3 id="templateFormTitle" style="margin-bottom:var(--space-2);"></h3>
+            <p id="templateFormDesc" style="color:var(--color-text-secondary);font-size:var(--font-size-sm);margin-bottom:var(--space-5);"></p>
+
+            <div id="templateFields"></div>
+
+            <button class="btn btn-primary mb-6" onclick="generateLetter()">Generate Letter</button>
+
+            <div id="letterOutput" style="display:none;">
+              <h4 style="margin-bottom:var(--space-3);">Your Letter</h4>
+              <div class="letter-output" id="letterText" contenteditable="true" spellcheck="true" aria-label="Generated letter text — editable"></div>
+              <div class="letter-actions">
+                <button class="btn btn-primary" onclick="copyLetter()">Copy Letter</button>
+                <button class="btn btn-secondary" onclick="printLetter()">Print</button>
+                <button class="btn btn-ghost" onclick="downloadLetter()">Download .txt</button>
+                <button class="btn btn-ghost" onclick="saveLetter()">Save to My Plan</button>
+              </div>
+              <div class="alert alert-warn mt-4">
+                <span class="alert-icon">👁️</span>
+                <div class="alert-content"><p>Review this letter before sending. Fill in all bracketed items. For legal matters, also contact legal aid.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scripts Tab -->
+    <div id="scriptsTab" style="display:none;">
+      <div id="scriptsList"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer"><div class="footer-inner"><div class="footer-bottom">
+  <p class="footer-disclaimer">Letter templates only. Review before sending. Not legal advice. Free legal help: <a href="tel:18882011014">1-888-201-1014</a>.</p>
+  <p style="font-size:var(--font-size-xs);color:var(--color-text-muted);">© <span id="currentYear"></span> Stable Housing Navigator</p>
+</div></div></footer>
+
+<script type="module" src="js/app.js"></script>
+<script type="module">
+import { letterTemplates, phoneScripts, fillTemplate } from './js/letter-templates.js';
+
+let selectedTemplate = null;
+
+function renderTemplates() {
+  const list = document.getElementById('templateList');
+
+  const catLabels = {
+    'rental-assistance': '💰 Rental Assistance',
+    'disability': '♿ Disability',
+    'habitability': '🏗️ Repairs & Habitability',
+    'eviction': '🚨 Eviction',
+    'utilities': '💡 Utilities',
+    'applications': '📋 Applications',
+    'voucher': '🎫 Voucher',
+    'follow-up': '🔄 Follow-Up',
+  };
+
+  list.innerHTML = letterTemplates.map(t => `
+    <div class="template-card" role="listitem" onclick="selectTemplate('${t.id}')" id="tpl-${t.id}" tabindex="0">
+      <div class="template-cat">${catLabels[t.category] || t.category}</div>
+      <div class="template-title">${t.title}</div>
+      <div class="template-desc">${t.description}</div>
+    </div>
+  `).join('');
+}
+
+window.selectTemplate = function(id) {
+  selectedTemplate = letterTemplates.find(t => t.id === id);
+  if (!selectedTemplate) return;
+
+  document.querySelectorAll('.template-card').forEach(c => c.classList.remove('selected'));
+  document.getElementById('tpl-' + id)?.classList.add('selected');
+
+  document.getElementById('noTemplateSelected').style.display = 'none';
+  document.getElementById('templateForm').style.display = 'block';
+  document.getElementById('letterOutput').style.display = 'none';
+
+  document.getElementById('templateFormTitle').textContent = selectedTemplate.title;
+  document.getElementById('templateFormDesc').textContent = selectedTemplate.description;
+
+  // Try to pre-fill from session
+  const session = (() => { try { return JSON.parse(localStorage.getItem('shn_session') || '{}'); } catch { return {}; } })();
+  const profile = session.profile || {};
+
+  const fieldLabels = {
+    tenant_name: 'Your Full Name',
+    applicant_name: 'Your Full Name',
+    your_name: 'Your Name',
+    tenant_address: 'Your Current Address',
+    applicant_address: 'Your Address',
+    landlord_name: 'Landlord\'s Name',
+    landlord_address: 'Landlord\'s Address',
+    program_name: 'Program Name',
+    caseworker_name: 'Caseworker / Staff Name',
+    monthly_rent: 'Monthly Rent Amount ($)',
+    amount_owed: 'Total Amount Owed ($)',
+    months_behind: 'Number of Months Behind',
+    reason_for_hardship: 'Reason for Hardship',
+    accommodation_requested: 'Describe the Accommodation You Need',
+    how_accommodation_helps: 'How This Accommodation Helps You',
+    repair_description: 'Describe the Repairs Needed',
+    date_issue_started: 'When Did the Problem Start?',
+    notice_date: 'Date on the Notice',
+    notice_type: 'Type of Notice (e.g., 3-Day Pay or Vacate)',
+    dispute_reason: 'Why You Dispute the Notice',
+    denial_date: 'Date of Denial',
+    denial_reason: 'Reason Stated for Denial',
+    appeal_reason: 'Why You Are Appealing',
+    barrier_type: 'What Barrier Is Being Explained',
+    explanation: 'Explanation of the Situation',
+    what_changed: 'What Has Changed Since Then',
+    references: 'Names and Contact Info for References',
+    voucher_number: 'Your Voucher Number',
+    housing_authority: 'Your Housing Authority (KCHA or SHA)',
+    current_expiry_date: 'Current Voucher Expiration Date',
+    barriers_encountered: 'Barriers You Have Encountered in Your Search',
+    steps_taken: 'Steps You Have Already Taken',
+    service_address: 'Service Address',
+    account_number: 'Account Number',
+    proposed_payment: 'Proposed Monthly Payment ($)',
+    original_contact_date: 'Date of Original Contact',
+    what_waiting_for: 'What You Are Waiting For',
+    date: 'Today\'s Date',
+  };
+
+  const defaults = {
+    date: new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'}),
+  };
+
+  const fields = document.getElementById('templateFields');
+  fields.innerHTML = selectedTemplate.fields.map(f => {
+    const label = fieldLabels[f] || f.replace(/_/g, ' ');
+    const defaultVal = defaults[f] || '';
+    const isTextarea = ['reason_for_hardship', 'accommodation_requested', 'how_accommodation_helps', 'repair_description', 'dispute_reason', 'denial_reason', 'appeal_reason', 'explanation', 'what_changed', 'barriers_encountered', 'steps_taken', 'what_waiting_for'].includes(f);
+    return `
+      <div class="form-group">
+        <label class="form-label" for="field-${f}">${label}</label>
+        ${isTextarea
+          ? `<textarea class="form-textarea" id="field-${f}" name="${f}" rows="3" placeholder="Enter ${label.toLowerCase()}...">${defaultVal}</textarea>`
+          : `<input type="text" class="form-input" id="field-${f}" name="${f}" placeholder="Enter ${label.toLowerCase()}..." value="${defaultVal}">`
+        }
+      </div>
+    `;
+  }).join('');
+};
+
+window.generateLetter = function() {
+  if (!selectedTemplate) return;
+
+  const values = {};
+  selectedTemplate.fields.forEach(f => {
+    const el = document.getElementById('field-' + f);
+    if (el) values[f] = el.value || '';
+  });
+
+  const text = fillTemplate(selectedTemplate.id, values);
+  const outputEl = document.getElementById('letterText');
+  outputEl.textContent = text;
+  document.getElementById('letterOutput').style.display = 'block';
+  outputEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
+window.copyLetter = function() {
+  const text = document.getElementById('letterText').textContent;
+  navigator.clipboard.writeText(text).then(() => alert('Letter copied to clipboard.')).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    alert('Letter copied.');
+  });
+};
+
+window.printLetter = function() {
+  const text = document.getElementById('letterText').textContent;
+  const w = window.open('', '_blank');
+  w.document.write(`<!DOCTYPE html><html><head><title>Letter</title><style>body{font-family:Georgia,serif;padding:2rem 3rem;max-width:720px;margin:0 auto;font-size:12pt;line-height:1.7;}pre{white-space:pre-wrap;}</style></head><body><pre>${text.replace(/</g,'&lt;')}</pre></body></html>`);
+  w.document.close();
+  setTimeout(() => w.print(), 500);
+};
+
+window.downloadLetter = function() {
+  const text = document.getElementById('letterText').textContent;
+  const title = selectedTemplate?.title || 'letter';
+  const blob = new Blob([text], {type:'text/plain'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = title.toLowerCase().replace(/\s+/g, '-') + '.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
+window.saveLetter = function() {
+  try {
+    const session = JSON.parse(localStorage.getItem('shn_session') || '{}');
+    if (!session.letters) session.letters = [];
+    session.letters.push({
+      id: Date.now().toString(),
+      title: selectedTemplate?.title,
+      text: document.getElementById('letterText').textContent,
+      savedAt: new Date().toISOString(),
+    });
+    localStorage.setItem('shn_session', JSON.stringify(session));
+    alert('Letter saved to My Plan.');
+  } catch(e) {}
+};
+
+function renderScripts() {
+  const list = document.getElementById('scriptsList');
+  list.innerHTML = phoneScripts.map(s => `
+    <div class="script-card">
+      <h3>📞 ${s.title}</h3>
+      <div class="script-body">${s.script}</div>
+      <div style="margin-top:var(--space-4);">
+        <button class="btn btn-sm btn-ghost" onclick="copyScript('${s.id}')">Copy Script</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+window.copyScript = function(id) {
+  const script = phoneScripts.find(s => s.id === id);
+  if (!script) return;
+  navigator.clipboard.writeText(script.script).then(() => alert('Script copied.'));
+};
+
+window.showTab = function(tab, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('lettersTab').style.display = tab === 'letters' ? 'block' : 'none';
+  document.getElementById('scriptsTab').style.display = tab === 'scripts' ? 'block' : 'none';
+};
+
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+renderTemplates();
+renderScripts();
+</script>
+</body>
+</html>
