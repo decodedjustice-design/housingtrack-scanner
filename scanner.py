@@ -8,7 +8,7 @@ Purpose:
 - Extract availability, bedroom, sqft and rent signals when present.
 - Preserve evidence URLs and timestamps so the dashboard can show what was checked.
 - Support eligibility metadata so HA-owned, senior-only, disability-only and
-  low-income-only properties can be excluded without deleting them from the master inventory.
+  100%-low-income properties can be excluded without deleting them from the master inventory.
 
 Important: a keyword match is a LEAD, not proof that an affordable unit is currently
 available. The dashboard should display the source URL and last-checked timestamp and
@@ -31,10 +31,8 @@ from bs4 import BeautifulSoup
 
 RESULTS_FILE = Path("availability_results.json")
 HISTORY_FILE = Path("scan_history.json")
-# inventory_prepare.py creates this canonical five-city runtime inventory.
 PROPERTIES_FILE = Path("properties_scoped.json")
 ALERT_EMAIL = "DecodedJustice@gmail.com"
-
 TARGET_CITIES = {"Redmond", "Bellevue", "Bothell", "Kirkland", "Woodinville"}
 MAX_RENT_NO_UTILITIES = 2662
 MAX_RENT_WITH_UTILITIES = 2772
@@ -43,51 +41,22 @@ MAX_PAGES_PER_PROPERTY = 5
 POLITE_DELAY_SECONDS = 1.0
 
 AVAILABLE_PATTERNS = [
-    r"available\s+now",
-    r"move[- ]?in\s+(today|ready|now)",
-    r"immediate\s+availability",
-    r"units?\s+available",
-    r"apply\s+now",
-    r"schedule\s+a\s+tour",
-    r"check\s+availability",
-    r"view\s+available",
-    r"see\s+available",
-    r"available\s+units?",
-    r"now\s+leasing",
-    r"leasing\s+now",
-    r"open\s+for\s+leasing",
-    r"vacanc(?:y|ies)",
-    r"floor\s*plan\s+available",
+    r"available\s+now", r"move[- ]?in\s+(today|ready|now)", r"immediate\s+availability",
+    r"units?\s+available", r"apply\s+now", r"schedule\s+a\s+tour", r"check\s+availability",
+    r"view\s+available", r"see\s+available", r"available\s+units?", r"now\s+leasing",
+    r"leasing\s+now", r"open\s+for\s+leasing", r"vacanc(?:y|ies)", r"floor\s*plan\s+available",
     r"\b\d+\s+(?:unit|units)\s+available\b",
 ]
-
-WAITLIST_PATTERNS = [
-    r"join\s+(?:the\s+)?wait\s*list",
-    r"fully\s+occupied",
-    r"no\s+units?\s+available",
-    r"no\s+availability",
-    r"not\s+currently\s+accepting",
-]
-
-DEN_PATTERNS = [
-    r"\bden\b", r"\+\s*den\b", r"w/\s*den\b", r"loft",
-    r"home\s+office", r"bonus\s+room", r"flex\s+(?:room|space)",
-    r"attached\s+garage", r"townhome", r"townhouse",
-]
-
+WAITLIST_PATTERNS = [r"join\s+(?:the\s+)?wait\s*list", r"fully\s+occupied", r"no\s+units?\s+available", r"no\s+availability", r"not\s+currently\s+accepting"]
+DEN_PATTERNS = [r"\bden\b", r"\+\s*den\b", r"w/\s*den\b", r"loft", r"home\s+office", r"bonus\s+room", r"flex\s+(?:room|space)", r"attached\s+garage", r"townhome", r"townhouse"]
 BEDROOM_PATTERNS = {
-    "studio": [r"studio"],
-    "1br": [r"\b1\s*(?:br|bed|bedroom)\b", r"one[- ]bedroom"],
-    "2br": [r"\b2\s*(?:br|bed|bedroom)\b", r"two[- ]bedroom"],
-    "3br": [r"\b3\s*(?:br|bed|bedroom)\b", r"three[- ]bedroom"],
+    "studio": [r"studio"], "1br": [r"\b1\s*(?:br|bed|bedroom)\b", r"one[- ]bedroom"],
+    "2br": [r"\b2\s*(?:br|bed|bedroom)\b", r"two[- ]bedroom"], "3br": [r"\b3\s*(?:br|bed|bedroom)\b", r"three[- ]bedroom"],
     "4br": [r"\b4\s*(?:br|bed|bedroom)\b", r"four[- ]bedroom"],
 }
-
 PROGRAM_TERMS = {
-    "arch": r"\barch\b|a regional coalition for housing",
-    "mfte": r"\bmfte\b|multifamily tax exemption",
-    "inclusionary": r"inclusionary|affordable unit|rent[- ]restricted|income[- ]restricted",
-    "moderate_income": r"moderate[- ]income",
+    "arch": r"\barch\b|a regional coalition for housing", "mfte": r"\bmfte\b|multifamily tax exemption",
+    "inclusionary": r"inclusionary|affordable unit|rent[- ]restricted|income[- ]restricted", "moderate_income": r"moderate[- ]income",
 }
 
 
@@ -97,6 +66,19 @@ def load_json(path):
 
 def save_json(path, data):
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def normalize_results(value):
+    """Accept both the current list format and the legacy {results:{...}} format."""
+    if isinstance(value, list):
+        return value
+    if isinstance(value, dict):
+        nested = value.get("results")
+        if isinstance(nested, dict):
+            return list(nested.values())
+        if isinstance(nested, list):
+            return nested
+    return []
 
 
 def normalize_space(value):
@@ -122,27 +104,7 @@ def extract_signals(text):
     sqft = extract_numbers(r"([0-9]{3,4})\s*(?:sq\.?\s*ft\.?|square\s+feet)", text)
     den_features = sorted({p.strip("\\b") for p in DEN_PATTERNS if re.search(p, lowered)})
     programs = [name for name, pattern in PROGRAM_TERMS.items() if re.search(pattern, lowered)]
-    return {
-        "availability_signals": available,
-        "waitlist_signals": waitlist,
-        "bedroom_types": bedrooms,
-        "rents": sorted(set(rents)),
-        "sqft": sorted(set(sqft)),
-        "features": den_features,
-        "program_signals": programs,
-    }
-
-
-def classify(record, signals, error=None):
-    if error:
-        return "error"
-    if record.get("ha_owned") or record.get("senior_only") or record.get("disability_only") or record.get("low_income_only") or record.get("exclude_reason"):
-        return "excluded"
-    if signals["availability_signals"]:
-        return "available"
-    if signals["waitlist_signals"]:
-        return "waitlist_or_limited"
-    return "unknown"
+    return {"availability_signals": available, "waitlist_signals": waitlist, "bedroom_types": bedrooms, "rents": rents, "sqft": sqft, "features": den_features, "program_signals": programs}
 
 
 def eligibility(property_record):
@@ -153,13 +115,26 @@ def eligibility(property_record):
     if property_record.get("disability_only"):
         return "excluded", "disability-only"
     if property_record.get("low_income_only"):
-        return "excluded", "low-income-only"
+        return "excluded", "100%-low-income-only"
     if property_record.get("exclude_reason"):
         return "excluded", property_record["exclude_reason"]
     programs = {str(x).lower() for x in property_record.get("programs", [])}
     if programs.intersection({"arch", "mfte", "inclusionary", "moderate_income", "moderate-income"}):
         return "included", None
     return "review", None
+
+
+def classify(record, signals, error=None):
+    if error:
+        return "error"
+    eligibility_status, _ = eligibility(record)
+    if eligibility_status == "excluded":
+        return "excluded"
+    if signals["availability_signals"]:
+        return "available"
+    if signals["waitlist_signals"]:
+        return "waitlist_or_limited"
+    return "unknown"
 
 
 def discover_links(base_url, soup):
@@ -186,49 +161,29 @@ def fetch_page(session, url):
 def scan_property(session, item):
     started = datetime.now(timezone.utc).isoformat()
     eligibility_status, exclude_reason = eligibility(item)
-    result = {
-        "name": item.get("name"),
-        "city": item.get("city"),
-        "url": item.get("url"),
-        "eligibility": eligibility_status,
-        "exclude_reason": exclude_reason,
-        "pages_checked": [],
-        "checked_at": started,
-        "status": "excluded" if eligibility_status == "excluded" else "unknown",
-        "details": {},
-        "error": None,
-    }
+    result = {"name": item.get("name"), "city": item.get("city"), "url": item.get("url"), "eligibility": eligibility_status, "exclude_reason": exclude_reason, "pages_checked": [], "checked_at": started, "status": "excluded" if eligibility_status == "excluded" else "unknown", "details": {}, "error": None}
     if item.get("city") not in TARGET_CITIES:
-        result["status"] = "excluded"
-        result["eligibility"] = "excluded"
-        result["exclude_reason"] = "outside target five-city scope"
-        return result
+        result["status"] = "excluded"; result["eligibility"] = "excluded"; result["exclude_reason"] = "outside target five-city scope"; return result
     if eligibility_status == "excluded":
         return result
-
     urls = [item.get("url")]
     for field in ("availability_url", "floor_plans_url", "leasing_url"):
-        if item.get(field):
-            urls.append(item[field])
-
+        if item.get(field): urls.append(item[field])
     all_signals = {"availability_signals": [], "waitlist_signals": [], "bedroom_types": [], "rents": [], "sqft": [], "features": [], "program_signals": []}
     try:
-        first_url, soup, text = fetch_page(session, urls[0])
+        first_url, soup, _ = fetch_page(session, urls[0])
         urls = list(dict.fromkeys([first_url] + urls[1:] + discover_links(first_url, soup)))[:MAX_PAGES_PER_PROPERTY]
         for url in urls:
-            if url in result["pages_checked"]:
-                continue
+            if url in result["pages_checked"]: continue
             try:
-                final_url, page_soup, page_text = fetch_page(session, url)
+                final_url, _, page_text = fetch_page(session, url)
                 result["pages_checked"].append(final_url)
                 signals = extract_signals(page_text)
-                for key in all_signals:
-                    all_signals[key].extend(signals[key])
+                for key in all_signals: all_signals[key].extend(signals[key])
                 time.sleep(POLITE_DELAY_SECONDS)
             except Exception as exc:
                 result["details"].setdefault("page_errors", []).append({"url": url, "error": str(exc)})
-        for key in all_signals:
-            all_signals[key] = sorted(set(all_signals[key]))
+        for key in all_signals: all_signals[key] = sorted(set(all_signals[key]))
         result["details"] = all_signals
         result["min_rent"] = min(all_signals["rents"]) if all_signals["rents"] else None
         result["max_rent"] = max(all_signals["rents"]) if all_signals["rents"] else None
@@ -239,15 +194,14 @@ def scan_property(session, item):
         result["budget_flag"] = bool(result["min_rent"] is not None and result["min_rent"] <= MAX_RENT_NO_UTILITIES)
         result["status"] = classify(item, all_signals)
     except Exception as exc:
-        result["status"] = "error"
-        result["error"] = str(exc)
+        result["status"] = "error"; result["error"] = str(exc)
     return result
 
 
 def main():
     properties = load_json(PROPERTIES_FILE)
-    previous = load_json(RESULTS_FILE) if RESULTS_FILE.exists() else []
-    previous_by_key = {(p.get("city"), p.get("name")): p for p in previous}
+    previous = normalize_results(load_json(RESULTS_FILE)) if RESULTS_FILE.exists() else []
+    previous_by_key = {(p.get("city"), p.get("name")): p for p in previous if isinstance(p, dict)}
     session = requests.Session()
     results = []
     changes = []
@@ -259,7 +213,7 @@ def main():
             changes.append({"property": result.get("name"), "city": result.get("city"), "from": old.get("status"), "to": result.get("status")})
         results.append(result)
     save_json(RESULTS_FILE, results)
-    history = load_json(HISTORY_FILE) if HISTORY_FILE.exists() else []
+    history = normalize_results(load_json(HISTORY_FILE)) if HISTORY_FILE.exists() else []
     history.append({"checked_at": datetime.now(timezone.utc).isoformat(), "properties": len(results), "changes": changes})
     save_json(HISTORY_FILE, history[-100:])
     print(json.dumps({"properties_scanned": len(results), "changes": changes}, indent=2))
