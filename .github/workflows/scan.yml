@@ -1,36 +1,48 @@
 name: Housing Availability Scanner
+
 on:
+  # Run every 2 hours, around the clock.
+  # GitHub cron is UTC; the exact local clock alignment is not important because
+  # the requirement is a two-hour polling interval.
   schedule:
-    - cron: "0 14 * * *"
-    - cron: "0 19 * * *"
-    - cron: "0 1 * * *"
+    - cron: "0 */2 * * *"
   workflow_dispatch:
+
 permissions:
   contents: write
+
+concurrency:
+  group: housing-availability-scan
+  cancel-in-progress: false
+
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+
       - name: Install dependencies
         run: pip install requests beautifulsoup4 lxml
+
       - name: Run scanner
         env:
-          SMTP_USER: <LaTex>${{ secrets.SMTP_USER }}
-          SMTP_PASS: $</LaTex>{{ secrets.SMTP_PASS }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: python scanner.py
+
       - name: Commit and push results
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "Housing Scanner Bot"
-          git add availability_results.json
-          git diff --staged --quiet || git commit -m "chore: scan $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git add availability_results.json scan_history.json
+          git diff --staged --quiet || git commit -m "chore: housing availability scan $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push origin HEAD:main
