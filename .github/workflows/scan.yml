@@ -47,6 +47,9 @@ jobs:
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
         run: python scanner.py
 
+      - name: Quality-control scraped results
+        run: python result_quality.py
+
       - name: Run secondary marketplace lead scanner
         run: python external_scanner.py
 
