@@ -2,7 +2,7 @@ name: Sync scanner data to Supabase
 
 on:
   workflow_run:
-    workflows: ["ARCH + MFTE Availability Scan"]
+    workflows: ["Housing Availability Scanner"]
     types: [completed]
   workflow_dispatch:
 
