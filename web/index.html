@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Decoded Housing — ARCH + MFTE Availability Tracker" />
+  <title>Decoded Housing</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-name">Decoded Housing</div><div class="brand-sub">ARCH + MFTE Availability Tracker</div></div>
+      <nav id="nav">
+        <button class="nav active" data-view="dashboard">▦ <span>Dashboard</span></button>
+        <button class="nav" data-view="availability">☷ <span>Availability</span></button>
+        <button class="nav" data-view="properties">▥ <span>Properties</span></button>
+        <button class="nav" data-view="sources">◉ <span>Sources</span></button>
+        <button class="nav" data-view="alerts">♧ <span>Alerts</span></button>
+      </nav>
+      <div class="integrity">King County, WA<br><br><b>Evidence first.</b><br>Every availability claim shows its source and check time.</div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div><div class="eyebrow">HOUSING INTELLIGENCE</div><h1 id="title">Dashboard</h1></div><button id="refresh" class="button">Refresh data</button></header>
+      <section id="content" class="content"></section>
+    </main>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+</html>
