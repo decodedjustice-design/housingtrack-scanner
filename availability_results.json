@@ -1,1773 +1,4613 @@
-{
-  "last_scan": "2026-09-08T21:36:33.391380+00:00",
-  "total": 134,
-  "available_count": 77,
-  "results": {
-    "888 Bellevue": {
-      "name": "888 Bellevue",
-      "city": "Bellevue",
-      "url": "https://www.888bellevue.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:31:39.955593+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "AMLI Arc": {
-      "name": "AMLI Arc",
-      "city": "Bellevue",
-      "url": "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-bellevue-park/floorplans",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: available now, schedule a tour [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:31:43.739128+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 2400
-    },
-    "AMLI Spring District": {
-      "name": "AMLI Spring District",
-      "city": "Bellevue",
-      "url": "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-spring-district",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour, view available [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:31:45.592724+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 2170
-    },
-    "Alley 111": {
-      "name": "Alley 111",
-      "city": "Bellevue",
-      "url": "https://www.alley111.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:31:47.199554+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Ascent Bellevue": {
-      "name": "Ascent Bellevue",
-      "city": "Bellevue",
-      "url": "https://www.essexapartmenthomes.com/apartments/kirkland/ascent/floor-plans-and-pricing",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:31:48.913012+00:00",
-      "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/kirkland",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Avalon Meydenbauer": {
-      "name": "Avalon Meydenbauer",
-      "city": "Bellevue",
-      "url": "https://www.avaloncommunities.com/washington/bellevue-apartments/avalon-meydenbauer/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: \\d+ available, available.*\\d+ bed [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:31:50.560036+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Bellevue 10": {
-      "name": "Bellevue 10",
-      "city": "Bellevue",
-      "url": "https://bellevue10.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:31:53.740614+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Bellevue Heights": {
-      "name": "Bellevue Heights",
-      "city": "Bellevue",
-      "url": "https://www.bellevue-heights.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: available.*\\d+ bed",
-      "checked_at": "2026-09-08T21:31:55.415401+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Bellevue Meadows": {
-      "name": "Bellevue Meadows",
-      "city": "Bellevue",
-      "url": "https://www.equityapartments.com/seattle/redmond/bellevue-meadows-apartments",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:31:57.338989+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/redmond/bellevue-meado",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Bellevue Ridge": {
-      "name": "Bellevue Ridge",
-      "city": "Bellevue",
-      "url": "https://www.bellevueridgeapts.com",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal | den/loft detected",
-      "checked_at": "2026-09-08T21:31:58.907967+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Borgata": {
-      "name": "Borgata",
-      "city": "Bellevue",
-      "url": "https://www.borgatabellevue.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:32:00.711897+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 900
-    },
-    "Bridle Trails Apartments": {
-      "name": "Bridle Trails Apartments",
-      "city": "Bellevue",
-      "url": "https://www.bridletrailsapts.com",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:32:02.301560+00:00",
-      "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/kirkland",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Brio": {
-      "name": "Brio",
-      "city": "Bellevue",
-      "url": "https://www.udr.com/seattle-apartments/bellevue/brio/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: available.*\\d+ bed [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:32:03.953494+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1863
-    },
-    "Camden Bellevue": {
-      "name": "Camden Bellevue",
-      "city": "Bellevue",
-      "url": "https://www.camdenliving.com/apartments/bellevue-wa/camden-bellevue",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal | 3BR detected, den/loft detected",
-      "checked_at": "2026-09-08T21:32:06.243197+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1799
-    },
-    "Carrington Apartments": {
-      "name": "Carrington Apartments",
-      "city": "Bellevue",
-      "url": "https://www.carringtonplaceredmond.com",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:32:08.302743+00:00",
-      "error": "connection_error",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Catalina Community": {
-      "name": "Catalina Community",
-      "city": "Bellevue",
-      "url": "https://www.catalinabellevue.com",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal | den/loft detected",
-      "checked_at": "2026-09-08T21:32:09.814159+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Cerasa": {
-      "name": "Cerasa",
-      "city": "Bellevue",
-      "url": "https://www.cerasabellevue.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now [den/loft]",
-      "checked_at": "2026-09-08T21:32:12.130274+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "CityScape": {
-      "name": "CityScape",
-      "city": "Bellevue",
-      "url": "https://www.cityscapebellevue.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour, available units [den/loft]",
-      "checked_at": "2026-09-08T21:32:15.049969+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 2095
-    },
-    "Colonial Square": {
-      "name": "Colonial Square",
-      "city": "Bellevue",
-      "url": "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:32:16.953240+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Ellington at Bellevue": {
-      "name": "Ellington at Bellevue",
-      "city": "Bellevue",
-      "url": "https://www.essexapartmenthomes.com/apartments/bellevue/ellington-at-bellevue",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:32:19.826807+00:00",
-      "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/bellevue",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Esterra Apartments Phase II": {
-      "name": "Esterra Apartments Phase II",
-      "city": "Bellevue",
-      "url": "https://esterraapartments.com",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:32:21.391690+00:00",
-      "error": "connection_error",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Excalibur Apartment Homes": {
-      "name": "Excalibur Apartment Homes",
-      "city": "Bellevue",
-      "url": "https://www.excaliburbellevue.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour, check availability [den/loft]",
-      "checked_at": "2026-09-08T21:32:22.918344+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Hanson": {
-      "name": "Hanson",
-      "city": "Bellevue",
-      "url": "https://www.bellevuedowntown.com/go/the-carlyle-condominiums",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal | den/loft detected",
-      "checked_at": "2026-09-08T21:32:26.096763+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Hyde Square": {
-      "name": "Hyde Square",
-      "city": "Bellevue",
-      "url": "https://hydesquare.com/",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal | den/loft detected",
-      "checked_at": "2026-09-08T21:32:27.749826+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Lake Hills Apartments": {
-      "name": "Lake Hills Apartments",
-      "city": "Bellevue",
-      "url": "https://www.lakehillsapts.com",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:32:29.920273+00:00",
-      "error": "connection_error",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Lux": {
-      "name": "Lux",
-      "city": "Bellevue",
-      "url": "https://www.rentatlux.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:32:31.458008+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1000
-    },
-    "Madison Bellevue Apartments": {
-      "name": "Madison Bellevue Apartments",
-      "city": "Bellevue",
-      "url": "https://www.madison-bellevue.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:32:34.928619+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Milano": {
-      "name": "Milano",
-      "city": "Bellevue",
-      "url": "https://www.milanoapts.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: vacancies [den/loft]",
-      "checked_at": "2026-09-08T21:32:37.710288+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Mira Flats": {
-      "name": "Mira Flats",
-      "city": "Bellevue",
-      "url": "https://www.miraflats.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: move-in ready [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:32:39.433338+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Northpoint Apartments": {
-      "name": "Northpoint Apartments",
-      "city": "Bellevue",
-      "url": "https://www.northpointbellevue.com",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:32:41.057632+00:00",
-      "error": "connection_error",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Nuovo": {
-      "name": "Nuovo",
-      "city": "Bellevue",
-      "url": "https://www.nuovobellevue.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:32:42.605150+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Ondina": {
-      "name": "Ondina",
-      "city": "Bellevue",
-      "url": "https://liveondina.com/floorplans/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, available.*\\d+ bed [den/loft]",
-      "checked_at": "2026-09-08T21:32:49.259193+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1944
-    },
-    "Park 88": {
-      "name": "Park 88",
-      "city": "Bellevue",
-      "url": "https://www.park88.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: check availability, vacancies [den/loft]",
-      "checked_at": "2026-09-08T21:32:51.265588+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1000
-    },
-    "Park Bellevue": {
-      "name": "Park Bellevue",
-      "city": "Bellevue",
-      "url": "https://www.rentparkbellevue.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:32:53.135507+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1980
-    },
-    "Park Highlands": {
-      "name": "Park Highlands",
-      "city": "Bellevue",
-      "url": "https://www.essexapartmenthomes.com/apartments/bellevue/park-highland",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:32:54.754654+00:00",
-      "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/bellevue",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Polaris at Eastgate": {
-      "name": "Polaris at Eastgate",
-      "city": "Bellevue",
-      "url": "https://www.liveatpolarisateastgate.com/",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal | 3BR detected, den/loft detected",
-      "checked_at": "2026-09-08T21:32:56.301510+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Redmond Park": {
-      "name": "Redmond Park",
-      "city": "Bellevue",
-      "url": "https://www.redmondparkapts.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: available now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:32:58.285317+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1000
-    },
-    "Sir Gallahad Apartment Homes": {
-      "name": "Sir Gallahad Apartment Homes",
-      "city": "Bellevue",
-      "url": "https://www.sirgallahadbellevue.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour, check availability [den/loft]",
-      "checked_at": "2026-09-08T21:33:01.447154+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Soma Towers": {
-      "name": "Soma Towers",
-      "city": "Bellevue",
-      "url": "https://somatowersapts.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:33:05.327012+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Stokely": {
-      "name": "Stokely",
-      "city": "Bellevue",
-      "url": "https://www.livestokely.com/floorplans/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, available units [den/loft]",
-      "checked_at": "2026-09-08T21:33:08.378152+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Summit Apartments": {
-      "name": "Summit Apartments",
-      "city": "Bellevue",
-      "url": "https://www.livesummitredmond.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:33:11.929213+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "TEN20": {
-      "name": "TEN20",
-      "city": "Bellevue",
-      "url": "https://www.udr.com/seattle-apartments/bellevue/ten20/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: check availability [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:33:13.841985+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1863
-    },
-    "The Ashton Bellevue": {
-      "name": "The Ashton Bellevue",
-      "city": "Bellevue",
-      "url": "https://www.udr.com/seattle-apartments/bellevue/ashton-bellevue/apartments-pricing/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: available floor, \\d+ available [den/loft]",
-      "checked_at": "2026-09-08T21:33:15.782801+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1863
-    },
-    "The Charles": {
-      "name": "The Charles",
-      "city": "Bellevue",
-      "url": "https://www.thecharlesbellevue.com",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:33:18.011685+00:00",
-      "error": "connection_error",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "The Meyden": {
-      "name": "The Meyden",
-      "city": "Bellevue",
-      "url": "https://www.themeydenbellevue.com/floor-plans",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:33:19.600167+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "The Park in Bellevue": {
-      "name": "The Park in Bellevue",
-      "city": "Bellevue",
-      "url": "https://www.rentparkbellevue.com/floor-plans",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:33:21.315515+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "The Regent at Bellevue Way": {
-      "name": "The Regent at Bellevue Way",
-      "city": "Bellevue",
-      "url": "https://www.theregentatbellevueway.com/floorplans",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: available now, schedule a tour [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:33:22.904815+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 2099
-    },
-    "Venn at Main": {
-      "name": "Venn at Main",
-      "city": "Bellevue",
-      "url": "https://www.equityapartments.com/seattle/downtown-bellevue/venn-at-main-apartments",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:33:25.659166+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/downtown-bellevue/venn",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Vicino": {
-      "name": "Vicino",
-      "city": "Bellevue",
-      "url": "https://www.hollandresidential.com/wa/bellevue/vicino",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: now leasing [den/loft]",
-      "checked_at": "2026-09-08T21:33:27.193028+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Vue 22": {
-      "name": "Vue 22",
-      "city": "Bellevue",
-      "url": "https://www.vue22apts.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:33:29.081901+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": false,
-      "min_rent_found": 3000
-    },
-    "Anthology": {
-      "name": "Anthology",
-      "city": "Issaquah",
-      "url": "https://home.securityproperties.com/anthology/issaquah-wa-apartments/anthology-apartments/conventional/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:33:31.789633+00:00",
-      "error": "connection_error",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Boulder Creek": {
-      "name": "Boulder Creek",
-      "city": "Issaquah",
-      "url": "https://www.bouldercreekapts.net/floorplans",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, view available [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:33:33.331110+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Discovery Heights": {
-      "name": "Discovery Heights",
-      "city": "Issaquah",
-      "url": "https://www.discoverywa.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour, check availability [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:33:36.932484+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Highlands at Wynhaven": {
-      "name": "Highlands at Wynhaven",
-      "city": "Issaquah",
-      "url": "https://www.essexapartmenthomes.com/apartments/issaquah/the-highlands-at-wynhaven",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:33:39.782569+00:00",
-      "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/issaquah",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Summerwalk at Klahanie": {
-      "name": "Summerwalk at Klahanie",
-      "city": "Issaquah",
-      "url": "https://www.hollandresidential.com/wa/issaquah/summerwalk-at-klahanie/floorplans",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:33:41.323196+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "The Highlands at Wynhaven": {
-      "name": "The Highlands at Wynhaven",
-      "city": "Issaquah",
-      "url": "https://www.essexapartmenthomes.com/apartments/issaquah/the-highlands-at-wynhaven",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:33:43.060137+00:00",
-      "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/issaquah",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "The Timbers": {
-      "name": "The Timbers",
-      "city": "Issaquah",
-      "url": "https://www.simpsonpropertygroup.com/apartments/issaquah-washington/the-timbers-issaquah/apartment-floor-plans",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: available now, schedule a tour [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:33:44.674533+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 2370
-    },
-    "Vale": {
-      "name": "Vale",
-      "city": "Issaquah",
-      "url": "https://liveatvale.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now [den/loft]",
-      "checked_at": "2026-09-08T21:33:50.251827+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Hiatt Springs": {
-      "name": "Hiatt Springs",
-      "city": "Kenmore",
-      "url": "https://www.kcha.org/housing/city.aspx?city=kenmore",
-      "status": "waitlist",
-      "signal": "waitlist",
-      "details": "Waitlist keywords: not currently accepting",
-      "checked_at": "2026-09-08T21:33:51.807337+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Northlake Grove Cooperative": {
-      "name": "Northlake Grove Cooperative",
-      "city": "Kenmore",
-      "url": "https://www.compasshousingalliance.org/affordable-housing/northlake-grove-cooperative/",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal | den/loft detected",
-      "checked_at": "2026-09-08T21:33:54.522113+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Spencer 68": {
-      "name": "Spencer 68",
-      "city": "Kenmore",
-      "url": "https://www.liveatspencer68.com/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:33:57.019245+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.liveatspencer68.com/",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Ascent": {
-      "name": "Ascent",
-      "city": "Kirkland",
-      "url": "https://www.essexapartmenthomes.com/apartments/kirkland/ascent",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:33:58.636270+00:00",
-      "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/kirkland",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Aspen Townhomes": {
-      "name": "Aspen Townhomes",
-      "city": "Kirkland",
-      "url": "https://www.archhousing.org/affordable-apartment-list",
-      "status": "waitlist_or_limited",
-      "signal": "mixed",
-      "details": "Available: ['vacancies'], Waitlist: ['waitlist']",
-      "checked_at": "2026-09-08T21:34:00.176776+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Boardwalk": {
-      "name": "Boardwalk",
-      "city": "Kirkland",
-      "url": "https://kirklandboardwalk.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now [den/loft]",
-      "checked_at": "2026-09-08T21:34:01.970354+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Crestline Apartments": {
-      "name": "Crestline Apartments",
-      "city": "Kirkland",
-      "url": "https://neiders.com/property/crestline-apartments-washington-kirkland-apartment/",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal | 3BR detected, den/loft detected",
-      "checked_at": "2026-09-08T21:34:03.665977+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1100
-    },
-    "Grata at Totem Lake": {
-      "name": "Grata at Totem Lake",
-      "city": "Kirkland",
-      "url": "https://www.liveatgrata.com/",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal | den/loft detected",
-      "checked_at": "2026-09-08T21:34:05.537655+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Houghton Apartments": {
-      "name": "Houghton Apartments",
-      "city": "Kirkland",
-      "url": "https://www.kcha.org/housing/property.aspx?PropertyID=167",
-      "status": "waitlist_or_limited",
-      "signal": "mixed",
-      "details": "Available: ['vacancies'], Waitlist: ['not currently accepting']",
-      "checked_at": "2026-09-08T21:34:07.509520+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Kirkland Crossing": {
-      "name": "Kirkland Crossing",
-      "city": "Kirkland",
-      "url": "https://www.liveatkirklandcrossing.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:34:10.149413+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "SK Apartments": {
-      "name": "SK Apartments",
-      "city": "Kirkland",
-      "url": "https://www.skapartments.com/?p=1&nocache=1",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:34:13.051017+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.skapartments.com/?p=1&nocache=1",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "The Pine": {
-      "name": "The Pine",
-      "city": "Kirkland",
-      "url": "https://thepinekirkland.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: check availability [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:34:14.711326+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Uplund": {
-      "name": "Uplund",
-      "city": "Kirkland",
-      "url": "https://www.uplundkirkland.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: units available, schedule a tour [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:34:16.689172+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 2055
-    },
-    "Uptown at Kirkland Urban": {
-      "name": "Uptown at Kirkland Urban",
-      "city": "Kirkland",
-      "url": "https://washington.weidner.com/apartments/wa/kirkland/uptown-at-kirkland-urban",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:34:21.275252+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Hadley": {
-      "name": "Hadley",
-      "city": "Mercer Island",
-      "url": "https://hadleymercerisland.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:34:23.059153+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Island Square": {
-      "name": "Island Square",
-      "city": "Mercer Island",
-      "url": "https://www.udr.com/seattle-apartments/mercer-island/island-square/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:34:25.471429+00:00",
-      "error": "404 Client Error: Not Found for url: https://www.udr.com/seattle-apartments/mercer-island/island-squ",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "The Mercer Apartment Homes": {
-      "name": "The Mercer Apartment Homes",
-      "city": "Mercer Island",
-      "url": "https://www.themercer.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:34:27.970662+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Avalon Newcastle": {
-      "name": "Avalon Newcastle",
-      "city": "Newcastle",
-      "url": "https://www.avaloncommunities.com/washington/newcastle-apartments/avalon-newcastle/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:34:30.550659+00:00",
-      "error": "404 Client Error: Not Found for url: https://www.avaloncommunities.com/washington/newcastle-apartmen",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Avalon Newcastle Commons": {
-      "name": "Avalon Newcastle Commons",
-      "city": "Newcastle",
-      "url": "https://www.avaloncommunities.com/washington/newcastle-apartments/avalon-newcastle-commons/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: \\d+ available, available.*\\d+ bed [den/loft]",
-      "checked_at": "2026-09-08T21:34:32.613615+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "The Notch": {
-      "name": "The Notch",
-      "city": "Newcastle",
-      "url": "https://www.equityapartments.com/seattle/newcastle/notch-apartments",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:34:35.504015+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/newcastle/notch-apartm",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Tria": {
-      "name": "Tria",
-      "city": "Newcastle",
-      "url": "https://home.securityproperties.com/tria/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:34:37.056164+00:00",
-      "error": "connection_error",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "AVA Esterra Park": {
-      "name": "AVA Esterra Park",
-      "city": "Redmond",
-      "url": "https://www.avaloncommunities.com/washington/redmond-apartments/ava-esterra-park/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: \\d+ available, available.*\\d+ bed [den/loft]",
-      "checked_at": "2026-09-08T21:34:38.646387+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Allez": {
-      "name": "Allez",
-      "city": "Redmond",
-      "url": "https://www.allezliving.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour, check availability [den/loft]",
-      "checked_at": "2026-09-08T21:34:40.296697+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Aria Flats": {
-      "name": "Aria Flats",
-      "city": "Redmond",
-      "url": "https://ariaredmond.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now [den/loft]",
-      "checked_at": "2026-09-08T21:34:43.788053+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1995
-    },
-    "Avalon Downtown Redmond": {
-      "name": "Avalon Downtown Redmond",
-      "city": "Redmond",
-      "url": "https://www.avaloncommunities.com/washington/redmond-apartments/avalon-downtown-redmond/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:34:45.392554+00:00",
-      "error": "404 Client Error: Not Found for url: https://www.avaloncommunities.com/washington/redmond-apartments",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Avalon ParcSquare": {
-      "name": "Avalon ParcSquare",
-      "city": "Redmond",
-      "url": "https://www.avaloncommunities.com/washington/redmond-apartments/avalon-parcsquare/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: \\d+ available, available.*\\d+ bed [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:34:47.141674+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Avalon at Bear Creek": {
-      "name": "Avalon at Bear Creek",
-      "city": "Redmond",
-      "url": "https://www.avaloncommunities.com/washington/redmond-apartments/avalon-at-bear-creek/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: \\d+ available, available.*\\d+ bed [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:34:49.653810+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Avignon Townhomes": {
-      "name": "Avignon Townhomes",
-      "city": "Redmond",
-      "url": "https://www.avignontownhomes.com/Floor-plans.aspx",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:34:52.555325+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Blackbird": {
-      "name": "Blackbird",
-      "city": "Redmond",
-      "url": "https://www.blackbirdredmond.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:34:54.350728+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "BonTerra": {
-      "name": "BonTerra",
-      "city": "Redmond",
-      "url": "https://bonterraapartments.propertyware.com/about_us.html",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal",
-      "checked_at": "2026-09-08T21:34:56.114763+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Camden Redmond": {
-      "name": "Camden Redmond",
-      "city": "Redmond",
-      "url": "https://www.camdenliving.com/apartments/redmond-wa/camden-redmond",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal | 3BR detected, den/loft detected",
-      "checked_at": "2026-09-08T21:34:58.099479+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1799
-    },
-    "Capella at Esterra Park": {
-      "name": "Capella at Esterra Park",
-      "city": "Redmond",
-      "url": "https://www.capellaesterra.com/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:00.169652+00:00",
-      "error": "connection_error",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Cleveland Square": {
-      "name": "Cleveland Square",
-      "city": "Redmond",
-      "url": "https://www.clevelandsquareredmond.com",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:01.762584+00:00",
-      "error": "connection_error",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Core 83": {
-      "name": "Core 83",
-      "city": "Redmond",
-      "url": "https://www.thecore83.com/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:03.311182+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.thecore83.com/",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Cru": {
-      "name": "Cru",
-      "city": "Redmond",
-      "url": "https://www.cruatwillows.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour, view available [den/loft]",
-      "checked_at": "2026-09-08T21:35:04.967816+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Delano": {
-      "name": "Delano",
-      "city": "Redmond",
-      "url": "https://www.delanoredmond.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: move in today, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:35:07.404429+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Edge": {
-      "name": "Edge",
-      "city": "Redmond",
-      "url": "https://www.edge.apartments/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:10.236101+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.edge.apartments/",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Elan": {
-      "name": "Elan",
-      "city": "Redmond",
-      "url": "https://www.elanredmond.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:35:12.019108+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Elan Redmond": {
-      "name": "Elan Redmond",
-      "city": "Redmond",
-      "url": "https://elanredmond.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:35:14.243760+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Everlight": {
-      "name": "Everlight",
-      "city": "Redmond",
-      "url": "https://everlightapartments.com/floorplans/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: available.*\\d+ bed [den/loft]",
-      "checked_at": "2026-09-08T21:35:16.194534+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 2162
-    },
-    "Heron Flats & Lofts": {
-      "name": "Heron Flats & Lofts",
-      "city": "Redmond",
-      "url": "https://www.liveatheron.com/",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal | den/loft detected",
-      "checked_at": "2026-09-08T21:35:18.291948+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Hue Apartments": {
-      "name": "Hue Apartments",
-      "city": "Redmond",
-      "url": "https://www.liveathue.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:35:20.094046+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Milehouse": {
-      "name": "Milehouse",
-      "city": "Redmond",
-      "url": "https://www.udr.com/seattle-apartments/redmond/milehouse/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:23.072157+00:00",
-      "error": "404 Client Error: Not Found for url: https://www.udr.com/seattle-apartments/redmond/milehouse/",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Modera Overlake": {
-      "name": "Modera Overlake",
-      "city": "Redmond",
-      "url": "https://www.moderaoverlake.com/redmond/modera-overlake/conventional/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:27.873188+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.moderaoverlake.com/redmond/modera-overlake/conventi",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Modera Redmond": {
-      "name": "Modera Redmond",
-      "city": "Redmond",
-      "url": "https://www.moderaredmond.com/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:29.576154+00:00",
-      "error": "403 Client Error: Forbidden for url: https://toto4dcc.org/",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Modera River Trail": {
-      "name": "Modera River Trail",
-      "city": "Redmond",
-      "url": "https://www.moderarivertrail.com/redmond/modera-river-trail/conventional/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:31.654757+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.moderarivertrail.com/redmond/modera-river-trail/con",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Old Town Lofts": {
-      "name": "Old Town Lofts",
-      "city": "Redmond",
-      "url": "https://www.equityapartments.com/seattle/downtown-redmond/old-town-lofts-apartments?mkwid=sIBmEH6BS_dc&pcrid=&pkw=Old%20Town%20Lofts%20Apartments&pmt=e&utm_source=bing&utm_medium=cpc&utm_term=&utm_campaign=&utm_group=Old+Town+Lofts+Apartments&gclsrc=aw.ds",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:33.299213+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/downtown-redmond/old-t",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Overlake Village at Overlake Station": {
-      "name": "Overlake Village at Overlake Station",
-      "city": "Redmond",
-      "url": "https://www.overlakestation.com/floorplans/",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal | den/loft detected",
-      "checked_at": "2026-09-08T21:35:34.833372+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Parc Square": {
-      "name": "Parc Square",
-      "city": "Redmond",
-      "url": "https://www.avaloncommunities.com/washington/redmond-apartments/avalon-parcsquare/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: \\d+ available, available.*\\d+ bed [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:35:36.963103+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Porch and Park": {
-      "name": "Porch and Park",
-      "city": "Redmond",
-      "url": "https://porchandparkredmond.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: check availability [den/loft]",
-      "checked_at": "2026-09-08T21:35:38.732605+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Ravello": {
-      "name": "Ravello",
-      "city": "Redmond",
-      "url": "https://www.liveravello.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:35:40.694603+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Red 160": {
-      "name": "Red 160",
-      "city": "Redmond",
-      "url": "https://www.equityapartments.com/seattle/downtown-redmond/red160-apartments",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:47.159976+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/downtown-redmond/red16",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Redmond Place": {
-      "name": "Redmond Place",
-      "city": "Redmond",
-      "url": "https://www.redmondplaceapts.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:35:48.695478+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Redmond Ridge Apartments": {
-      "name": "Redmond Ridge Apartments",
-      "city": "Redmond",
-      "url": "https://redmondridgeapts.com",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:50.436844+00:00",
-      "error": "connection_error",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Riverpark": {
-      "name": "Riverpark",
-      "city": "Redmond",
-      "url": "https://www.equityapartments.com/seattle/downtown-redmond/riverpark-apartments",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:51.974100+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/downtown-redmond/river",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Shadowbrook Apartments": {
-      "name": "Shadowbrook Apartments",
-      "city": "Redmond",
-      "url": "https://www.essexapartmenthomes.com/apartments/redmond/shadowbrook",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:35:53.519863+00:00",
-      "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/redmond/",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Skyline Redmond": {
-      "name": "Skyline Redmond",
-      "city": "Redmond",
-      "url": "https://www.skylineredmond.com",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, available.*\\d+ bed [den/loft]",
-      "checked_at": "2026-09-08T21:35:55.063748+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Spectra": {
-      "name": "Spectra",
-      "city": "Redmond",
-      "url": "https://spectraapts.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour, check availability [den/loft]",
-      "checked_at": "2026-09-08T21:35:56.879505+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Station House Lofts": {
-      "name": "Station House Lofts",
-      "city": "Redmond",
-      "url": "https://www.stationhouseredmond.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:35:58.890017+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Station House Redmond": {
-      "name": "Station House Redmond",
-      "city": "Redmond",
-      "url": "https://liveatstationhouse.com",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:36:00.689806+00:00",
-      "error": "connection_error",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Talisman": {
-      "name": "Talisman",
-      "city": "Redmond",
-      "url": "https://livetalisman.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:36:02.275897+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "The Bond": {
-      "name": "The Bond",
-      "city": "Redmond",
-      "url": "https://www.thebondredmond.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:36:04.282685+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "The Carter": {
-      "name": "The Carter",
-      "city": "Redmond",
-      "url": "https://www.liveatthecarter.com/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:36:07.565895+00:00",
-      "error": "connection_error",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "The Colony at Bear Creek": {
-      "name": "The Colony at Bear Creek",
-      "city": "Redmond",
-      "url": "https://www.thecolonyatbearcreek.com/redmond-redmond/the-colony-at-bear-creek-the-colony-at-bear-creek/conventional/",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:36:09.557314+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.thecolonyatbearcreek.com/redmond-redmond/the-colony",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "The Docks at Redmond Lakeview": {
-      "name": "The Docks at Redmond Lakeview",
-      "city": "Redmond",
-      "url": "https://www.docksatredmond.com/apartments/wa/redmond/floor-plans",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:36:11.267859+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "The Lodge": {
-      "name": "The Lodge",
-      "city": "Redmond",
-      "url": "https://www.simpsonpropertygroup.com/apartments/redmond-washington/the-lodge-at-redmond-ridge",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: schedule a tour [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:36:13.095878+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 1873
-    },
-    "The Luke": {
-      "name": "The Luke",
-      "city": "Redmond",
-      "url": "https://www.theluke.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:36:14.757386+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "The Spoke": {
-      "name": "The Spoke",
-      "city": "Redmond",
-      "url": "https://thespokeredmond.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now [den/loft]",
-      "checked_at": "2026-09-08T21:36:16.556967+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "The Triangle": {
-      "name": "The Triangle",
-      "city": "Redmond",
-      "url": "https://www.triangleredmond.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now [den/loft]",
-      "checked_at": "2026-09-08T21:36:18.241742+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Townside Flats": {
-      "name": "Townside Flats",
-      "city": "Redmond",
-      "url": "https://townsideflats.com",
-      "status": "waitlist_or_limited",
-      "signal": "mixed",
-      "details": "Available: ['apply now', 'schedule a tour'], Waitlist: ['waitlist']",
-      "checked_at": "2026-09-08T21:36:20.463691+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 2210
-    },
-    "Triangle Redmond": {
-      "name": "Triangle Redmond",
-      "city": "Redmond",
-      "url": "https://triangleredmond.com/floorplans/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now, schedule a tour [den/loft]",
-      "checked_at": "2026-09-08T21:36:22.626323+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true,
-      "min_rent_found": 2572
-    },
-    "Veloce": {
-      "name": "Veloce",
-      "city": "Redmond",
-      "url": "https://www.equityapartments.com/seattle/downtown-redmond/veloce-apartments?mkwid=seWqdJ0YM_dc&pcrid=&pkw=veloce%20apartments%20redmond&pmt=e&utm_source=bing&utm_medium=cpc&utm_term=&utm_campaign=&utm_group=Veloce+Apartments&gclsrc=aw.ds&&utm_source=bing&",
-      "status": "error",
-      "signal": "none",
-      "details": "",
-      "checked_at": "2026-09-08T21:36:24.683551+00:00",
-      "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/downtown-redmond/veloc",
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "eaves Redmond Campus": {
-      "name": "eaves Redmond Campus",
-      "city": "Redmond",
-      "url": "https://www.avaloncommunities.com/washington/redmond-apartments/eaves-redmond-campus/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: \\d+ available, available.*\\d+ bed [3BR, den/loft]",
-      "checked_at": "2026-09-08T21:36:26.220961+00:00",
-      "error": null,
-      "has_3br": true,
-      "has_den": true,
-      "in_budget": true
-    },
-    "SAMM": {
-      "name": "SAMM",
-      "city": "Sammamish",
-      "url": "https://liveatsamm.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: apply now [den/loft]",
-      "checked_at": "2026-09-08T21:36:27.999125+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    },
-    "Sky": {
-      "name": "Sky",
-      "city": "Sammamish",
-      "url": "https://www.liveskysammamish.com/",
-      "status": "unknown",
-      "signal": "none",
-      "details": "No clear availability signal",
-      "checked_at": "2026-09-08T21:36:29.639110+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": false,
-      "in_budget": true
-    },
-    "Eastrail Flats": {
-      "name": "Eastrail Flats",
-      "city": "Woodinville",
-      "url": "https://www.eastrailflatswoodinville.com/",
-      "status": "available",
-      "signal": "strong",
-      "details": "Keywords: move in today, apply now [den/loft]",
-      "checked_at": "2026-09-08T21:36:31.722583+00:00",
-      "error": null,
-      "has_3br": false,
-      "has_den": true,
-      "in_budget": true
-    }
+[
+  {
+    "name": "888 Bellevue",
+    "city": "Bellevue",
+    "url": "https://www.888bellevue.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.888bellevue.com/",
+      "https://www.888bellevue.com/floorplans"
+    ],
+    "checked_at": "2026-09-09T01:39:27.032922+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+now",
+        "check\\s+availability",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        2650.0,
+        2695.0,
+        2795.0,
+        3720.0,
+        3800.0,
+        3890.0,
+        4350.0,
+        5200.0,
+        5300.0
+      ],
+      "sqft": [
+        40.0,
+        71.0,
+        93.0,
+        432.0,
+        542.0,
+        569.0,
+        692.0,
+        738.0,
+        776.0,
+        1040.0,
+        1071.0,
+        1093.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 2650.0,
+    "max_rent": 5300.0,
+    "min_sqft": 40.0,
+    "max_sqft": 1093.0,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Alley 111",
+    "city": "Bellevue",
+    "url": "https://www.alley111.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.alley111.com/",
+      "https://www.alley111.com/floor-plans",
+      "https://www.alley111.com/community-info",
+      "https://www.alley111.com/contact-us",
+      "https://www.alley111.com/floor-plans?bedroom=studio"
+    ],
+    "checked_at": "2026-09-09T01:39:32.067785+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        350.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 350.0,
+    "max_rent": 350.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "AMLI Arc",
+    "city": "Bellevue",
+    "url": "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-bellevue-park/floorplans",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-bellevue-park/floorplans",
+      "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-bellevue-park",
+      "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-bellevue-park/amenities",
+      "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-bellevue-park/location",
+      "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-bellevue-park/contact"
+    ],
+    "checked_at": "2026-09-09T01:39:37.860597+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "available\\s+now",
+        "available\\s+units?",
+        "schedule\\s+a\\s+tour",
+        "view\\s+available"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        150.0,
+        200.0,
+        275.0,
+        280.0,
+        500.0,
+        2400.0,
+        2404.0,
+        2601.0,
+        2605.0,
+        2948.0,
+        2952.0,
+        2970.0,
+        2974.0,
+        3314.0,
+        3318.0,
+        3559.0,
+        3563.0,
+        3754.0,
+        3758.0,
+        3858.0,
+        3862.0,
+        3914.0,
+        3918.0,
+        4076.0,
+        4080.0,
+        30000.0
+      ],
+      "sqft": [
+        245.0,
+        478.0,
+        628.0,
+        958.0
+      ],
+      "features": [
+        "loft",
+        "townhome"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 150.0,
+    "max_rent": 30000.0,
+    "min_sqft": 245.0,
+    "max_sqft": 958.0,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "AMLI Spring District",
+    "city": "Bellevue",
+    "url": "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-spring-district",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-spring-district",
+      "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-spring-district/floorplans",
+      "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-spring-district/amenities",
+      "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-spring-district/location",
+      "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-spring-district/contact"
+    ],
+    "checked_at": "2026-09-09T01:39:46.100869+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "available\\s+now",
+        "available\\s+units?",
+        "schedule\\s+a\\s+tour",
+        "view\\s+available"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        105.0,
+        200.0,
+        230.0,
+        260.0,
+        275.0,
+        500.0,
+        2170.0,
+        2174.0,
+        2266.0,
+        2270.0,
+        2701.0,
+        2705.0,
+        2920.0,
+        2924.0,
+        3016.0,
+        3020.0,
+        3089.0,
+        3093.0,
+        3251.0,
+        3255.0,
+        3877.0,
+        3881.0,
+        4016.0,
+        4020.0,
+        4378.0,
+        4382.0,
+        4385.0,
+        4389.0,
+        5365.0,
+        5369.0,
+        30000.0
+      ],
+      "sqft": [
+        436.0,
+        479.0,
+        708.0,
+        971.0
+      ],
+      "features": [
+        "den",
+        "home\\s+office",
+        "townhome"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 105.0,
+    "max_rent": 30000.0,
+    "min_sqft": 436.0,
+    "max_sqft": 971.0,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Avalon Meydenbauer",
+    "city": "Bellevue",
+    "url": "https://www.avaloncommunities.com/washington/bellevue-apartments/avalon-meydenbauer/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.avaloncommunities.com/washington/bellevue-apartments/avalon-meydenbauer/",
+      "https://www.avaloncommunities.com/",
+      "https://www.avaloncommunities.com/apartment-locations/",
+      "https://www.avaloncommunities.com/about-us/",
+      "https://www.avaloncommunities.com/about-us/esg/"
+    ],
+    "checked_at": "2026-09-09T01:39:53.803537+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        2070.0,
+        2135.0,
+        2265.0,
+        2385.0,
+        2405.0,
+        2475.0,
+        3194.0,
+        3235.0,
+        3391.0,
+        3475.0,
+        3485.0,
+        3683.0,
+        3753.0,
+        4430.0,
+        4975.0,
+        6080.0
+      ],
+      "sqft": [
+        491.0,
+        506.0,
+        601.0,
+        750.0,
+        820.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 2070.0,
+    "max_rent": 6080.0,
+    "min_sqft": 491.0,
+    "max_sqft": 820.0,
+    "three_bedroom": true,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Bellevue 10",
+    "city": "Bellevue",
+    "url": "https://bellevue10.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://bellevue10.com/"
+    ],
+    "checked_at": "2026-09-09T01:40:02.086120+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Bellevue Heights",
+    "city": "Bellevue",
+    "url": "https://www.bellevue-heights.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://sites.google.com/view/bellevueheights/home"
+    ],
+    "checked_at": "2026-09-09T01:40:03.622655+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br"
+      ],
+      "rents": [],
+      "sqft": [
+        1004.0,
+        1028.0,
+        1063.0,
+        1092.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": 1004.0,
+    "max_sqft": 1092.0,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Bellevue Meadows",
+    "city": "Bellevue",
+    "url": "https://www.equityapartments.com/seattle/redmond/bellevue-meadows-apartments",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:40:05.527849+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/redmond/bellevue-meadows-apartments"
+  },
+  {
+    "name": "Bellevue Ridge",
+    "city": "Bellevue",
+    "url": "https://www.bellevueridgeapts.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.bellevueridgeapts.com/",
+      "https://www.bellevueridgeapts.com/apartments/wa/bellevue/residents",
+      "https://www.bellevueridgeapts.com/apartments/wa/bellevue/floor-plans",
+      "https://www.bellevueridgeapts.com/apartments/wa/bellevue/amenities",
+      "https://www.bellevueridgeapts.com/apartments/wa/bellevue/pet-friendly"
+    ],
+    "checked_at": "2026-09-09T01:40:05.656364+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "studio"
+      ],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Borgata",
+    "city": "Bellevue",
+    "url": "https://www.borgatabellevue.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.borgatabellevue.com/",
+      "https://www.borgatabellevue.com/#1701050675",
+      "https://www.borgatabellevue.com/availability"
+    ],
+    "checked_at": "2026-09-09T01:40:11.280388+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "studio"
+      ],
+      "rents": [
+        300.0,
+        900.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 300.0,
+    "max_rent": 900.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Bridle Trails Apartments",
+    "city": "Bellevue",
+    "url": "https://www.bridletrailsapts.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:40:14.834171+00:00",
+    "status": "error",
+    "details": {},
+    "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/kirkland/bridle-trails"
+  },
+  {
+    "name": "Brio",
+    "city": "Bellevue",
+    "url": "https://www.udr.com/seattle-apartments/bellevue/brio/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.udr.com/seattle-apartments/bellevue/brio/",
+      "https://www.udr.com/seattle-apartments/bellevue/brio/#main",
+      "https://www.udr.com/seattle-apartments/bellevue/brio/faq/qualification-requirements/",
+      "https://www.udr.com/leaseoll/floorplan/?pid=140",
+      "https://www.udr.com/seattle-apartments/bellevue/brio/schedule-tour/"
+    ],
+    "checked_at": "2026-09-09T01:40:15.432922+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        1863.0,
+        2199.0,
+        2254.0,
+        2581.0,
+        2699.0,
+        3599.0,
+        4536.0,
+        20000.0
+      ],
+      "sqft": [],
+      "features": [
+        "den"
+      ],
+      "program_signals": [
+        "arch"
+      ]
+    },
+    "error": null,
+    "min_rent": 1863.0,
+    "max_rent": 20000.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Camden Bellevue",
+    "city": "Bellevue",
+    "url": "https://www.camdenliving.com/apartments/bellevue-wa/camden-bellevue",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.camdenliving.com/",
+      "https://www.camdenliving.com/unit-comparison",
+      "https://www.camdenliving.com/apartments/charlotte-nc/camden-blakeney",
+      "https://www.camdenliving.com/blog/discover-elevated-living-at-camden-loso-apartments",
+      "https://www.camdenliving.com/blog/paws-and-polish-mastering-the-art-of-pet-friendly-apartment-living"
+    ],
+    "checked_at": "2026-09-09T01:40:22.422527+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        1799.0
+      ],
+      "sqft": [],
+      "features": [
+        "attached\\s+garage",
+        "townhome"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 1799.0,
+    "max_rent": 1799.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Carrington Apartments",
+    "city": "Bellevue",
+    "url": "https://www.carringtonplaceredmond.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:40:29.980518+00:00",
+    "status": "error",
+    "details": {},
+    "error": "HTTPSConnectionPool(host='www.carringtonplaceredmond.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.carringtonplaceredmond.com', port=443): Failed to resolve 'www.carringtonplaceredmond.com' ([Errno -2] Name or service not known)\"))"
+  },
+  {
+    "name": "Catalina Community",
+    "city": "Bellevue",
+    "url": "https://www.catalinabellevue.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.catalinabellevue.com/",
+      "https://www.catalinabellevue.com/floorplans"
+    ],
+    "checked_at": "2026-09-09T01:40:30.038284+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        400.0,
+        600.0
+      ],
+      "sqft": [
+        9.0,
+        300.0,
+        700.0
+      ],
+      "features": [
+        "den"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 400.0,
+    "max_rent": 600.0,
+    "min_sqft": 9.0,
+    "max_sqft": 700.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Cerasa",
+    "city": "Bellevue",
+    "url": "https://www.cerasabellevue.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.livestokely.com/",
+      "https://www.livestokely.com/floorplans",
+      "https://www.livestokely.com/community"
+    ],
+    "checked_at": "2026-09-09T01:40:35.807284+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+units?"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [],
+      "sqft": [
+        443.0,
+        446.0,
+        555.0,
+        645.0,
+        750.0,
+        751.0,
+        849.0,
+        859.0,
+        890.0,
+        892.0
+      ],
+      "features": [
+        "den",
+        "loft",
+        "w/\\s*den"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": 443.0,
+    "max_sqft": 892.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": false
+  },
+  {
+    "name": "CityScape",
+    "city": "Bellevue",
+    "url": "https://www.cityscapebellevue.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.cityscapebellevue.com/",
+      "https://www.cityscapebellevue.com/#Floorplans",
+      "https://www.cityscapebellevue.com/availability"
+    ],
+    "checked_at": "2026-09-09T01:40:42.736558+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "available\\s+units?",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        750.0,
+        2095.0,
+        2895.0
+      ],
+      "sqft": [
+        519.0,
+        625.0,
+        703.0,
+        905.0,
+        962.0,
+        970.0,
+        985.0
+      ],
+      "features": [
+        "+\\s*den",
+        "den"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 750.0,
+    "max_rent": 2895.0,
+    "min_sqft": 519.0,
+    "max_sqft": 985.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Colonial Square",
+    "city": "Bellevue",
+    "url": "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/",
+      "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/#main-content",
+      "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/index",
+      "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/amenities",
+      "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/petpolicy"
+    ],
+    "checked_at": "2026-09-09T01:40:46.473667+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "studio"
+      ],
+      "rents": [
+        300.0,
+        1685.0,
+        2180.0,
+        2232.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 300.0,
+    "max_rent": 2232.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Ellington at Bellevue",
+    "city": "Bellevue",
+    "url": "https://www.essexapartmenthomes.com/apartments/bellevue/ellington-at-bellevue",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:40:58.002679+00:00",
+    "status": "error",
+    "details": {},
+    "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/bellevue/ellington-at-bellevue"
+  },
+  {
+    "name": "Esterra Apartments Phase II",
+    "city": "Bellevue",
+    "url": "https://esterraapartments.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:40:58.032820+00:00",
+    "status": "error",
+    "details": {},
+    "error": "HTTPSConnectionPool(host='esterraapartments.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='esterraapartments.com', port=443): Failed to resolve 'esterraapartments.com' ([Errno -2] Name or service not known)\"))"
+  },
+  {
+    "name": "Excalibur Apartment Homes",
+    "city": "Bellevue",
+    "url": "https://www.excaliburbellevue.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.excaliburbellevue.com/",
+      "https://www.excaliburbellevue.com/floorplans"
+    ],
+    "checked_at": "2026-09-09T01:40:58.085858+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "available\\s+now",
+        "check\\s+availability",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        2025.0
+      ],
+      "sqft": [
+        373.0,
+        553.0,
+        592.0,
+        777.0,
+        864.0,
+        865.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 2025.0,
+    "max_rent": 2025.0,
+    "min_sqft": 373.0,
+    "max_sqft": 865.0,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Hanson",
+    "city": "Bellevue",
+    "url": "https://www.bellevuedowntown.com/go/the-carlyle-condominiums",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.bellevuedowntown.com/go/the-carlyle-condominiums"
+    ],
+    "checked_at": "2026-09-09T01:41:04.526813+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Hyde Square",
+    "city": "Bellevue",
+    "url": "https://hydesquare.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://hydesquare.com/"
+    ],
+    "checked_at": "2026-09-09T01:41:05.919069+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Lake Hills Apartments",
+    "city": "Bellevue",
+    "url": "https://www.lakehillsapts.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:41:07.348068+00:00",
+    "status": "error",
+    "details": {},
+    "error": "HTTPSConnectionPool(host='www.lakehillsapts.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.lakehillsapts.com', port=443): Failed to resolve 'www.lakehillsapts.com' ([Errno -2] Name or service not known)\"))"
+  },
+  {
+    "name": "Lux",
+    "city": "Bellevue",
+    "url": "https://www.rentatlux.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.rentatlux.com/",
+      "https://www.rentatlux.com/#nudgeTopExtra",
+      "https://www.rentatlux.com/floorplans",
+      "https://www.rentatlux.com/communityevents"
+    ],
+    "checked_at": "2026-09-09T01:41:07.406392+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        1000.0,
+        2020.0,
+        2435.0,
+        2595.0,
+        2632.0,
+        2725.0,
+        2825.0,
+        2850.0,
+        2862.0,
+        2945.0,
+        3295.0,
+        3332.0,
+        3895.0,
+        3932.0,
+        4095.0,
+        4132.0,
+        6195.0,
+        6232.0
+      ],
+      "sqft": [
+        43.0,
+        68.0,
+        161.0,
+        167.0,
+        392.0,
+        722.0,
+        773.0,
+        814.0,
+        845.0,
+        967.0
+      ],
+      "features": [
+        "den"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 1000.0,
+    "max_rent": 6232.0,
+    "min_sqft": 43.0,
+    "max_sqft": 967.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Madison Bellevue Apartments",
+    "city": "Bellevue",
+    "url": "https://www.madison-bellevue.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.madison-bellevue.com/",
+      "https://www.madison-bellevue.com/floorplans",
+      "https://www.madison-bellevue.com/availableunits?beds=1&calledfrom=home",
+      "https://www.madison-bellevue.com/availableunits?beds=2&calledfrom=home"
+    ],
+    "checked_at": "2026-09-09T01:41:17.783725+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+now",
+        "check\\s+availability",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br"
+      ],
+      "rents": [
+        300.0,
+        2150.0,
+        2170.0,
+        2175.0,
+        2255.0,
+        2295.0,
+        2545.0,
+        2550.0,
+        2595.0,
+        3135.0,
+        3235.0,
+        3250.0
+      ],
+      "sqft": [
+        0.0,
+        102.0,
+        103.0,
+        105.0,
+        108.0,
+        201.0,
+        203.0,
+        207.0,
+        212.0,
+        301.0,
+        303.0,
+        306.0,
+        307.0,
+        312.0,
+        662.0,
+        724.0,
+        744.0,
+        748.0,
+        760.0,
+        763.0,
+        950.0,
+        986.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 300.0,
+    "max_rent": 3250.0,
+    "min_sqft": 0.0,
+    "max_sqft": 986.0,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Milano",
+    "city": "Bellevue",
+    "url": "https://www.milanoapts.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.milanoapts.com/",
+      "https://www.milanoapts.com/milano-apartments"
+    ],
+    "checked_at": "2026-09-09T01:41:26.600850+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "vacanc(?:y|ies)"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br"
+      ],
+      "rents": [],
+      "sqft": [],
+      "features": [
+        "townhome"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": false
+  },
+  {
+    "name": "Mira Flats",
+    "city": "Bellevue",
+    "url": "https://www.miraflats.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.miraflats.com/",
+      "https://www.miraflats.com/floor-plans",
+      "https://www.miraflats.com/available-homes"
+    ],
+    "checked_at": "2026-09-09T01:41:29.065901+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "move[- ]?in\\s+(today|ready|now)"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        694.0,
+        702.0,
+        766.0,
+        774.0,
+        863.0,
+        1049.0,
+        1060.0,
+        1109.0,
+        1150.0,
+        1170.0,
+        1180.0,
+        1190.0,
+        40000.0,
+        77900.0,
+        78900.0,
+        79900.0,
+        82400.0,
+        82900.0,
+        84400.0,
+        86400.0,
+        86500.0,
+        87900.0,
+        89900.0,
+        90900.0,
+        91900.0,
+        94900.0,
+        96500.0,
+        98400.0,
+        98900.0,
+        99400.0,
+        99900.0
+      ],
+      "sqft": [
+        189.0,
+        191.0,
+        959.0,
+        964.0,
+        965.0,
+        1057.0,
+        1064.0,
+        1189.0,
+        1191.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 694.0,
+    "max_rent": 99900.0,
+    "min_sqft": 189.0,
+    "max_sqft": 1191.0,
+    "three_bedroom": true,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Northpoint Apartments",
+    "city": "Bellevue",
+    "url": "https://www.northpointbellevue.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:41:32.445606+00:00",
+    "status": "error",
+    "details": {},
+    "error": "HTTPSConnectionPool(host='www.northpointbellevue.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.northpointbellevue.com', port=443): Failed to resolve 'www.northpointbellevue.com' ([Errno -2] Name or service not known)\"))"
+  },
+  {
+    "name": "Nuovo",
+    "city": "Bellevue",
+    "url": "https://www.nuovobellevue.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.nuovobellevue.com/",
+      "https://www.nuovobellevue.com/floorplans"
+    ],
+    "checked_at": "2026-09-09T01:41:32.501558+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        500.0,
+        2156.0,
+        2450.0,
+        2581.0,
+        3156.0
+      ],
+      "sqft": [
+        75.0,
+        566.0,
+        637.0,
+        1075.0
+      ],
+      "features": [
+        "home\\s+office"
+      ],
+      "program_signals": [
+        "inclusionary"
+      ]
+    },
+    "error": null,
+    "min_rent": 500.0,
+    "max_rent": 3156.0,
+    "min_sqft": 75.0,
+    "max_sqft": 1075.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Ondina",
+    "city": "Bellevue",
+    "url": "https://liveondina.com/floorplans/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://liveondina.com/floorplans/"
+    ],
+    "checked_at": "2026-09-09T01:41:38.496731+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Park 88",
+    "city": "Bellevue",
+    "url": "https://www.park88.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.park88.com/",
+      "https://www.park88.com/availability"
+    ],
+    "checked_at": "2026-09-09T01:41:39.902676+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "check\\s+availability",
+        "vacanc(?:y|ies)"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "studio"
+      ],
+      "rents": [
+        1000.0,
+        2499.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 1000.0,
+    "max_rent": 2499.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Park Bellevue",
+    "city": "Bellevue",
+    "url": "https://www.rentparkbellevue.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.rentparkbellevue.com/",
+      "https://www.rentparkbellevue.com/floor-plans"
+    ],
+    "checked_at": "2026-09-09T01:41:42.652968+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "2br"
+      ],
+      "rents": [
+        1980.0,
+        2345.0,
+        2725.0,
+        2910.0,
+        2975.0
+      ],
+      "sqft": [
+        211.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 1980.0,
+    "max_rent": 2975.0,
+    "min_sqft": 211.0,
+    "max_sqft": 211.0,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Park Highlands",
+    "city": "Bellevue",
+    "url": "https://www.essexapartmenthomes.com/apartments/bellevue/park-highland",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:41:45.115064+00:00",
+    "status": "error",
+    "details": {},
+    "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/bellevue/park-highland"
+  },
+  {
+    "name": "Polaris at Eastgate",
+    "city": "Bellevue",
+    "url": "https://www.liveatpolarisateastgate.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.liveatpolarisateastgate.com/",
+      "https://www.liveatpolarisateastgate.com/screen-reader/",
+      "https://www.liveatpolarisateastgate.com/floorplans/",
+      "https://www.liveatpolarisateastgate.com/sisters/"
+    ],
+    "checked_at": "2026-09-09T01:41:45.204488+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+units?"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        150.0,
+        400.0,
+        1000.0,
+        1335.0,
+        1409.0,
+        1768.0
+      ],
+      "sqft": [
+        1335.0,
+        1409.0,
+        1768.0
+      ],
+      "features": [],
+      "program_signals": [
+        "inclusionary"
+      ]
+    },
+    "error": null,
+    "min_rent": 150.0,
+    "max_rent": 1768.0,
+    "min_sqft": 1335.0,
+    "max_sqft": 1768.0,
+    "three_bedroom": true,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Redmond Park",
+    "city": "Bellevue",
+    "url": "https://www.redmondparkapts.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.redmondparkapts.com/"
+    ],
+    "checked_at": "2026-09-09T01:41:50.319979+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Sir Gallahad Apartment Homes",
+    "city": "Bellevue",
+    "url": "https://www.sirgallahadbellevue.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.sirgallahadbellevue.com/",
+      "https://www.sirgallahadbellevue.com/floorplans"
+    ],
+    "checked_at": "2026-09-09T01:41:51.839508+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "available\\s+now",
+        "check\\s+availability",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        2285.0,
+        3239.0
+      ],
+      "sqft": [
+        420.0,
+        498.0,
+        563.0,
+        587.0,
+        761.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 2285.0,
+    "max_rent": 3239.0,
+    "min_sqft": 420.0,
+    "max_sqft": 761.0,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Soma Towers",
+    "city": "Bellevue",
+    "url": "https://somatowersapts.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.somatowersapts.com/",
+      "https://www.somatowersapts.com/floorplans"
+    ],
+    "checked_at": "2026-09-09T01:41:56.887797+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+now",
+        "check\\s+availability",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "4br",
+        "studio"
+      ],
+      "rents": [
+        2102.0,
+        2108.0,
+        2250.0,
+        2256.0,
+        2307.0,
+        2313.0,
+        2391.0,
+        2397.0,
+        2408.0,
+        2414.0,
+        2452.0,
+        2522.0,
+        2528.0,
+        2531.0,
+        2653.0,
+        2741.0,
+        2747.0,
+        2766.0,
+        2772.0,
+        2791.0,
+        2796.0,
+        2797.0,
+        2802.0,
+        2841.0,
+        2847.0,
+        2894.0,
+        2900.0,
+        3048.0,
+        3053.0,
+        3130.0,
+        3287.0,
+        4039.0,
+        4045.0,
+        4209.0,
+        4215.0,
+        4246.0,
+        4650.0,
+        4790.0,
+        4796.0,
+        5250.0,
+        5256.0,
+        5292.0,
+        9996.0,
+        10002.0
+      ],
+      "sqft": [
+        48.0,
+        50.0,
+        90.0,
+        107.0,
+        114.0,
+        116.0,
+        130.0,
+        141.0,
+        145.0,
+        158.0,
+        219.0,
+        260.0,
+        275.0,
+        383.0,
+        432.0,
+        436.0,
+        466.0,
+        468.0,
+        474.0,
+        475.0,
+        493.0,
+        505.0,
+        529.0,
+        534.0,
+        551.0,
+        560.0,
+        572.0,
+        592.0,
+        615.0,
+        633.0,
+        657.0,
+        661.0,
+        662.0,
+        667.0,
+        701.0,
+        707.0,
+        714.0,
+        733.0,
+        737.0,
+        959.0,
+        975.0,
+        977.0,
+        978.0
+      ],
+      "features": [
+        "loft"
+      ],
+      "program_signals": [
+        "arch"
+      ]
+    },
+    "error": null,
+    "min_rent": 2102.0,
+    "max_rent": 10002.0,
+    "min_sqft": 48.0,
+    "max_sqft": 978.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Stokely",
+    "city": "Bellevue",
+    "url": "https://www.livestokely.com/floorplans/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.livestokely.com/floorplans/",
+      "https://www.livestokely.com/floorplans/#floor-1",
+      "https://www.livestokely.com/floorplans/#floor-2",
+      "https://www.livestokely.com/floorplans/#floor-3",
+      "https://www.livestokely.com/floorplans/#floor-4"
+    ],
+    "checked_at": "2026-09-09T01:42:03.762567+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+units?"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [],
+      "sqft": [
+        443.0,
+        446.0,
+        555.0,
+        645.0,
+        750.0,
+        751.0,
+        849.0,
+        859.0,
+        890.0,
+        892.0
+      ],
+      "features": [
+        "den",
+        "loft",
+        "w/\\s*den"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": 443.0,
+    "max_sqft": 892.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": false
+  },
+  {
+    "name": "Summit Apartments",
+    "city": "Bellevue",
+    "url": "https://www.livesummitredmond.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.livesummitredmond.com/",
+      "https://www.livesummitredmond.com/apartments/wa/redmond/apply",
+      "https://www.livesummitredmond.com/apartments/wa/redmond/floor-plans",
+      "https://www.livesummitredmond.com/apartments/wa/redmond/photo-gallery",
+      "https://www.livesummitredmond.com/apartments/wa/redmond/virtual-tour"
+    ],
+    "checked_at": "2026-09-09T01:42:19.309544+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "2br"
+      ],
+      "rents": [
+        130.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 130.0,
+    "max_rent": 130.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "TEN20",
+    "city": "Bellevue",
+    "url": "https://www.udr.com/seattle-apartments/bellevue/ten20/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.udr.com/seattle-apartments/bellevue/ten20/",
+      "https://www.udr.com/seattle-apartments/bellevue/ten20/#main",
+      "https://www.udr.com/seattle-apartments/bellevue/ten20/faq/qualification-requirements/",
+      "https://www.udr.com/leaseoll/floorplan/?pid=35370",
+      "https://www.udr.com/seattle-apartments/bellevue/ten20/schedule-tour/"
+    ],
+    "checked_at": "2026-09-09T01:42:24.897082+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "check\\s+availability",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br"
+      ],
+      "rents": [
+        1863.0,
+        2199.0,
+        2254.0,
+        2699.0,
+        4119.0,
+        5333.0,
+        20000.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 1863.0,
+    "max_rent": 20000.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "The Ashton Bellevue",
+    "city": "Bellevue",
+    "url": "https://www.udr.com/seattle-apartments/bellevue/ashton-bellevue/apartments-pricing/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.udr.com/seattle-apartments/bellevue/ashton-bellevue/apartments-pricing/",
+      "https://www.udr.com/seattle-apartments/bellevue/ashton-bellevue/apartments-pricing/#main",
+      "https://www.udr.com/seattle-apartments/bellevue/ashton-bellevue/",
+      "https://www.udr.com/seattle-apartments/bellevue/ashton-bellevue/faq/qualification-requirements/",
+      "https://www.udr.com/leaseoll/floorplan/?pid=35369"
+    ],
+    "checked_at": "2026-09-09T01:42:31.848914+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "check\\s+availability"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        1863.0,
+        2095.0,
+        2199.0,
+        2254.0,
+        2581.0,
+        2699.0,
+        3221.0,
+        3599.0,
+        4119.0,
+        4870.0,
+        20000.0
+      ],
+      "sqft": [],
+      "features": [
+        "den"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 1863.0,
+    "max_rent": 20000.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "The Charles",
+    "city": "Bellevue",
+    "url": "https://www.thecharlesbellevue.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:42:38.465984+00:00",
+    "status": "error",
+    "details": {},
+    "error": "HTTPSConnectionPool(host='www.thecharlesbellevue.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.thecharlesbellevue.com', port=443): Failed to resolve 'www.thecharlesbellevue.com' ([Errno -2] Name or service not known)\"))"
+  },
+  {
+    "name": "The Meyden",
+    "city": "Bellevue",
+    "url": "https://www.themeydenbellevue.com/floor-plans",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.themeydenbellevue.com/floor-plans/",
+      "https://www.themeydenbellevue.com/floor-plans/"
+    ],
+    "checked_at": "2026-09-09T01:42:38.530458+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "2br",
+        "studio"
+      ],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "The Park in Bellevue",
+    "city": "Bellevue",
+    "url": "https://www.rentparkbellevue.com/floor-plans",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.rentparkbellevue.com/floor-plans"
+    ],
+    "checked_at": "2026-09-09T01:42:40.942873+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "2br"
+      ],
+      "rents": [],
+      "sqft": [
+        211.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": 211.0,
+    "max_sqft": 211.0,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "The Regent at Bellevue Way",
+    "city": "Bellevue",
+    "url": "https://www.theregentatbellevueway.com/floorplans",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.theregentatbellevueway.com/floorplans",
+      "https://www.theregentatbellevueway.com/floorplans#main-content",
+      "https://www.theregentatbellevueway.com/floorplans/1-bedroom-1-bath",
+      "https://www.theregentatbellevueway.com/floorplans/2-bedroom-1.5-bath",
+      "https://www.theregentatbellevueway.com/floorplans/2-bedroom-1.5-bath-townhome"
+    ],
+    "checked_at": "2026-09-09T01:42:42.213009+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "available\\s+now",
+        "available\\s+units?",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br"
+      ],
+      "rents": [
+        2099.0,
+        2107.0,
+        2115.0,
+        2322.0,
+        2330.0,
+        2339.0,
+        2347.0,
+        2899.0,
+        2907.0,
+        2994.0,
+        3002.0,
+        3728.0,
+        3730.0,
+        4103.0,
+        4151.0,
+        4401.0,
+        4409.0,
+        5021.0,
+        5348.0,
+        8513.0
+      ],
+      "sqft": [
+        30.0,
+        34.0,
+        50.0,
+        64.0,
+        70.0,
+        100.0,
+        132.0,
+        145.0,
+        151.0,
+        501.0,
+        856.0
+      ],
+      "features": [
+        "+\\s*den",
+        "den",
+        "townhome"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 2099.0,
+    "max_rent": 8513.0,
+    "min_sqft": 30.0,
+    "max_sqft": 856.0,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Venn at Main",
+    "city": "Bellevue",
+    "url": "https://www.equityapartments.com/seattle/downtown-bellevue/venn-at-main-apartments",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:42:50.931612+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/downtown-bellevue/venn-at-main-apartments"
+  },
+  {
+    "name": "Vicino",
+    "city": "Bellevue",
+    "url": "https://www.hollandresidential.com/wa/bellevue/vicino",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.hollandresidential.com/wa/bellevue/vicino",
+      "https://www.hollandresidential.com/equal-housing-opportunity"
+    ],
+    "checked_at": "2026-09-09T01:42:50.987120+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "now\\s+leasing"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [
+        "townhome"
+      ],
+      "program_signals": [
+        "inclusionary",
+        "mfte"
+      ]
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": false
+  },
+  {
+    "name": "Vue 22",
+    "city": "Bellevue",
+    "url": "https://www.vue22apts.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.vue22apts.com/",
+      "https://www.vue22apts.com/floorplans",
+      "https://www.vue22apts.com/incomerestrictions"
+    ],
+    "checked_at": "2026-09-09T01:42:54.243367+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "available\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        1914.0,
+        1932.0,
+        1998.0,
+        2006.0,
+        2024.0,
+        2028.0,
+        2029.0,
+        2060.0,
+        2118.0,
+        2142.0,
+        2156.0,
+        2161.0,
+        2217.0,
+        2226.0,
+        2249.0,
+        2321.0,
+        2389.0,
+        2409.0,
+        2413.0,
+        2426.0,
+        2446.0,
+        2511.0,
+        2680.0,
+        2781.0,
+        2806.0,
+        2896.0,
+        2981.0,
+        2984.0,
+        3000.0,
+        3026.0,
+        3114.0,
+        3146.0,
+        3155.0,
+        3229.0,
+        3264.0,
+        3299.0,
+        3308.0,
+        3426.0,
+        3474.0,
+        10521.0,
+        11836.0,
+        13152.0,
+        14204.0,
+        92064.0
+      ],
+      "sqft": [
+        28.0,
+        55.0,
+        133.0,
+        144.0,
+        151.0,
+        442.0,
+        506.0,
+        556.0,
+        571.0,
+        590.0,
+        605.0,
+        609.0,
+        644.0,
+        743.0,
+        814.0,
+        825.0,
+        931.0,
+        976.0
+      ],
+      "features": [
+        "loft"
+      ],
+      "program_signals": [
+        "arch",
+        "inclusionary"
+      ]
+    },
+    "error": null,
+    "min_rent": 1914.0,
+    "max_rent": 92064.0,
+    "min_sqft": 28.0,
+    "max_sqft": 976.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Ascent",
+    "city": "Kirkland",
+    "url": "https://www.essexapartmenthomes.com/apartments/kirkland/ascent",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:43:01.506158+00:00",
+    "status": "error",
+    "details": {},
+    "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/kirkland/ascent"
+  },
+  {
+    "name": "Ascent Bellevue",
+    "city": "Kirkland",
+    "url": "https://www.essexapartmenthomes.com/apartments/kirkland/ascent/floor-plans-and-pricing",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:43:01.656917+00:00",
+    "status": "error",
+    "details": {},
+    "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/kirkland/ascent/floor-plans-and-pricing"
+  },
+  {
+    "name": "Aspen Townhomes",
+    "city": "Kirkland",
+    "url": "https://www.archhousing.org/affordable-apartment-list",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.archhousing.org/affordable-apartment-list",
+      "https://www.archhousing.org/affordable-apartment-list#page",
+      "https://www.archhousing.org/apartment-search-tool",
+      "https://www.archhousing.org/upcomingunitsunderconstruction",
+      "https://www.archhousing.org/apply-to-homebuying-process"
+    ],
+    "checked_at": "2026-09-09T01:43:01.683597+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "vacanc(?:y|ies)"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        1439.0,
+        1541.0,
+        1850.0,
+        10000.0,
+        15000.0,
+        57540.0,
+        65760.0,
+        73980.0,
+        82200.0,
+        88776.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": [
+        "arch",
+        "inclusionary",
+        "mfte"
+      ]
+    },
+    "error": null,
+    "min_rent": 1439.0,
+    "max_rent": 88776.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Boardwalk",
+    "city": "Kirkland",
+    "url": "https://kirklandboardwalk.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://kirklandboardwalk.com/",
+      "https://kirklandboardwalk.com/floor-plans/",
+      "https://kirklandboardwalk.com/neighborhood/"
+    ],
+    "checked_at": "2026-09-09T01:43:07.567322+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        500.0,
+        2925.0,
+        3430.0,
+        5195.0,
+        54985.0,
+        62840.0,
+        70695.0,
+        78550.0,
+        84834.0
+      ],
+      "sqft": [],
+      "features": [
+        "+\\s*den",
+        "den",
+        "townhome"
+      ],
+      "program_signals": [
+        "arch",
+        "moderate_income"
+      ]
+    },
+    "error": null,
+    "min_rent": 500.0,
+    "max_rent": 84834.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Crestline Apartments",
+    "city": "Kirkland",
+    "url": "https://neiders.com/property/crestline-apartments-washington-kirkland-apartment/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://neiders.com/property/crestline-apartments-washington-kirkland-apartment/",
+      "https://neiders.com/property/crestline-apartments-washington-kirkland-apartment/#main",
+      "https://neiders.com/properties/washington/?category=communities",
+      "https://neiders.com/properties/nevada/?category=communities",
+      "https://neiders.com/properties/arizona/?category=communities"
+    ],
+    "checked_at": "2026-09-09T01:43:11.136855+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        850.0,
+        895.0,
+        975.0,
+        1000.0,
+        1065.0,
+        1075.0,
+        1100.0,
+        1140.0,
+        1150.0,
+        1175.0,
+        1200.0,
+        1225.0,
+        1250.0,
+        1275.0,
+        1295.0,
+        1325.0,
+        1350.0,
+        1355.0,
+        1375.0,
+        1395.0,
+        1400.0,
+        1425.0,
+        1450.0,
+        1455.0,
+        1475.0,
+        1495.0,
+        1550.0,
+        1575.0,
+        1595.0,
+        1600.0,
+        1625.0,
+        1650.0,
+        1675.0,
+        1710.0,
+        1750.0,
+        1755.0,
+        1770.0,
+        1800.0,
+        1805.0,
+        1815.0,
+        1820.0,
+        1825.0,
+        1850.0,
+        1895.0,
+        1925.0,
+        1965.0,
+        2005.0,
+        2200.0,
+        2350.0,
+        2600.0,
+        2950.0
+      ],
+      "sqft": [
+        100.0,
+        361.0,
+        476.0,
+        540.0,
+        560.0,
+        580.0,
+        600.0,
+        608.0,
+        650.0,
+        674.0,
+        700.0,
+        717.0,
+        720.0,
+        725.0,
+        732.0,
+        750.0,
+        765.0,
+        773.0,
+        788.0,
+        795.0,
+        800.0,
+        840.0,
+        845.0,
+        850.0,
+        860.0,
+        865.0,
+        880.0,
+        888.0,
+        892.0,
+        900.0,
+        908.0,
+        920.0,
+        921.0,
+        925.0,
+        930.0,
+        945.0,
+        950.0,
+        961.0,
+        980.0,
+        1000.0,
+        1008.0,
+        1015.0,
+        1034.0,
+        1035.0,
+        1050.0,
+        1053.0,
+        1060.0,
+        1065.0,
+        1090.0,
+        1100.0,
+        1115.0,
+        1150.0,
+        1180.0,
+        1200.0,
+        1250.0,
+        1372.0,
+        1400.0,
+        1895.0,
+        2050.0
+      ],
+      "features": [
+        "attached\\s+garage",
+        "loft",
+        "townhome"
+      ],
+      "program_signals": [
+        "inclusionary"
+      ]
+    },
+    "error": null,
+    "min_rent": 850.0,
+    "max_rent": 2950.0,
+    "min_sqft": 100.0,
+    "max_sqft": 2050.0,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Grata at Totem Lake",
+    "city": "Kirkland",
+    "url": "https://www.liveatgrata.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.liveatgrata.com/",
+      "https://www.liveatgrata.com/screen-reader/",
+      "https://www.liveatgrata.com/floorplans/",
+      "https://www.liveatgrata.com/community_tour/"
+    ],
+    "checked_at": "2026-09-09T01:43:18.752404+00:00",
+    "status": "waitlist_or_limited",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [
+        "no\\s+availability"
+      ],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "4br",
+        "studio"
+      ],
+      "rents": [
+        100.0,
+        200.0,
+        400.0,
+        500.0,
+        600.0,
+        700.0,
+        800.0,
+        1241.0,
+        1300.0,
+        1398.0,
+        1582.0,
+        1588.0,
+        1615.0,
+        1686.0,
+        1707.0,
+        1808.0,
+        1921.0,
+        1945.0,
+        2008.0,
+        2056.0,
+        2373.0,
+        2658.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": [
+        "inclusionary"
+      ]
+    },
+    "error": null,
+    "min_rent": 100.0,
+    "max_rent": 2658.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": true,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Houghton Apartments",
+    "city": "Kirkland",
+    "url": "https://www.kcha.org/housing/property.aspx?PropertyID=167",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.kcha.org/housing/property.aspx?PropertyID=167",
+      "https://www.kcha.org/housing/vouchers/apply",
+      "https://www.kcha.org/housing/subsidized/apply",
+      "https://www.kcha.org/landlords/leasing",
+      "https://www.kcha.org/employment/apply/"
+    ],
+    "checked_at": "2026-09-09T01:43:23.758160+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "vacanc(?:y|ies)"
+      ],
+      "waitlist_signals": [
+        "not\\s+currently\\s+accepting"
+      ],
+      "bedroom_types": [],
+      "rents": [
+        10500.0,
+        11665.0,
+        12600.0,
+        13535.0,
+        14465.0,
+        15400.0,
+        16335.0,
+        17265.0,
+        34550.0,
+        39450.0,
+        44400.0,
+        49300.0,
+        53250.0,
+        57200.0,
+        61150.0,
+        65100.0,
+        69050.0,
+        73000.0,
+        81700.0,
+        93350.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": [
+        "moderate_income"
+      ]
+    },
+    "error": null,
+    "min_rent": 10500.0,
+    "max_rent": 93350.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Kirkland Crossing",
+    "city": "Kirkland",
+    "url": "https://www.liveatkirklandcrossing.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.liveatkirklandcrossing.com/",
+      "https://www.liveatkirklandcrossing.com/floorplans",
+      "https://www.liveatkirklandcrossing.com/featuredfloorplans/featured-floor-plans",
+      "https://www.liveatkirklandcrossing.com/#fpaModal1"
+    ],
+    "checked_at": "2026-09-09T01:43:36.485046+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        500.0,
+        1985.0,
+        2000.0,
+        2280.0,
+        2450.0,
+        2455.0,
+        2540.0
+      ],
+      "sqft": [
+        149.0,
+        498.0,
+        694.0,
+        748.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 500.0,
+    "max_rent": 2540.0,
+    "min_sqft": 149.0,
+    "max_sqft": 748.0,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "SK Apartments",
+    "city": "Kirkland",
+    "url": "https://www.skapartments.com/?p=1&nocache=1",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:43:47.849549+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://www.skapartments.com/?p=1&nocache=1"
+  },
+  {
+    "name": "The Pine",
+    "city": "Kirkland",
+    "url": "https://thepinekirkland.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://thepinekirkland.com/"
+    ],
+    "checked_at": "2026-09-09T01:43:48.166250+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Uplund",
+    "city": "Kirkland",
+    "url": "https://www.uplundkirkland.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.windsorcommunities.com:443/properties/windsor-totem-lake/",
+      "https://www.windsorcommunities.com:443/properties/windsor-totem-lake/#primary-navigation",
+      "https://www.windsorcommunities.com:443/find-apartments/",
+      "https://www.windsorcommunities.com:443/careers/",
+      "https://www.windsorcommunities.com:443/contact/"
+    ],
+    "checked_at": "2026-09-09T01:43:49.601700+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "schedule\\s+a\\s+tour",
+        "units?\\s+available"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "4br",
+        "studio"
+      ],
+      "rents": [
+        2055.0,
+        2994.0,
+        3744.0
+      ],
+      "sqft": [],
+      "features": [
+        "loft"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 2055.0,
+    "max_rent": 3744.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Uptown at Kirkland Urban",
+    "city": "Kirkland",
+    "url": "https://washington.weidner.com/apartments/wa/kirkland/uptown-at-kirkland-urban",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.uptownkirkland.com/",
+      "https://www.uptownkirkland.com/floor-plans",
+      "https://www.uptownkirkland.com/interactive-leasing"
+    ],
+    "checked_at": "2026-09-09T01:44:02.217698+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "2br",
+        "studio"
+      ],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Allez",
+    "city": "Redmond",
+    "url": "https://www.allezliving.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.allezliving.com/",
+      "https://www.allezliving.com/floorplans"
+    ],
+    "checked_at": "2026-09-09T01:44:06.165748+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "available\\s+now",
+        "check\\s+availability",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        1931.0,
+        2027.0,
+        2162.0,
+        2229.0,
+        2258.0,
+        2266.0,
+        2321.0,
+        2362.0,
+        2417.0,
+        2613.0,
+        2624.0,
+        2642.0,
+        2652.0,
+        2738.0,
+        2957.0,
+        3484.0,
+        3494.0,
+        3580.0,
+        3590.0,
+        3664.0,
+        3921.0
+      ],
+      "sqft": [
+        11.0,
+        17.0,
+        41.0,
+        120.0,
+        139.0,
+        231.0,
+        325.0,
+        544.0,
+        556.0,
+        601.0,
+        602.0,
+        639.0,
+        675.0,
+        681.0,
+        682.0,
+        685.0,
+        696.0,
+        699.0,
+        712.0,
+        717.0,
+        729.0,
+        733.0,
+        736.0,
+        755.0,
+        780.0,
+        811.0,
+        833.0,
+        851.0,
+        886.0,
+        888.0,
+        922.0,
+        940.0,
+        962.0,
+        982.0,
+        992.0
+      ],
+      "features": [
+        "attached\\s+garage",
+        "den",
+        "loft"
+      ],
+      "program_signals": [
+        "arch",
+        "inclusionary"
+      ]
+    },
+    "error": null,
+    "min_rent": 1931.0,
+    "max_rent": 3921.0,
+    "min_sqft": 11.0,
+    "max_sqft": 992.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Aria Flats",
+    "city": "Redmond",
+    "url": "https://ariaredmond.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://ariaredmond.com/",
+      "https://ariaredmond.com/availability/",
+      "https://ariaredmond.com/apartments/",
+      "https://ariaredmond.com/amenities/"
+    ],
+    "checked_at": "2026-09-09T01:44:11.545214+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+units?",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br"
+      ],
+      "rents": [
+        1995.0
+      ],
+      "sqft": [],
+      "features": [
+        "home\\s+office",
+        "loft"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 1995.0,
+    "max_rent": 1995.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "AVA Esterra Park",
+    "city": "Redmond",
+    "url": "https://www.avaloncommunities.com/washington/redmond-apartments/ava-esterra-park/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.avaloncommunities.com/washington/redmond-apartments/ava-esterra-park/",
+      "https://www.avaloncommunities.com/",
+      "https://www.avaloncommunities.com/apartment-locations/",
+      "https://www.avaloncommunities.com/about-us/",
+      "https://www.avaloncommunities.com/about-us/esg/"
+    ],
+    "checked_at": "2026-09-09T01:44:19.220380+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        1875.0,
+        1895.0,
+        1955.0,
+        2000.0,
+        2021.0,
+        2028.0,
+        2075.0,
+        2996.0,
+        3016.0,
+        3077.0,
+        3100.0,
+        3121.0,
+        3151.0,
+        3325.0,
+        3480.0,
+        4980.0
+      ],
+      "sqft": [
+        462.0,
+        485.0,
+        490.0,
+        500.0,
+        521.0,
+        616.0
+      ],
+      "features": [
+        "loft"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 1875.0,
+    "max_rent": 4980.0,
+    "min_sqft": 462.0,
+    "max_sqft": 616.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Avalon at Bear Creek",
+    "city": "Redmond",
+    "url": "https://www.avaloncommunities.com/washington/redmond-apartments/avalon-at-bear-creek/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.avaloncommunities.com/washington/redmond-apartments/avalon-at-bear-creek/",
+      "https://www.avaloncommunities.com/",
+      "https://www.avaloncommunities.com/apartment-locations/",
+      "https://www.avaloncommunities.com/about-us/",
+      "https://www.avaloncommunities.com/about-us/esg/"
+    ],
+    "checked_at": "2026-09-09T01:44:26.949725+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        2196.0,
+        2225.0,
+        2320.0,
+        2655.0,
+        2685.0,
+        2905.0,
+        2960.0,
+        3280.0,
+        3471.0,
+        3475.0,
+        3570.0,
+        4155.0,
+        4215.0,
+        4438.0,
+        4643.0
+      ],
+      "sqft": [
+        761.0,
+        968.0,
+        1132.0
+      ],
+      "features": [
+        "townhome",
+        "townhouse"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 2196.0,
+    "max_rent": 4643.0,
+    "min_sqft": 761.0,
+    "max_sqft": 1132.0,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Avalon Downtown Redmond",
+    "city": "Redmond",
+    "url": "https://www.avaloncommunities.com/washington/redmond-apartments/avalon-downtown-redmond/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:44:33.547715+00:00",
+    "status": "error",
+    "details": {},
+    "error": "404 Client Error: Not Found for url: https://www.avaloncommunities.com/washington/redmond-apartments/avalon-downtown-redmond/"
+  },
+  {
+    "name": "Avalon ParcSquare",
+    "city": "Redmond",
+    "url": "https://www.avaloncommunities.com/washington/redmond-apartments/avalon-parcsquare/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.avaloncommunities.com/washington/redmond-apartments/avalon-parcsquare/",
+      "https://www.avaloncommunities.com/",
+      "https://www.avaloncommunities.com/apartment-locations/",
+      "https://www.avaloncommunities.com/about-us/",
+      "https://www.avaloncommunities.com/about-us/esg/"
+    ],
+    "checked_at": "2026-09-09T01:44:33.944596+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        2370.0,
+        2922.0,
+        3647.0,
+        4422.0,
+        4765.0,
+        4830.0
+      ],
+      "sqft": [
+        763.0,
+        1230.0,
+        1501.0
+      ],
+      "features": [
+        "townhome",
+        "townhouse"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 2370.0,
+    "max_rent": 4830.0,
+    "min_sqft": 763.0,
+    "max_sqft": 1501.0,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Avignon Townhomes",
+    "city": "Redmond",
+    "url": "https://www.avignontownhomes.com/Floor-plans.aspx",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.avignontownhomes.com/Floor-plans.aspx",
+      "https://www.avignontownhomes.com/Floor-plans.aspx#main-content",
+      "https://www.avignontownhomes.com/floor-plans.aspx"
+    ],
+    "checked_at": "2026-09-09T01:44:41.110964+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "4br"
+      ],
+      "rents": [],
+      "sqft": [
+        784.0
+      ],
+      "features": [
+        "attached\\s+garage",
+        "townhome"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": 784.0,
+    "max_sqft": 784.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": false
+  },
+  {
+    "name": "Blackbird",
+    "city": "Redmond",
+    "url": "https://www.blackbirdredmond.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.blackbirdredmond.com/",
+      "https://www.blackbirdredmond.com/apartments/wa/redmond/floor-plans",
+      "https://www.blackbirdredmond.com/apartments/wa/redmond/interactive-map",
+      "https://www.blackbirdredmond.com/apartments/wa/redmond/amenities",
+      "https://www.blackbirdredmond.com/apartments/wa/redmond/pet-friendly"
+    ],
+    "checked_at": "2026-09-09T01:44:44.699444+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "now\\s+leasing",
+        "schedule\\s+a\\s+tour",
+        "view\\s+available"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "2br",
+        "studio"
+      ],
+      "rents": [],
+      "sqft": [],
+      "features": [
+        "loft"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": false
+  },
+  {
+    "name": "BonTerra",
+    "city": "Redmond",
+    "url": "https://bonterraapartments.propertyware.com/about_us.html",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://bonterraapartments.propertyware.com/about_us.html",
+      "https://bonterraapartments.propertyware.com/index.html",
+      "https://bonterraapartments.propertyware.com/tenants.html",
+      "https://bonterraapartments.propertyware.com/owners.html",
+      "https://bonterraapartments.propertyware.com/rentals.html"
+    ],
+    "checked_at": "2026-09-09T01:44:50.451370+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "available\\s+units?"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Camden Redmond",
+    "city": "Redmond",
+    "url": "https://www.camdenliving.com/apartments/redmond-wa/camden-redmond",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.camdenliving.com/",
+      "https://www.camdenliving.com/unit-comparison",
+      "https://www.camdenliving.com/apartments/charlotte-nc/camden-blakeney",
+      "https://www.camdenliving.com/blog/discover-elevated-living-at-camden-loso-apartments",
+      "https://www.camdenliving.com/blog/paws-and-polish-mastering-the-art-of-pet-friendly-apartment-living"
+    ],
+    "checked_at": "2026-09-09T01:44:56.208044+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        1799.0
+      ],
+      "sqft": [],
+      "features": [
+        "attached\\s+garage",
+        "townhome"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 1799.0,
+    "max_rent": 1799.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Capella at Esterra Park",
+    "city": "Redmond",
+    "url": "https://www.capellaesterra.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:45:03.111512+00:00",
+    "status": "error",
+    "details": {},
+    "error": "HTTPSConnectionPool(host='www.capellaesterra.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.capellaesterra.com', port=443): Failed to resolve 'www.capellaesterra.com' ([Errno -2] Name or service not known)\"))"
+  },
+  {
+    "name": "Cleveland Square",
+    "city": "Redmond",
+    "url": "https://www.clevelandsquareredmond.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:45:03.180012+00:00",
+    "status": "error",
+    "details": {},
+    "error": "HTTPSConnectionPool(host='www.clevelandsquareredmond.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.clevelandsquareredmond.com', port=443): Failed to resolve 'www.clevelandsquareredmond.com' ([Errno -2] Name or service not known)\"))"
+  },
+  {
+    "name": "Core 83",
+    "city": "Redmond",
+    "url": "https://www.thecore83.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:45:03.233716+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://www.thecore83.com/"
+  },
+  {
+    "name": "Cru",
+    "city": "Redmond",
+    "url": "https://www.cruatwillows.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.cruatwillows.com/",
+      "https://www.cruatwillows.com/floorplans"
+    ],
+    "checked_at": "2026-09-09T01:45:03.423603+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "available\\s+now",
+        "schedule\\s+a\\s+tour",
+        "view\\s+available"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        1787.0,
+        1795.0,
+        1880.0,
+        1888.0,
+        1991.0,
+        1999.0,
+        2007.0,
+        2062.0,
+        2070.0,
+        2107.0,
+        2115.0,
+        2422.0,
+        2491.0,
+        2499.0,
+        2510.0,
+        2553.0,
+        2634.0,
+        2642.0,
+        2658.0,
+        2712.0,
+        2840.0,
+        2869.0,
+        3035.0,
+        3368.0,
+        3376.0,
+        3428.0,
+        3436.0,
+        4554.0,
+        4623.0
+      ],
+      "sqft": [
+        53.0,
+        100.0,
+        101.0,
+        104.0,
+        177.0,
+        194.0,
+        248.0,
+        480.0,
+        529.0,
+        541.0,
+        545.0,
+        548.0,
+        598.0,
+        612.0,
+        616.0,
+        630.0,
+        631.0,
+        641.0,
+        713.0,
+        717.0,
+        721.0,
+        723.0,
+        740.0,
+        748.0,
+        757.0,
+        771.0,
+        798.0,
+        828.0,
+        829.0,
+        841.0,
+        862.0
+      ],
+      "features": [
+        "den"
+      ],
+      "program_signals": [
+        "arch"
+      ]
+    },
+    "error": null,
+    "min_rent": 1787.0,
+    "max_rent": 4623.0,
+    "min_sqft": 53.0,
+    "max_sqft": 862.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Delano",
+    "city": "Redmond",
+    "url": "https://www.delanoredmond.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.delanoredmond.com/",
+      "https://www.delanoredmond.com/leasingoffers",
+      "https://www.delanoredmond.com/floorplans",
+      "https://www.delanoredmond.com/#fpaModal1"
+    ],
+    "checked_at": "2026-09-09T01:45:10.937157+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+now",
+        "check\\s+availability",
+        "move[- ]?in\\s+(today|ready|now)",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        125.0,
+        150.0,
+        175.0,
+        200.0,
+        225.0,
+        250.0,
+        300.0,
+        500.0,
+        600.0,
+        1000.0,
+        1735.0,
+        1900.0,
+        2000.0,
+        2250.0,
+        2450.0,
+        2850.0,
+        3895.0
+      ],
+      "sqft": [
+        92.0,
+        302.0,
+        443.0,
+        561.0,
+        562.0,
+        575.0,
+        723.0,
+        836.0,
+        839.0,
+        1092.0,
+        1302.0,
+        1562.0
+      ],
+      "features": [
+        "townhouse"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 125.0,
+    "max_rent": 3895.0,
+    "min_sqft": 92.0,
+    "max_sqft": 1562.0,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "eaves Redmond Campus",
+    "city": "Redmond",
+    "url": "https://www.avaloncommunities.com/washington/redmond-apartments/eaves-redmond-campus/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.avaloncommunities.com/washington/redmond-apartments/eaves-redmond-campus/",
+      "https://www.avaloncommunities.com/",
+      "https://www.avaloncommunities.com/apartment-locations/",
+      "https://www.avaloncommunities.com/about-us/",
+      "https://www.avaloncommunities.com/about-us/esg/"
+    ],
+    "checked_at": "2026-09-09T01:45:18.417626+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        2173.0,
+        2175.0,
+        2187.0,
+        2228.0,
+        2415.0,
+        2495.0,
+        3423.0,
+        3425.0,
+        3462.0,
+        3503.0,
+        3665.0,
+        4075.0,
+        5111.0
+      ],
+      "sqft": [
+        565.0,
+        749.0,
+        765.0,
+        867.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 2173.0,
+    "max_rent": 5111.0,
+    "min_sqft": 565.0,
+    "max_sqft": 867.0,
+    "three_bedroom": true,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Edge",
+    "city": "Redmond",
+    "url": "https://www.edge.apartments/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:45:25.287770+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://www.edge.apartments/"
+  },
+  {
+    "name": "Elan",
+    "city": "Redmond",
+    "url": "https://www.elanredmond.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.elanredmond.com/"
+    ],
+    "checked_at": "2026-09-09T01:45:25.698440+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Elan Redmond",
+    "city": "Redmond",
+    "url": "https://elanredmond.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://elanredmond.com/"
+    ],
+    "checked_at": "2026-09-09T01:45:27.280728+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Everlight",
+    "city": "Redmond",
+    "url": "https://everlightapartments.com/floorplans/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://everlightapartments.com/floorplans/"
+    ],
+    "checked_at": "2026-09-09T01:45:28.662735+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Heron Flats & Lofts",
+    "city": "Redmond",
+    "url": "https://www.liveatheron.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.bozzuto.com/apartments-for-rent/wa/redmond/the-heron-flats-and-lofts",
+      "https://www.bozzuto.com/apartments-for-rent/wa/redmond/the-heron-flats-and-lofts#skip-to-main"
+    ],
+    "checked_at": "2026-09-09T01:45:30.154952+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [
+        "loft"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": false
+  },
+  {
+    "name": "Hue Apartments",
+    "city": "Redmond",
+    "url": "https://www.liveathue.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.liveathue.com/",
+      "https://www.liveathue.com/floorplans",
+      "https://www.liveathue.com/floorplans?gadid=null&device=c&network=g&keyword=hue%20apartments&adgroup=168110213466&campaign=21793878607&gclid=EAIaIQobChMI-oXt4_LmiQMVFc3CBB1VLQ_ZEAAYASAAEgLYUfD_BwE",
+      "https://www.liveathue.com/contactus?gadid=716240619492&device=c&network=g&keyword=hue%20apartments&adgroup=168110213466&campaign=21793878607&gclid=EAIaIQobChMI-oXt4_LmiQMVFc3CBB1VLQ_ZEAAYASAAEgLYUfD_BwE",
+      "https://www.liveathue.com/#fpaModal1"
+    ],
+    "checked_at": "2026-09-09T01:45:32.959019+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [],
+      "sqft": [
+        426.0,
+        522.0,
+        557.0,
+        841.0,
+        965.0
+      ],
+      "features": [
+        "+\\s*den",
+        "den",
+        "w/\\s*den"
+      ],
+      "program_signals": [
+        "mfte"
+      ]
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": 426.0,
+    "max_sqft": 965.0,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": false
+  },
+  {
+    "name": "Milehouse",
+    "city": "Redmond",
+    "url": "https://www.udr.com/seattle-apartments/redmond/milehouse/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:45:41.926866+00:00",
+    "status": "error",
+    "details": {},
+    "error": "404 Client Error: Not Found for url: https://www.udr.com/seattle-apartments/redmond/milehouse/"
+  },
+  {
+    "name": "Modera Overlake",
+    "city": "Redmond",
+    "url": "https://www.moderaoverlake.com/redmond/modera-overlake/conventional/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:45:42.187166+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://www.moderaoverlake.com/redmond/modera-overlake/conventional/"
+  },
+  {
+    "name": "Modera Redmond",
+    "city": "Redmond",
+    "url": "https://www.moderaredmond.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:45:42.480383+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://toto4dcc.org/"
+  },
+  {
+    "name": "Modera River Trail",
+    "city": "Redmond",
+    "url": "https://www.moderarivertrail.com/redmond/modera-river-trail/conventional/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:45:43.529197+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://www.moderarivertrail.com/redmond/modera-river-trail/conventional/"
+  },
+  {
+    "name": "Old Town Lofts",
+    "city": "Redmond",
+    "url": "https://www.equityapartments.com/seattle/downtown-redmond/old-town-lofts-apartments?mkwid=sIBmEH6BS_dc&pcrid=&pkw=Old%20Town%20Lofts%20Apartments&pmt=e&utm_source=bing&utm_medium=cpc&utm_term=&utm_campaign=&utm_group=Old+Town+Lofts+Apartments&gclsrc=aw.ds",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:45:43.717703+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/downtown-redmond/old-town-lofts-apartments?mkwid=sIBmEH6BS_dc&pcrid=&pkw=Old%20Town%20Lofts%20Apartments&pmt=e&utm_source=bing&utm_medium=cpc&utm_term=&utm_campaign=&utm_group=Old+Town+Lofts+Apartments&gclsrc=aw.ds"
+  },
+  {
+    "name": "Overlake Village at Overlake Station",
+    "city": "Redmond",
+    "url": "https://www.overlakestation.com/floorplans/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.overlakestation.com/floorplans/",
+      "https://www.overlakestation.com/screen-reader/",
+      "https://www.overlakestation.com/floorplans/#main_content",
+      "https://www.overlakestation.com/floorplans/tour/"
+    ],
+    "checked_at": "2026-09-09T01:45:43.850226+00:00",
+    "status": "waitlist_or_limited",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [
+        "no\\s+availability"
+      ],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        200.0,
+        300.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 200.0,
+    "max_rent": 300.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": true,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Parc Square",
+    "city": "Redmond",
+    "url": "https://www.avaloncommunities.com/washington/redmond-apartments/avalon-parcsquare/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.avaloncommunities.com/washington/redmond-apartments/avalon-parcsquare/",
+      "https://www.avaloncommunities.com/",
+      "https://www.avaloncommunities.com/apartment-locations/",
+      "https://www.avaloncommunities.com/about-us/",
+      "https://www.avaloncommunities.com/about-us/esg/"
+    ],
+    "checked_at": "2026-09-09T01:45:48.708299+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        2370.0,
+        2922.0,
+        3647.0,
+        4422.0,
+        4765.0,
+        4830.0
+      ],
+      "sqft": [
+        763.0,
+        1230.0,
+        1501.0
+      ],
+      "features": [
+        "townhome",
+        "townhouse"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 2370.0,
+    "max_rent": 4830.0,
+    "min_sqft": 763.0,
+    "max_sqft": 1501.0,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "Porch and Park",
+    "city": "Redmond",
+    "url": "https://porchandparkredmond.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://porchandparkredmond.com/"
+    ],
+    "checked_at": "2026-09-09T01:45:54.114967+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Ravello",
+    "city": "Redmond",
+    "url": "https://www.liveravello.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.liveravello.com/",
+      "https://www.liveravello.com/floorplans",
+      "https://www.liveravello.com/featuredfloorplans/featured-floor-plans",
+      "https://www.liveravello.com/#fpaModal1"
+    ],
+    "checked_at": "2026-09-09T01:45:55.466344+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        1910.0,
+        1930.0,
+        2110.0,
+        2495.0,
+        3065.0,
+        3195.0
+      ],
+      "sqft": [
+        148.0,
+        448.0,
+        516.0,
+        518.0,
+        637.0,
+        780.0,
+        931.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 1910.0,
+    "max_rent": 3195.0,
+    "min_sqft": 148.0,
+    "max_sqft": 931.0,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Red 160",
+    "city": "Redmond",
+    "url": "https://www.equityapartments.com/seattle/downtown-redmond/red160-apartments",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:46:05.724186+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/downtown-redmond/red160-apartments"
+  },
+  {
+    "name": "Redmond Place",
+    "city": "Redmond",
+    "url": "https://www.redmondplaceapts.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.redmondplaceapts.com/",
+      "https://www.redmondplaceapts.com/apartments/wa/redmond/floor-plans",
+      "https://www.redmondplaceapts.com/apartments/wa/redmond/photo-gallery",
+      "https://www.redmondplaceapts.com/apartments/wa/redmond/virtual-tour",
+      "https://www.redmondplaceapts.com/apartments/wa/redmond/amenities"
+    ],
+    "checked_at": "2026-09-09T01:46:05.782866+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "3br"
+      ],
+      "rents": [
+        500.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 500.0,
+    "max_rent": 500.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": true,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Redmond Ridge Apartments",
+    "city": "Redmond",
+    "url": "https://redmondridgeapts.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:46:11.315420+00:00",
+    "status": "error",
+    "details": {},
+    "error": "HTTPSConnectionPool(host='redmondridgeapts.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='redmondridgeapts.com', port=443): Failed to resolve 'redmondridgeapts.com' ([Errno -2] Name or service not known)\"))"
+  },
+  {
+    "name": "Riverpark",
+    "city": "Redmond",
+    "url": "https://www.equityapartments.com/seattle/downtown-redmond/riverpark-apartments",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:46:11.371066+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/downtown-redmond/riverpark-apartments"
+  },
+  {
+    "name": "Shadowbrook Apartments",
+    "city": "Redmond",
+    "url": "https://www.essexapartmenthomes.com/apartments/redmond/shadowbrook",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:46:11.435874+00:00",
+    "status": "error",
+    "details": {},
+    "error": "429 Client Error: Too Many Requests for url: https://www.essexapartmenthomes.com/apartments/redmond/shadowbrook"
+  },
+  {
+    "name": "Skyline Redmond",
+    "city": "Redmond",
+    "url": "https://www.skylineredmond.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.skylineredmond.com/",
+      "https://www.skylineredmond.com/apartments/wa/redmond/floor-plans",
+      "https://www.skylineredmond.com/apartments/wa/redmond/gallery",
+      "https://www.skylineredmond.com/apartments/wa/redmond/virtual-tour",
+      "https://www.skylineredmond.com/apartments/wa/redmond/amenities"
+    ],
+    "checked_at": "2026-09-09T01:46:11.604626+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "2br"
+      ],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Spectra",
+    "city": "Redmond",
+    "url": "https://spectraapts.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://spectraapts.com/"
+    ],
+    "checked_at": "2026-09-09T01:46:17.270912+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Station House Lofts",
+    "city": "Redmond",
+    "url": "https://www.stationhouseredmond.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.stationhouseredmond.com/",
+      "https://www.stationhouseredmond.com/apartments/wa/redmond/floor-plans",
+      "https://www.stationhouseredmond.com/apartments/wa/redmond/interactive-map",
+      "https://www.stationhouseredmond.com/apartments/wa/redmond/gallery",
+      "https://www.stationhouseredmond.com/apartments/wa/redmond/virtual-tours"
+    ],
+    "checked_at": "2026-09-09T01:46:18.747743+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [],
+      "sqft": [],
+      "features": [
+        "loft"
+      ],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": true,
+    "budget_flag": false
+  },
+  {
+    "name": "Station House Redmond",
+    "city": "Redmond",
+    "url": "https://liveatstationhouse.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:46:24.361270+00:00",
+    "status": "error",
+    "details": {},
+    "error": "HTTPSConnectionPool(host='liveatstationhouse.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='liveatstationhouse.com', port=443): Failed to resolve 'liveatstationhouse.com' ([Errno -2] Name or service not known)\"))"
+  },
+  {
+    "name": "Talisman",
+    "city": "Redmond",
+    "url": "https://livetalisman.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://livetalisman.com/"
+    ],
+    "checked_at": "2026-09-09T01:46:24.431396+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "The Bond",
+    "city": "Redmond",
+    "url": "https://www.thebondredmond.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.thebondredmond.com/",
+      "https://www.thebondredmond.com/floorplans",
+      "https://www.thebondredmond.com/interactivesitemap",
+      "https://www.thebondredmond.com/mapsanddirections"
+    ],
+    "checked_at": "2026-09-09T01:46:25.836832+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "available\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        2264.0,
+        2297.0,
+        2618.0,
+        2651.0,
+        2982.0,
+        3015.0,
+        3226.0,
+        3259.0,
+        3857.0,
+        4442.0,
+        6226.0,
+        6677.0
+      ],
+      "sqft": [
+        93.0,
+        705.0,
+        768.0,
+        957.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 2264.0,
+    "max_rent": 6677.0,
+    "min_sqft": 93.0,
+    "max_sqft": 957.0,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "The Carter",
+    "city": "Redmond",
+    "url": "https://www.liveatthecarter.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:46:35.199999+00:00",
+    "status": "error",
+    "details": {},
+    "error": "HTTPSConnectionPool(host='www.liveatthecarter.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError(\"HTTPSConnection(host='www.liveatthecarter.com', port=443): Failed to resolve 'www.liveatthecarter.com' ([Errno -3] Temporary failure in name resolution)\"))"
+  },
+  {
+    "name": "The Colony at Bear Creek",
+    "city": "Redmond",
+    "url": "https://www.thecolonyatbearcreek.com/redmond-redmond/the-colony-at-bear-creek-the-colony-at-bear-creek/conventional/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:46:36.297347+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://www.thecolonyatbearcreek.com/redmond-redmond/the-colony-at-bear-creek-the-colony-at-bear-creek/conventional/"
+  },
+  {
+    "name": "The Docks at Redmond Lakeview",
+    "city": "Redmond",
+    "url": "https://www.docksatredmond.com/apartments/wa/redmond/floor-plans",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.docksatredmond.com/apartments/wa/redmond/floor-plans",
+      "https://www.docksatredmond.com/apartments/wa/redmond/amenities",
+      "https://www.docksatredmond.com/apartments/wa/redmond/gallery",
+      "https://www.docksatredmond.com/apartments/wa/redmond/location",
+      "https://www.docksatredmond.com/apartments/wa/redmond/residents"
+    ],
+    "checked_at": "2026-09-09T01:46:36.444408+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "2br"
+      ],
+      "rents": [
+        250.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 250.0,
+    "max_rent": 250.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "The Lodge",
+    "city": "Redmond",
+    "url": "https://www.simpsonpropertygroup.com/apartments/redmond-washington/the-lodge-at-redmond-ridge",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.simpsonpropertygroup.com/apartments/redmond-washington/the-lodge-at-redmond-ridge",
+      "https://www.simpsonpropertygroup.com/apartments/redmond-washington/the-lodge-at-redmond-ridge/apartment-floor-plans",
+      "https://www.simpsonpropertygroup.com/apartments/redmond-washington/the-lodge-at-redmond-ridge/photo-gallery",
+      "https://www.simpsonpropertygroup.com/apartments/redmond-washington/the-lodge-at-redmond-ridge/schedule-tour",
+      "https://www.simpsonpropertygroup.com/apartments/redmond-washington/the-lodge-at-redmond-ridge/resident-portal"
+    ],
+    "checked_at": "2026-09-09T01:46:42.134376+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "available\\s+now",
+        "available\\s+units?",
+        "schedule\\s+a\\s+tour",
+        "see\\s+available",
+        "view\\s+available"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br",
+        "3br",
+        "studio"
+      ],
+      "rents": [
+        1873.0,
+        1973.0,
+        2027.0,
+        2084.0,
+        2414.0,
+        2430.0,
+        2478.0,
+        2664.0,
+        2880.0,
+        3116.0,
+        3216.0,
+        3231.0,
+        3291.0,
+        3785.0,
+        3986.0,
+        4201.0,
+        4261.0
+      ],
+      "sqft": [
+        51.0,
+        249.0,
+        691.0,
+        752.0,
+        973.0,
+        1051.0,
+        1219.0,
+        1249.0,
+        1691.0
+      ],
+      "features": [
+        "attached\\s+garage",
+        "den",
+        "loft",
+        "townhome"
+      ],
+      "program_signals": [
+        "inclusionary"
+      ]
+    },
+    "error": null,
+    "min_rent": 1873.0,
+    "max_rent": 4261.0,
+    "min_sqft": 51.0,
+    "max_sqft": 1691.0,
+    "three_bedroom": true,
+    "den_flex": true,
+    "budget_flag": true
+  },
+  {
+    "name": "The Luke",
+    "city": "Redmond",
+    "url": "https://www.theluke.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.theluke.com/",
+      "https://www.theluke.com/apartments/wa/redmond/amenities",
+      "https://www.theluke.com/apartments/wa/redmond/floor-plans",
+      "https://www.theluke.com/apartments/wa/redmond/gallery",
+      "https://www.theluke.com/apartments/wa/redmond/location"
+    ],
+    "checked_at": "2026-09-09T01:46:48.590760+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "2br",
+        "studio"
+      ],
+      "rents": [
+        350.0
+      ],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 350.0,
+    "max_rent": 350.0,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "The Spoke",
+    "city": "Redmond",
+    "url": "https://thespokeredmond.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://thespokeredmond.com/",
+      "https://thespokeredmond.com/floorplans/"
+    ],
+    "checked_at": "2026-09-09T01:46:54.705557+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "3br",
+        "studio"
+      ],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": true,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "The Triangle",
+    "city": "Redmond",
+    "url": "https://www.triangleredmond.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.triangleredmond.com/"
+    ],
+    "checked_at": "2026-09-09T01:46:57.659695+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Townside Flats",
+    "city": "Redmond",
+    "url": "https://townsideflats.com",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.townsideflats.com/",
+      "https://www.townsideflats.com/content/apply-here",
+      "https://www.townsideflats.com/floorplans",
+      "https://www.townsideflats.com/floorplans/one-bedroom",
+      "https://www.townsideflats.com/floorplans/one-bedroom/1x1-620-sq-ft"
+    ],
+    "checked_at": "2026-09-09T01:46:59.086612+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "check\\s+availability",
+        "schedule\\s+a\\s+tour"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "1br",
+        "2br"
+      ],
+      "rents": [
+        100.0,
+        200.0,
+        400.0,
+        2210.0,
+        2664.0
+      ],
+      "sqft": [
+        620.0,
+        850.0
+      ],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": 100.0,
+    "max_rent": 2664.0,
+    "min_sqft": 620.0,
+    "max_sqft": 850.0,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": true
+  },
+  {
+    "name": "Triangle Redmond",
+    "city": "Redmond",
+    "url": "https://triangleredmond.com/floorplans/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://triangleredmond.com/floorplans/"
+    ],
+    "checked_at": "2026-09-09T01:47:05.838130+00:00",
+    "status": "unknown",
+    "details": {
+      "availability_signals": [],
+      "waitlist_signals": [],
+      "bedroom_types": [],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": false,
+    "den_flex": false,
+    "budget_flag": false
+  },
+  {
+    "name": "Veloce",
+    "city": "Redmond",
+    "url": "https://www.equityapartments.com/seattle/downtown-redmond/veloce-apartments?mkwid=seWqdJ0YM_dc&pcrid=&pkw=veloce%20apartments%20redmond&pmt=e&utm_source=bing&utm_medium=cpc&utm_term=&utm_campaign=&utm_group=Veloce+Apartments&gclsrc=aw.ds&&utm_source=bing&",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [],
+    "checked_at": "2026-09-09T01:47:07.254830+00:00",
+    "status": "error",
+    "details": {},
+    "error": "403 Client Error: Forbidden for url: https://www.equityapartments.com/seattle/downtown-redmond/veloce-apartments?mkwid=seWqdJ0YM_dc&pcrid=&pkw=veloce%20apartments%20redmond&pmt=e&utm_source=bing&utm_medium=cpc&utm_term=&utm_campaign=&utm_group=Veloce+Apartments&gclsrc=aw.ds&&utm_source=bing&"
+  },
+  {
+    "name": "Eastrail Flats",
+    "city": "Woodinville",
+    "url": "https://www.eastrailflatswoodinville.com/",
+    "eligibility": "review",
+    "exclude_reason": null,
+    "pages_checked": [
+      "https://www.eastrailflatswoodinville.com/",
+      "https://www.eastrailflatswoodinville.com/floorplans/"
+    ],
+    "checked_at": "2026-09-09T01:47:07.314684+00:00",
+    "status": "available",
+    "details": {
+      "availability_signals": [
+        "apply\\s+now",
+        "move[- ]?in\\s+(today|ready|now)"
+      ],
+      "waitlist_signals": [],
+      "bedroom_types": [
+        "3br",
+        "studio"
+      ],
+      "rents": [],
+      "sqft": [],
+      "features": [],
+      "program_signals": []
+    },
+    "error": null,
+    "min_rent": null,
+    "max_rent": null,
+    "min_sqft": null,
+    "max_sqft": null,
+    "three_bedroom": true,
+    "den_flex": false,
+    "budget_flag": false
   }
-}
+]
