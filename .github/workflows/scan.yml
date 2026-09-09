@@ -1,11 +1,9 @@
 name: Housing Availability Scanner
 
 on:
-  # Run every 2 hours, around the clock.
   schedule:
     - cron: "0 */2 * * *"
   workflow_dispatch:
-  # Also validate scanner changes immediately when pushed to main.
   push:
     branches: [main]
 
@@ -37,6 +35,9 @@ jobs:
       - name: Prepare canonical five-city inventory
         run: python inventory_prepare.py
 
+      - name: Verify program metadata
+        run: python program_verification.py
+
       - name: Audit target inventory
         run: python inventory_audit.py
 
@@ -53,6 +54,6 @@ jobs:
         run: |
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "Housing Scanner Bot"
-          git add properties_scoped.json inventory_audit.json availability_results.json scan_history.json external_leads.json
+          git add properties_scoped.json program_verification.json inventory_audit.json availability_results.json scan_history.json external_leads.json
           git diff --staged --quiet || git commit -m "chore: housing availability scan $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push origin HEAD:main
