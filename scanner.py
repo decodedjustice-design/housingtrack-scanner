@@ -1,349 +1,485 @@
 #!/usr/bin/env python3
 """
-Housing Tracker Availability Scanner
-Scans property websites for availability keywords and detects changes.
-Sends email alerts when new availability is found.
+ARCH + MFTE Housing Availability Scanner
+
+Purpose:
+- Poll official property availability/floor-plan pages every 2 hours via GitHub Actions.
+- Follow relevant availability/floor-plan/leasing links found on property sites.
+- Extract availability, bedroom, sqft and rent signals when present.
+- Preserve evidence URLs and timestamps so the dashboard can show what was checked.
+- Support eligibility metadata so HA-owned, senior-only, disability-only and
+  low-income-only properties can be excluded without deleting them from the master inventory.
+
+Important: a keyword match is a LEAD, not proof that an affordable unit is currently
+available. The dashboard should display the source URL and last-checked timestamp and
+require verification with the property before an applicant relies on it.
 """
 
 import json
 import os
 import re
 import smtplib
-import sys
 import time
 from datetime import datetime, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
 
-# ── Config ──────────────────────────────────────────────────────────────────
-ALERT_EMAIL = "DecodedJustice@gmail.com"
 RESULTS_FILE = Path("availability_results.json")
+HISTORY_FILE = Path("scan_history.json")
 PROPERTIES_FILE = Path("properties.json")
+ALERT_EMAIL = "DecodedJustice@gmail.com"
 
-# Budget thresholds
+TARGET_CITIES = {"Redmond", "Bellevue", "Bothell", "Kirkland", "Woodinville"}
 MAX_RENT_NO_UTILITIES = 2662
 MAX_RENT_WITH_UTILITIES = 2772
+REQUEST_TIMEOUT = 20
+MAX_PAGES_PER_PROPERTY = 5
+POLITE_DELAY_SECONDS = 1.0
 
-# Keywords that strongly suggest a unit is available NOW
-AVAILABLE_KEYWORDS = [
-    "available now",
-    "move in today",
-    "move-in ready",
-    "ready now",
-    "immediate availability",
-    "units available",
-    "apply now",
-    "schedule a tour",
-    "check availability",
-    "view available",
-    "see available",
-    "available units",
-    "now leasing",
-    "leasing now",
-    "open for leasing",
-    "vacancies",
-    "vacant",
-    "floor plan available",
-    "available floor",
-    r"\d+ available",
-    r"\d+ unit[s]? available",
-    r"available.*\d+ bed",
+AVAILABLE_PATTERNS = [
+    r"available\s+now",
+    r"move[- ]?in\s+(today|ready|now)",
+    r"immediate\s+availability",
+    r"units?\s+available",
+    r"apply\s+now",
+    r"schedule\s+a\s+tour",
+    r"check\s+availability",
+    r"view\s+available",
+    r"see\s+available",
+    r"available\s+units?",
+    r"now\s+leasing",
+    r"leasing\s+now",
+    r"open\s+for\s+leasing",
+    r"vacanc(?:y|ies)",
+    r"floor\s*plan\s+available",
+    r"\b\d+\s+(?:unit|units)\s+available\b",
 ]
 
-# Keywords indicating a 2BR+den/loft/bonus/office/studio-den unit
-DEN_KEYWORDS = [
-    "den", "with den", "+ den", "w/den",
-    "loft", "with loft", "+ loft",
-    "office", "home office", "bonus room",
-    "flex room", "flex space",
-    "attached garage", "townhome", "townhouse",
-    "2 bed 2 bath den", "2br den", "2bd den",
+WAITLIST_PATTERNS = [
+    r"join\s+(?:the\s+)?wait\s*list",
+    r"fully\s+occupied",
+    r"no\s+units?\s+available",
+    r"no\s+availability",
+    r"not\s+currently\s+accepting",
 ]
 
-# Keywords indicating a 3-bedroom unit
-THREE_BR_KEYWORDS = [
-    "3 bedroom", "3-bedroom", "3br", "3 br",
-    "three bedroom", "three-bedroom",
-    "3 bed", "3-bed",
+DEN_PATTERNS = [
+    r"\bden\b", r"\+\s*den\b", r"w/\s*den\b", r"loft",
+    r"home\s+office", r"bonus\s+room", r"flex\s+(?:room|space)",
+    r"attached\s+garage", r"townhome", r"townhouse",
 ]
 
-# Keywords that suggest waitlist / not available
-WAITLIST_KEYWORDS = [
-    "join waitlist",
-    "join the waitlist",
-    "waitlist",
-    "wait list",
-    "no units available",
-    "fully occupied",
-    "no availability",
-    "not currently accepting",
-    "contact for availability",
-]
+BEDROOM_PATTERNS = {
+    "studio": [r"studio"],
+    "1br": [r"\b1\s*(?:br|bed|bedroom)\b", r"one[- ]bedroom"],
+    "2br": [r"\b2\s*(?:br|bed|bedroom)\b", r"two[- ]bedroom"],
+    "3br": [r"\b3\s*(?:br|bed|bedroom)\b", r"three[- ]bedroom"],
+    "4br": [r"\b4\s*(?:br|bed|bedroom)\b", r"four[- ]bedroom"],
+}
 
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/122.0.0.0 Safari/537.36"
+        "Mozilla/5.0 (compatible; ARCH-MFTE-Housing-Tracker/2.0; "
+        "+https://github.com/decodedjustice-design/housingtrack-scanner)"
     ),
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.5",
+    "Accept-Language": "en-US,en;q=0.8",
 }
 
 
-def load_properties():
-    with open(PROPERTIES_FILE) as f:
-        return json.load(f)
-
-
-def load_previous_results():
-    if RESULTS_FILE.exists():
-        with open(RESULTS_FILE) as f:
+def load_json(path, default):
+    if not path.exists():
+        return default
+    try:
+        with open(path, encoding="utf-8") as f:
             return json.load(f)
-    return {}
+    except (OSError, json.JSONDecodeError):
+        return default
 
 
-def check_property(prop):
-    """Check a single property URL for availability signals."""
-    url = prop["url"]
-    name = prop["name"]
-    
-    # Try to find a more specific availability/floor-plans page
-    availability_paths = [
-        "/availability", "/floor-plans", "/floorplans", "/apartments",
-        "/available-apartments", "/available-units", "/apply",
+def save_json(path, value):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(value, f, indent=2, ensure_ascii=False)
+
+
+def normalize_text(value):
+    return re.sub(r"\s+", " ", value or "").strip().lower()
+
+
+def matches_any(text, patterns):
+    return [pattern for pattern in patterns if re.search(pattern, text, flags=re.I)]
+
+
+def extract_rents(text):
+    values = []
+    for match in re.findall(r"\$\s*([\d,]{3,6})(?:\s*(?:/\s*mo|per\s+month|monthly))?", text, flags=re.I):
+        try:
+            amount = int(match.replace(",", ""))
+            if 500 <= amount <= 10000:
+                values.append(amount)
+        except ValueError:
+            continue
+    return sorted(set(values))
+
+
+def extract_sqft(text):
+    values = []
+    patterns = [
+        r"([\d,]{3,5})\s*(?:sq\.?\s*ft|square\s+feet|sf)\b",
+        r"\b([\d,]{3,5})\s*sqft\b",
     ]
-    
-    result = {
-        "name": name,
+    for pattern in patterns:
+        for match in re.findall(pattern, text, flags=re.I):
+            try:
+                value = int(match.replace(",", ""))
+                if 300 <= value <= 5000:
+                    values.append(value)
+            except ValueError:
+                continue
+    return sorted(set(values))
+
+
+def extract_bedrooms(text):
+    found = []
+    for bedroom_type, patterns in BEDROOM_PATTERNS.items():
+        if matches_any(text, patterns):
+            found.append(bedroom_type)
+    return found
+
+
+def eligibility_for_property(prop):
+    """Return inclusion/exclusion classification from explicit property metadata.
+
+    Unknown is intentionally retained rather than guessing from the property name.
+    """
+    programs = {normalize_text(x) for x in prop.get("programs", [])}
+    restrictions = {normalize_text(x) for x in prop.get("restricted_populations", [])}
+    housing_type = normalize_text(prop.get("housing_type", ""))
+    explicit_exclude = normalize_text(prop.get("exclude_reason", ""))
+
+    if prop.get("ha_owned") is True or "kcha" in housing_type or "housing authority" in housing_type:
+        return "excluded", "HA-owned/managed"
+    if prop.get("senior_only") is True or "senior" in restrictions:
+        return "excluded", "senior/age restricted"
+    if prop.get("disability_only") is True or "disability-only" in restrictions:
+        return "excluded", "disability-only"
+    if prop.get("low_income_only") is True:
+        return "excluded", "low-income-only"
+    if explicit_exclude:
+        return "excluded", explicit_exclude
+
+    # If explicit ARCH/MFTE metadata exists, include it.
+    if programs.intersection({"arch", "mfte", "inclusionary", "moderate-income", "moderate income"}):
+        return "included", "qualifying program metadata"
+    if prop.get("affordability_levels"):
+        return "included", "affordability metadata present"
+
+    return "review", "eligibility metadata not yet verified"
+
+
+def discover_relevant_links(base_url, soup):
+    """Find availability/floor-plan/leasing links without crawling a whole domain."""
+    keywords = (
+        "availability", "available", "floor", "floorplan", "floor-plan",
+        "apartments", "units", "leasing", "rentals", "pricing", "apply",
+    )
+    links = []
+    base_host = urlparse(base_url).netloc.lower()
+    for anchor in soup.find_all("a", href=True):
+        href = urljoin(base_url, anchor.get("href", ""))
+        if not href.startswith(("http://", "https://")):
+            continue
+        if urlparse(href).netloc.lower() != base_host:
+            continue
+        label = normalize_text(anchor.get_text(" ", strip=True))
+        haystack = f"{label} {href.lower()}"
+        if any(keyword in haystack for keyword in keywords):
+            if href not in links:
+                links.append(href)
+        if len(links) >= MAX_PAGES_PER_PROPERTY - 1:
+            break
+    return links
+
+
+def fetch_page(session, url):
+    response = session.get(url, headers=HEADERS, timeout=REQUEST_TIMEOUT, allow_redirects=True)
+    response.raise_for_status()
+    content_type = response.headers.get("content-type", "").lower()
+    if "html" not in content_type and not response.text.lstrip().startswith(("<!doctype", "<html", "<HTML")):
+        return None, "non_html"
+    return BeautifulSoup(response.text, "html.parser"), None
+
+
+def analyze_pages(prop, pages):
+    all_text = []
+    availability = []
+    waitlist = []
+    bedrooms = set()
+    rents = set()
+    sqft = set()
+    den = False
+
+    for url, soup in pages:
+        text = normalize_text(soup.get_text(" ", strip=True))
+        all_text.append(text)
+        availability.extend(matches_any(text, AVAILABLE_PATTERNS))
+        waitlist.extend(matches_any(text, WAITLIST_PATTERNS))
+        bedrooms.update(extract_bedrooms(text))
+        rents.update(extract_rents(text))
+        sqft.update(extract_sqft(text))
+        den = den or bool(matches_any(text, DEN_PATTERNS))
+
+    available_hits = sorted(set(availability))
+    waitlist_hits = sorted(set(waitlist))
+    eligibility_status, eligibility_reason = eligibility_for_property(prop)
+
+    if available_hits and not waitlist_hits:
+        status = "available"
+        signal = "strong"
+    elif available_hits and waitlist_hits:
+        status = "waitlist_or_limited"
+        signal = "mixed"
+    elif waitlist_hits:
+        status = "waitlist"
+        signal = "waitlist"
+    else:
+        status = "unknown"
+        signal = "none"
+
+    min_rent = min(rents) if rents else None
+    in_budget = None if min_rent is None else min_rent <= MAX_RENT_WITH_UTILITIES
+
+    return {
+        "name": prop["name"],
         "city": prop["city"],
-        "url": url,
-        "status": "unknown",
-        "signal": "none",
-        "details": "",
+        "url": prop["url"],
+        "status": status,
+        "signal": signal,
+        "availability_signals": available_hits[:10],
+        "waitlist_signals": waitlist_hits[:10],
+        "bedroom_types_detected": sorted(bedrooms),
+        "has_3br": "3br" in bedrooms,
+        "has_den_or_flex": den,
+        "rents_found": sorted(rents)[:20],
+        "min_rent_found": min_rent,
+        "sqft_found": sorted(sqft)[:20],
+        "in_budget": in_budget,
+        "eligibility_status": eligibility_status,
+        "eligibility_reason": eligibility_reason,
+        "pages_checked": [url for url, _ in pages],
+        "details": (
+            f"Availability signals: {', '.join(available_hits[:3]) or 'none'}; "
+            f"bedrooms: {', '.join(sorted(bedrooms)) or 'not detected'}; "
+            f"rent: {('$' + format(min_rent, ',') if min_rent else 'not detected')}"
+        ),
         "checked_at": datetime.now(timezone.utc).isoformat(),
         "error": None,
-        "has_3br": False,
-        "has_den": False,
-        "in_budget": True,
     }
-    
+
+
+def check_property(session, prop):
+    if prop.get("city") not in TARGET_CITIES:
+        return None
+
+    eligibility_status, eligibility_reason = eligibility_for_property(prop)
+    # Excluded properties remain in the inventory, but we do not poll them.
+    if eligibility_status == "excluded":
+        return {
+            "name": prop["name"],
+            "city": prop["city"],
+            "url": prop["url"],
+            "status": "excluded",
+            "signal": "excluded",
+            "eligibility_status": "excluded",
+            "eligibility_reason": eligibility_reason,
+            "pages_checked": [],
+            "checked_at": datetime.now(timezone.utc).isoformat(),
+            "error": None,
+        }
+
+    pages = []
+    errors = []
+    candidate_urls = [prop["url"]]
+
+    # Explicit pages supplied in properties.json take priority.
+    for key in ("availability_url", "floor_plans_url", "leasing_url"):
+        value = prop.get(key)
+        if value and value not in candidate_urls:
+            candidate_urls.append(value)
+
     try:
-        # First try the base URL
-        resp = requests.get(url, headers=HEADERS, timeout=15, allow_redirects=True)
-        resp.raise_for_status()
-        text_lower = resp.text.lower()
-        soup = BeautifulSoup(resp.text, "html.parser")
-        page_text = soup.get_text(" ", strip=True).lower()
-        
-        # Check for availability keywords
-        found_available = []
-        for kw in AVAILABLE_KEYWORDS:
-            if re.search(kw, page_text):
-                found_available.append(kw)
-        
-        found_waitlist = []
-        for kw in WAITLIST_KEYWORDS:
-            if kw in page_text:
-                found_waitlist.append(kw)
-        
-        # Check for 3BR and den/loft unit types
-        found_3br = [kw for kw in THREE_BR_KEYWORDS if kw in page_text]
-        found_den = [kw for kw in DEN_KEYWORDS if kw in page_text]
-        result["has_3br"] = len(found_3br) > 0
-        result["has_den"] = len(found_den) > 0
-        
-        # Check for rent prices to see if in budget
-        rent_matches = re.findall(r'\$([\d,]+)(?:/mo|\.?\s*per month|\s*month)?', page_text)
-        rents = []
-        for m in rent_matches:
-            try:
-                rents.append(int(m.replace(',', '')))
-            except ValueError:
-                pass
-        # Filter to plausible apartment rents (800-6000)
-        rents = [r for r in rents if 800 <= r <= 6000]
-        if rents:
-            min_rent = min(rents)
-            result["in_budget"] = min_rent <= MAX_RENT_WITH_UTILITIES
-            result["min_rent_found"] = min_rent
-        
-        if found_available and not found_waitlist:
-            result["status"] = "available"
-            result["signal"] = "strong"
-            unit_notes = []
-            if found_3br: unit_notes.append("3BR")
-            if found_den: unit_notes.append("den/loft")
-            unit_str = f" [{', '.join(unit_notes)}]" if unit_notes else ""
-            result["details"] = f"Keywords: {', '.join(found_available[:2])}{unit_str}"
-        elif found_available and found_waitlist:
-            result["status"] = "waitlist_or_limited"
-            result["signal"] = "mixed"
-            result["details"] = f"Available: {found_available[:2]}, Waitlist: {found_waitlist[:2]}"
-        elif found_waitlist:
-            result["status"] = "waitlist"
-            result["signal"] = "waitlist"
-            result["details"] = f"Waitlist keywords: {', '.join(found_waitlist[:3])}"
-        else:
-            result["status"] = "unknown"
-            result["signal"] = "none"
-            type_notes = []
-            if found_3br: type_notes.append("3BR detected")
-            if found_den: type_notes.append("den/loft detected")
-            result["details"] = "No clear availability signal" + (f" | {', '.join(type_notes)}" if type_notes else "")
-            
-    except requests.exceptions.Timeout:
-        result["error"] = "timeout"
-        result["status"] = "error"
-    except requests.exceptions.ConnectionError:
-        result["error"] = "connection_error"
-        result["status"] = "error"
-    except Exception as e:
-        result["error"] = str(e)[:100]
-        result["status"] = "error"
-    
+        soup, error = fetch_page(session, prop["url"])
+        if soup:
+            pages.append((prop["url"], soup))
+            for discovered in discover_relevant_links(prop["url"], soup):
+                if discovered not in candidate_urls:
+                    candidate_urls.append(discovered)
+    except Exception as exc:
+        errors.append(f"base: {str(exc)[:120]}")
+
+    # Fetch the most relevant pages only. This avoids hammering a property site.
+    for url in candidate_urls[1:MAX_PAGES_PER_PROPERTY]:
+        try:
+            soup, error = fetch_page(session, url)
+            if soup:
+                pages.append((url, soup))
+            elif error:
+                errors.append(f"{url}: {error}")
+        except Exception as exc:
+            errors.append(f"{url}: {str(exc)[:120]}")
+        time.sleep(POLITE_DELAY_SECONDS)
+
+    if not pages:
+        return {
+            "name": prop["name"],
+            "city": prop["city"],
+            "url": prop["url"],
+            "status": "error",
+            "signal": "error",
+            "eligibility_status": eligibility_status,
+            "eligibility_reason": eligibility_reason,
+            "pages_checked": [],
+            "checked_at": datetime.now(timezone.utc).isoformat(),
+            "error": "; ".join(errors)[:500],
+        }
+
+    result = analyze_pages(prop, pages)
+    result["error"] = "; ".join(errors)[:500] if errors else None
     return result
 
 
+def detect_changes(current_results, previous_results):
+    previous = previous_results.get("results", previous_results) if isinstance(previous_results, dict) else {}
+    new_available = []
+    newly_gone = []
+
+    for name, current in current_results.items():
+        if current.get("eligibility_status") == "excluded":
+            continue
+        previous_item = previous.get(name, {})
+        old_status = previous_item.get("status", "unknown")
+        new_status = current.get("status", "unknown")
+        if new_status == "available" and old_status != "available":
+            new_available.append(current)
+        elif old_status == "available" and new_status not in ("available", "error"):
+            newly_gone.append(current)
+    return new_available, newly_gone
+
+
 def send_email_alert(new_available, newly_gone, smtp_user, smtp_pass):
-    """Send email alert for availability changes."""
     if not new_available and not newly_gone:
         return
-    
+
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = f"🏠 Housing Alert: {len(new_available)} new opening(s) detected"
+    msg["Subject"] = f"Housing Tracker Alert: {len(new_available)} new opening(s)"
     msg["From"] = smtp_user
     msg["To"] = ALERT_EMAIL
-    
-    # Build HTML email
-    html_parts = ["""
-    <html><body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-    <h2 style="color: #1e40af;">🏠 Housing Tracker Alert</h2>
-    <p style="color: #6b7280;">Scan completed: """ + datetime.now().strftime("%B %d, %Y at %I:%M %p") + """</p>
-    """]
-    
+
+    html = [
+        "<html><body style='font-family:Arial,sans-serif;max-width:700px;margin:auto'>",
+        "<h2>ARCH + MFTE Housing Tracker</h2>",
+        f"<p>Scan: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}</p>",
+    ]
+
     if new_available:
-        html_parts.append("""
-        <h3 style="color: #16a34a;">✅ Newly Available (%d properties)</h3>
-        <table style="width:100%%; border-collapse: collapse;">
-        <tr style="background:#f0fdf4;">
-            <th style="padding:8px; text-align:left; border:1px solid #bbf7d0;">Property</th>
-            <th style="padding:8px; text-align:left; border:1px solid #bbf7d0;">City</th>
-            <th style="padding:8px; text-align:left; border:1px solid #bbf7d0;">Signal</th>
-            <th style="padding:8px; text-align:left; border:1px solid #bbf7d0;">Link</th>
-        </tr>
-        """ % len(new_available))
-        for p in new_available:
-            tags = []
-            if p.get('has_3br'): tags.append('<span style="background:#ede9fe;color:#4c1d95;padding:2px 6px;border-radius:4px;font-size:11px;">3BR</span>')
-            if p.get('has_den'): tags.append('<span style="background:#fef3c7;color:#92400e;padding:2px 6px;border-radius:4px;font-size:11px;">den/loft</span>')
-            if not p.get('in_budget', True): tags.append('<span style="background:#fee2e2;color:#991b1b;padding:2px 6px;border-radius:4px;font-size:11px;">over budget</span>')
-            tag_str = ' '.join(tags)
-            html_parts.append(f"""
-        <tr>
-            <td style="padding:8px; border:1px solid #d1fae5;"><strong>{p['name']}</strong><br>{tag_str}</td>
-            <td style="padding:8px; border:1px solid #d1fae5;">{p['city']}</td>
-            <td style="padding:8px; border:1px solid #d1fae5; font-size:12px; color:#6b7280;">{p.get('details','')}</td>
-            <td style="padding:8px; border:1px solid #d1fae5;"><a href="{p['url']}">Visit →</a></td>
-        </tr>""")
-        html_parts.append("</table>")
-    
+        html.append(f"<h3>New availability detected ({len(new_available)})</h3><ul>")
+        for item in new_available:
+            html.append(
+                f"<li><strong>{item['name']}</strong> ({item['city']}) — "
+                f"{item.get('details','')} — "
+                f"<a href='{item['url']}'>source</a></li>"
+            )
+        html.append("</ul>")
+
     if newly_gone:
-        html_parts.append("""
-        <h3 style="color: #dc2626; margin-top:24px;">❌ No Longer Available (%d properties)</h3>
-        <ul>""" % len(newly_gone))
-        for p in newly_gone:
-            html_parts.append(f"<li><strong>{p['name']}</strong> ({p['city']}) — <a href='{p['url']}'>check site</a></li>")
-        html_parts.append("</ul>")
-    
-    html_parts.append("""
-    <hr style="margin-top:24px; border:none; border-top:1px solid #e5e7eb;">
-    <p style="color:#9ca3af; font-size:12px;">
-        This alert was sent by the <strong>ARCH + Market Rate Housing Tracker</strong> automated scanner.<br>
-        Scans run 3× daily at 7am, 12pm, and 6pm PT.<br>
-        <a href="https://housingtrack-x59yrvfp.manus.space">View full tracker →</a>
-    </p>
-    </body></html>""")
-    
-    html_body = "".join(html_parts)
-    msg.attach(MIMEText(html_body, "html"))
-    
-    try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
-            server.login(smtp_user, smtp_pass)
-            server.sendmail(smtp_user, ALERT_EMAIL, msg.as_string())
-        print(f"✅ Alert email sent to {ALERT_EMAIL}")
-    except Exception as e:
-        print(f"⚠️  Email send failed: {e}")
+        html.append(f"<h3>No longer showing availability ({len(newly_gone)})</h3><ul>")
+        for item in newly_gone:
+            html.append(
+                f"<li><strong>{item['name']}</strong> ({item['city']}) — "
+                f"<a href='{item['url']}'>recheck source</a></li>"
+            )
+        html.append("</ul>")
+
+    html.append(
+        "<p style='font-size:12px;color:#777'>A scan signal is not a guarantee of an affordable-unit vacancy. "
+        "Verify the unit, AMI restriction, rent, eligibility and application status with the property.</p>"
+        "</body></html>"
+    )
+    msg.attach(MIMEText("\n".join(html), "html"))
+
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+        server.login(smtp_user, smtp_pass)
+        server.sendmail(smtp_user, ALERT_EMAIL, msg.as_string())
 
 
 def main():
-    print(f"🔍 Housing Tracker Scanner — {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}")
-    
-    properties = load_properties()
-    previous = load_previous_results()
-    
-    print(f"   Scanning {len(properties)} properties...")
-    
+    started = datetime.now(timezone.utc)
+    properties = load_json(PROPERTIES_FILE, [])
+    previous = load_json(RESULTS_FILE, {})
+
+    session = requests.Session()
     current_results = {}
-    new_available = []
-    newly_gone = []
-    
-    for i, prop in enumerate(properties):
-        name = prop["name"]
-        print(f"   [{i+1}/{len(properties)}] {name}...", end=" ", flush=True)
-        
-        result = check_property(prop)
-        current_results[name] = result
-        
-        prev_status = previous.get(name, {}).get("status", "unknown")
-        curr_status = result["status"]
-        
-        print(curr_status)
-        
-        # Detect changes
-        if curr_status == "available" and prev_status not in ("available",):
-            new_available.append(result)
-        elif prev_status == "available" and curr_status not in ("available",):
-            newly_gone.append(result)
-        
-        # Be polite to servers
-        time.sleep(1.5)
-    
-    # Save results
-    with open(RESULTS_FILE, "w") as f:
-        json.dump({
-            "last_scan": datetime.now(timezone.utc).isoformat(),
-            "total": len(current_results),
-            "available_count": sum(1 for r in current_results.values() if r["status"] == "available"),
-            "results": current_results,
-        }, f, indent=2)
-    
-    print(f"\n📊 Summary:")
-    print(f"   Available: {sum(1 for r in current_results.values() if r['status'] == 'available')}")
-    print(f"   Waitlist:  {sum(1 for r in current_results.values() if r['status'] == 'waitlist')}")
-    print(f"   Unknown:   {sum(1 for r in current_results.values() if r['status'] == 'unknown')}")
-    print(f"   Errors:    {sum(1 for r in current_results.values() if r['status'] == 'error')}")
-    print(f"\n🔔 Changes:")
-    print(f"   Newly available: {len(new_available)}")
-    print(f"   Newly gone:      {len(newly_gone)}")
-    
-    # Send email if there are changes
+
+    eligible_properties = [p for p in properties if p.get("city") in TARGET_CITIES]
+    print(f"Housing Tracker Scanner — {started.isoformat()}")
+    print(f"Inventory: {len(properties)} | Target-city records: {len(eligible_properties)}")
+
+    for index, prop in enumerate(eligible_properties, start=1):
+        print(f"[{index}/{len(eligible_properties)}] {prop['name']} ({prop['city']})")
+        result = check_property(session, prop)
+        if result:
+            current_results[prop["name"]] = result
+        time.sleep(POLITE_DELAY_SECONDS)
+
+    summary = {
+        "available": sum(1 for r in current_results.values() if r.get("status") == "available"),
+        "waitlist": sum(1 for r in current_results.values() if r.get("status") == "waitlist"),
+        "unknown": sum(1 for r in current_results.values() if r.get("status") == "unknown"),
+        "error": sum(1 for r in current_results.values() if r.get("status") == "error"),
+        "excluded": sum(1 for r in current_results.values() if r.get("status") == "excluded"),
+        "review": sum(1 for r in current_results.values() if r.get("eligibility_status") == "review"),
+    }
+
+    new_available, newly_gone = detect_changes(current_results, previous)
+
+    payload = {
+        "last_scan": datetime.now(timezone.utc).isoformat(),
+        "target_cities": sorted(TARGET_CITIES),
+        "total": len(current_results),
+        "summary": summary,
+        "newly_available_count": len(new_available),
+        "newly_gone_count": len(newly_gone),
+        "results": current_results,
+    }
+    save_json(RESULTS_FILE, payload)
+
+    history = load_json(HISTORY_FILE, [])
+    if not isinstance(history, list):
+        history = []
+    history.append({
+        "scan_at": payload["last_scan"],
+        "summary": summary,
+        "newly_available": [r["name"] for r in new_available],
+        "newly_gone": [r["name"] for r in newly_gone],
+    })
+    save_json(HISTORY_FILE, history[-500:])
+
     smtp_user = os.environ.get("SMTP_USER", "")
     smtp_pass = os.environ.get("SMTP_PASS", "")
-    
     if (new_available or newly_gone) and smtp_user and smtp_pass:
-        send_email_alert(new_available, newly_gone, smtp_user, smtp_pass)
-    elif new_available or newly_gone:
-        print("⚠️  Changes detected but SMTP credentials not set — skipping email")
-    else:
-        print("   No changes detected — no email sent")
-    
-    print("\n✅ Scan complete.")
+        try:
+            send_email_alert(new_available, newly_gone, smtp_user, smtp_pass)
+            print("Alert email sent.")
+        except Exception as exc:
+            print(f"Alert email failed: {exc}")
+
+    print(json.dumps(summary, indent=2))
+    print(f"New availability: {len(new_available)} | Newly gone: {len(newly_gone)}")
 
 
 if __name__ == "__main__":
