@@ -1,7 +1,7 @@
 name: Deploy Decoded Housing Web
 on:
   push:
-    branches: [decoded-housing-web]
+    branches: [main]
     paths:
       - 'web/**'
       - '.github/workflows/pages.yml'
