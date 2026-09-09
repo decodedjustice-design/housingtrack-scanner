@@ -1,0 +1,24 @@
+{
+  "target_cities": ["Redmond", "Bellevue", "Bothell", "Kirkland", "Woodinville"],
+  "programs_in_scope": ["ARCH", "MFTE", "inclusionary", "moderate-income"],
+  "exclude_if_explicit": [
+    "HA-owned/managed",
+    "senior/age restricted",
+    "disability-only",
+    "low-income-only"
+  ],
+  "mixed_income_rule": "Keep a property when it has qualifying ARCH/MFTE/moderate-income units even if the same property also has lower-income units. Exclude only when the relevant inventory is exclusively within an excluded category.",
+  "authoritative_sources": [
+    {
+      "name": "ARCH Affordable Housing Apartment List",
+      "url": "https://www.archhousing.org/affordable-apartment-list",
+      "role": "East King County affordable-rental inventory and property-level program context"
+    },
+    {
+      "name": "ARCH Apartment Search Tool",
+      "url": "https://www.archhousing.org/apartment-search-tool",
+      "role": "Cross-check for current ARCH apartment communities"
+    }
+  ],
+  "verification_rule": "A listing signal is not treated as proof of a qualifying vacancy. Program eligibility, bedroom, rent, income restriction, and current availability must be verified against the property/leasing source."
+}
