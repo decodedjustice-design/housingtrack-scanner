@@ -1,0 +1,63 @@
+{
+  "purpose": "Secondary listing leads for ARCH/MFTE and qualifying moderate-income apartments. External listings are leads only and never establish program eligibility or current availability without verification.",
+  "sources": [
+    {
+      "name": "Craigslist",
+      "type": "search",
+      "enabled": true,
+      "cities": ["Redmond", "Bellevue", "Bothell", "Kirkland", "Woodinville"],
+      "query_terms": ["MFTE", "ARCH", "affordable", "income restricted", "moderate income"],
+      "verification_required": true,
+      "notes": "Use public search/RSS endpoints where available; do not treat generic affordable-housing results as proof of ARCH/MFTE eligibility."
+    },
+    {
+      "name": "Zumper",
+      "type": "search",
+      "enabled": true,
+      "cities": ["Redmond", "Bellevue", "Bothell", "Kirkland", "Woodinville"],
+      "query_terms": ["MFTE", "ARCH", "income restricted", "affordable", "moderate income"],
+      "verification_required": true,
+      "notes": "Capture listing URL, property name, advertised rent, bedroom count and posted/updated timestamp when publicly exposed."
+    },
+    {
+      "name": "Apartments.com",
+      "type": "search",
+      "enabled": true,
+      "cities": ["Redmond", "Bellevue", "Bothell", "Kirkland", "Woodinville"],
+      "query_terms": ["MFTE", "ARCH", "income restricted", "affordable"],
+      "verification_required": true
+    },
+    {
+      "name": "Apartment Finder",
+      "type": "search",
+      "enabled": true,
+      "cities": ["Redmond", "Bellevue", "Bothell", "Kirkland", "Woodinville"],
+      "query_terms": ["MFTE", "ARCH", "income restricted", "affordable"],
+      "verification_required": true
+    },
+    {
+      "name": "Property official site",
+      "type": "primary",
+      "enabled": true,
+      "cities": ["Redmond", "Bellevue", "Bothell", "Kirkland", "Woodinville"],
+      "query_terms": ["availability", "floor plans", "units", "leasing", "pricing"],
+      "verification_required": true,
+      "notes": "Primary evidence source. Scanner follows explicit availability/floor-plan/leasing URLs and relevant internal links."
+    }
+  ],
+  "lead_statuses": [
+    "new",
+    "seen",
+    "changed",
+    "verified",
+    "stale",
+    "rejected"
+  ],
+  "verification_rules": {
+    "official_property_page": "preferred",
+    "external_listing": "secondary",
+    "program_eligibility": "must_be_confirmed_from_property_or_program_source",
+    "availability": "must_be_confirmed_from_current_property_or_leasing_source",
+    "rent": "advertised_rent_is_not_necessarily_the_qualifying_MFTE_or_ARCH_rent"
+  }
+}
