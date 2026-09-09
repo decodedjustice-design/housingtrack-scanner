@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Build a verification queue for the five-city ARCH/MFTE rental inventory.
 
-This does not guess eligibility. It separates verified program records from
-properties that still require source confirmation, and explicitly flags HA,
-senior, disability-only and low-income-only exclusions.
+Eligibility rule: exclude properties where the entire property is designated
+as low-income/income-restricted housing, including properties operated by
+charities/nonprofits or offered at reduced rents. Do not exclude mixed-income
+properties merely because they contain some affordable units; mixed-income
+ARCH/MFTE properties remain eligible when their program is otherwise relevant.
 """
 import json
 from pathlib import Path
@@ -20,6 +22,35 @@ def norm(v):
     return str(v or "").strip().lower()
 
 
+def truthy(v):
+    return v is True or norm(v) in {"true", "yes", "1", "y"}
+
+
+def fully_low_income(p):
+    """Return True only when metadata says the whole property is low-income."""
+    flags = (
+        "low_income_only",
+        "all_units_income_restricted",
+        "all_units_low_income",
+        "100_percent_low_income",
+        "fully_income_restricted",
+    )
+    if any(truthy(p.get(flag)) for flag in flags):
+        return True
+
+    housing_type = norm(p.get("housing_type"))
+    operator_type = norm(p.get("operator_type"))
+    operator = norm(p.get("operator"))
+    low_income_markers = {"low-income-only", "low income only", "income-restricted only", "affordable-only"}
+    if housing_type in low_income_markers:
+        return True
+    if operator_type in {"charity", "nonprofit", "non-profit"} and truthy(p.get("all_units_restricted")):
+        return True
+    if operator and any(x in operator for x in {"charity", "nonprofit", "non-profit"}) and truthy(p.get("all_units_restricted")):
+        return True
+    return False
+
+
 def classify(p):
     programs = {norm(x) for x in p.get("programs", [])}
     restrictions = {norm(x) for x in p.get("restricted_populations", [])}
@@ -31,8 +62,8 @@ def classify(p):
         return "excluded", "senior/age restricted"
     if p.get("disability_only") is True or "disability-only" in restrictions:
         return "excluded", "disability-only"
-    if p.get("low_income_only") is True:
-        return "excluded", "low-income-only"
+    if fully_low_income(p):
+        return "excluded", "100% low-income/income-restricted property"
     if programs & PROGRAMS:
         return "verified_program", "explicit ARCH/MFTE/moderate-income metadata"
     if p.get("affordability_levels"):
