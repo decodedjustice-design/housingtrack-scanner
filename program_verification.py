@@ -1,17 +1,16 @@
 #!/usr/bin/env python3
-"""Build a verification queue for the five-city ARCH/MFTE rental inventory.
+"""Build a verification queue for the canonical five-city ARCH/MFTE rental inventory.
 
 Eligibility rule: exclude properties where the entire property is designated
 as low-income/income-restricted housing, including properties operated by
 charities/nonprofits or offered at reduced rents. Do not exclude mixed-income
-properties merely because they contain some affordable units; mixed-income
-ARCH/MFTE properties remain eligible when their program is otherwise relevant.
+properties merely because they contain some affordable units.
 """
 import json
 from pathlib import Path
 from datetime import datetime, timezone
 
-PROPERTIES = Path("properties.json")
+PROPERTIES = Path("properties_scoped.json")
 OUT = Path("program_verification.json")
 TARGET_CITIES = {"Bellevue", "Redmond", "Bothell", "Kirkland", "Woodinville"}
 EXCLUDED_HOUSING_TYPES = {"kcha", "housing authority"}
@@ -27,17 +26,12 @@ def truthy(v):
 
 
 def fully_low_income(p):
-    """Return True only when metadata says the whole property is low-income."""
     flags = (
-        "low_income_only",
-        "all_units_income_restricted",
-        "all_units_low_income",
-        "100_percent_low_income",
-        "fully_income_restricted",
+        "low_income_only", "all_units_income_restricted", "all_units_low_income",
+        "100_percent_low_income", "fully_income_restricted",
     )
     if any(truthy(p.get(flag)) for flag in flags):
         return True
-
     housing_type = norm(p.get("housing_type"))
     operator_type = norm(p.get("operator_type"))
     operator = norm(p.get("operator"))
@@ -55,7 +49,6 @@ def classify(p):
     programs = {norm(x) for x in p.get("programs", [])}
     restrictions = {norm(x) for x in p.get("restricted_populations", [])}
     housing_type = norm(p.get("housing_type"))
-
     if p.get("ha_owned") is True or housing_type in EXCLUDED_HOUSING_TYPES:
         return "excluded", "HA-owned/managed"
     if p.get("senior_only") is True or "senior" in restrictions:
@@ -95,7 +88,6 @@ def main():
             "needs_human_verification": status == "needs_program_confirmation",
             "checked_at": datetime.now(timezone.utc).isoformat(),
         })
-
     summary = {
         "total": len(records),
         "verified_program": sum(r["status"] == "verified_program" for r in records),
