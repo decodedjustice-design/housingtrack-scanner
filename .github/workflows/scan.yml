@@ -2,11 +2,12 @@ name: Housing Availability Scanner
 
 on:
   # Run every 2 hours, around the clock.
-  # GitHub cron is UTC; the exact local clock alignment is not important because
-  # the requirement is a two-hour polling interval.
   schedule:
     - cron: "0 */2 * * *"
   workflow_dispatch:
+  # Also validate scanner changes immediately when pushed to main.
+  push:
+    branches: [main]
 
 permissions:
   contents: write
