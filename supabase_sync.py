@@ -8,10 +8,9 @@ import requests
 
 ROOT = Path(__file__).resolve().parent
 SUPABASE_URL = os.environ["SUPABASE_URL"].rstrip("/")
-SERVICE_KEY = os.environ["SUPABASE_SERVICE_ROLE_KEY"]
+SUPABASE_SECRET_KEY = os.environ["SUPABASE_SECRET_KEY"]
 HEADERS = {
-    "apikey": SERVICE_KEY,
-    "Authorization": f"Bearer {SERVICE_KEY}",
+    "apikey": SUPABASE_SECRET_KEY,
     "Content-Type": "application/json",
     "Prefer": "resolution=merge-duplicates,return=minimal",
 }
@@ -67,7 +66,6 @@ def main():
         })
     post("properties", property_rows, "canonical_id")
 
-    # Resolve property IDs after upsert so availability rows can reference them.
     lookup = {}
     if property_rows:
         query = f"?select=id,canonical_id&canonical_id=in.({','.join(r['canonical_id'] for r in property_rows)})"
