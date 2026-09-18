@@ -1,262 +1,294 @@
 {
-  "generated_at": "2026-09-18T14:08:27.611415+00:00",
-  "lead_count": 32,
+  "generated_at": "2026-09-18T17:39:11.459670+00:00",
+  "lead_count": 36,
   "leads": [
     {
       "source": "Apartments.com",
+      "city": "Bothell",
+      "query_term": "affordable",
+      "status": "error",
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Bothell%2522%2520affordable%2520apartment&q=EgQUZutQGIzutdUGIjCSHuOLJwwFAANNxwDNMjnhQT-E6a1jI9wiacG4SgoRKK4MswYbqY_g6jzglMD8S3YyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:20.575042+00:00"
+    },
+    {
+      "source": "Apartments.com",
+      "city": "Bothell",
+      "query_term": "moderate income",
+      "status": "error",
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Bothell%2522%2520moderate%2520income%2520apartment&q=EgQUZutQGI3utdUGIjD8B11J5Nw0xssuz1OuMrNgmnTSnQkZD2TI8QqUITYSYyWdyHbS-00QHBhC-hblMsEyAnJSWgF",
+      "captured_at": "2026-09-18T17:38:22.048868+00:00"
+    },
+    {
+      "source": "Apartments.com",
+      "city": "Kirkland",
+      "query_term": "mfte",
+      "status": "error",
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Kirkland%2522%2520mfte%2520apartment&q=EgQUZutQGI_utdUGIjA7jFwJWZYwOOTofKdhpSvZ6qDIwv8N82VSRTWES_-PrZ8vEzLZBzMqPKGClxpw2F4yAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:23.462992+00:00"
+    },
+    {
+      "source": "Apartments.com",
+      "city": "Kirkland",
+      "query_term": "arch",
+      "status": "error",
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Kirkland%2522%2520arch%2520apartment&q=EgQUZutQGJDutdUGIjAqPbq_LUDV9lM40pI0ZuivbtJtI3qYS6ea1L4kRnxKCl7P_Fc_7mV08muVU8rKWKsyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:24.852554+00:00"
+    },
+    {
+      "source": "Apartments.com",
       "city": "Kirkland",
       "query_term": "affordable",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Kirkland%2522%2520affordable%2520apartment&q=EgQUqxaiGK6LtdUGIjAQUCg4LJtmnw9OCRrEYf8aJLj8iiScbRJUEeCFamUoBWh4kf6TaJgO5q2OjuVMEDsyAnJSWgFD",
-      "captured_at": "2026-09-18T14:07:42.372771+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Kirkland%2522%2520affordable%2520apartment&q=EgQUZutQGJLutdUGIjCwI0oNoSdWRCCear2c2B6aecPnpchQbjoM6oLajyDJSw_n8O1I5KVTMkNa-gE0D78yAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:27.300685+00:00"
     },
     {
       "source": "Apartments.com",
       "city": "Kirkland",
       "query_term": "moderate income",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Kirkland%2522%2520moderate%2520income%2520apartment&q=EgQUqxaiGK-LtdUGIjDlP6bKvN1l4Y-XUgeiyeZdcn-B1Q3DgKA3rlDXkT5135XtAIEQQV2wMk96KAeafTkyAnJSWg",
-      "captured_at": "2026-09-18T14:07:43.907685+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Kirkland%2522%2520moderate%2520income%2520apartment&q=EgQUZutQGJTutdUGIjA1wz3xpzSQywhgYF0csXPDTgDjE8fVw2z1IFLsxAr2PWew3PDVG0AAZi_AadehCfMyAnJSWg",
+      "captured_at": "2026-09-18T17:38:28.643624+00:00"
     },
     {
       "source": "Apartments.com",
       "city": "Woodinville",
       "query_term": "mfte",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Woodinville%2522%2520mfte%2520apartment&q=EgQUqxaiGLCLtdUGIjAsyD06VsvZOGIrmHHFkbWigq-1McilikOBmKQCdT1fG8n2UJ9omC0Uz0euwIFTiO0yAnJSWgFD",
-      "captured_at": "2026-09-18T14:07:45.468337+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Woodinville%2522%2520mfte%2520apartment&q=EgQUZutQGJXutdUGIjDJdZbVitQMaIBRnZyPyRmx6cLCWsmBO19dFHDbxSKvyZNZ1UBi98qaJeU4HDjViwgyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:30.140091+00:00"
     },
     {
       "source": "Apartments.com",
       "city": "Woodinville",
       "query_term": "arch",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Woodinville%2522%2520arch%2520apartment&q=EgQUqxaiGLKLtdUGIjCQkqBlfF6yB6q98-nb2-VJ8CTqQ_uiO80MKHKBN0vunBz5yBb167kQk6MAZlEweC0yAnJSWgFD",
-      "captured_at": "2026-09-18T14:07:46.943637+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Woodinville%2522%2520arch%2520apartment&q=EgQUZutQGJfutdUGIjCywS14xSjy6oMmiaPS_JU-vQE1VoYVcBo8d2nBqeTW9mVRSxAq8mwxsOCdgtymEhMyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:31.608178+00:00"
     },
     {
       "source": "Apartments.com",
       "city": "Woodinville",
       "query_term": "income restricted",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Woodinville%2522%2520income%2520restricted%2520apartment&q=EgQUqxaiGLOLtdUGIjCWvJ7aK5sNQXZJgp8t2bdQ2agxqbdMZRYsnJGZF-h5EPOHf8tDNYTOgkxPnBRDmXsyA",
-      "captured_at": "2026-09-18T14:07:48.369005+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Woodinville%2522%2520income%2520restricted%2520apartment&q=EgQUZutQGJjutdUGIjA-WjXfLGDFhbR6IGYFyBvrL9m9GHo4va6EwlSVmOqDRroTkMmEguMVS-asfl3B57gyA",
+      "captured_at": "2026-09-18T17:38:32.907025+00:00"
     },
     {
       "source": "Apartments.com",
       "city": "Woodinville",
       "query_term": "affordable",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Woodinville%2522%2520affordable%2520apartment&q=EgQUqxaiGLWLtdUGIjBsCz0nHy0sHLT0YGFitISdRacAoC2i28y6fZL1IQjFxu4iW_JootgSxCBdOldtO4YyAnJSWgFD",
-      "captured_at": "2026-09-18T14:07:49.786702+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Woodinville%2522%2520affordable%2520apartment&q=EgQUZutQGJnutdUGIjCUp0EYvl8JhE0Y7h4bkjVSkgIbKEkgDhcmGNR-r_WtdjbGtYZcnceOPhdmFcqtiEMyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:34.426915+00:00"
     },
     {
       "source": "Apartments.com",
       "city": "Woodinville",
       "query_term": "moderate income",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Woodinville%2522%2520moderate%2520income%2520apartment&q=EgQUqxaiGLaLtdUGIjDJWKJWeznWGwQ_Ei4l8dEA3BJqaPjrogtwmmKmcQoHcm2T-7FU1O5JrfqkhwVzztcyAnJ",
-      "captured_at": "2026-09-18T14:07:51.277241+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartments.com%2B%2522Woodinville%2522%2520moderate%2520income%2520apartment&q=EgQUZutQGJvutdUGIjD2LhOCe5FaRgjTXaVikAl3slzxYM8BzC9VOYz-PEtgN1T2bgZRLVTJL8b0HwRhnOAyAnJ",
+      "captured_at": "2026-09-18T17:38:35.864910+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Redmond",
       "query_term": "mfte",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Redmond%2522%2520mfte%2520apartment&q=EgQUqxaiGLiLtdUGIjDrFJUDtet7tW6yX79J7LrsIirlbv7-U9I94Dex11DgiLdhC-lmtlXp3zQ6CnEm90IyAnJSWgFD",
-      "captured_at": "2026-09-18T14:07:52.623769+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Redmond%2522%2520mfte%2520apartment&q=EgQUZutQGJzutdUGIjCxg50d5gmlho15oJanraRg14SbOxofpLBHux-z8W8T-dJPpn7pctln-aapgWWqhaoyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:37.233642+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Redmond",
       "query_term": "arch",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Redmond%2522%2520arch%2520apartment&q=EgQUqxaiGLmLtdUGIjCwBRuH0Iwy25w22Usx0rm0PqwtjzHBBhUyqqS20ho1nC2uynnNIZ7jKfZpWIDCFCMyAnJSWgFD",
-      "captured_at": "2026-09-18T14:07:54.040950+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Redmond%2522%2520arch%2520apartment&q=EgQUZutQGJ7utdUGIjCRx1gqpYX9-rukZ8EoAaCAyurRhuqMe7ivZCrdqlSiKc8F6FPrjACIQCakLzBwCFMyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:38.702021+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Redmond",
       "query_term": "income restricted",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Redmond%2522%2520income%2520restricted%2520apartment&q=EgQUqxaiGLuLtdUGIjB__G7T2BwsnnuiWFwFJm74zztUECsm6GrS9Z6FpbvydwFxZdqYxDRbg8OCnIiD5hAy",
-      "captured_at": "2026-09-18T14:07:55.487182+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Redmond%2522%2520income%2520restricted%2520apartment&q=EgQUZutQGJ_utdUGIjD_uppxp5lC_TLiCPQWqeTQHJ3PE4E10x3rwfKAgre99NRUijHyWlZOunB2zLZIjf8y",
+      "captured_at": "2026-09-18T17:38:40.000742+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Redmond",
       "query_term": "affordable",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Redmond%2522%2520affordable%2520apartment&q=EgQUqxaiGLyLtdUGIjBmxHSfAeXcQZVeW4VFUaY6ac-xjc7btShrQRs23jK8Y4Hv8-82x_WJGX-rZSxAZfsyAnJSWgFD",
-      "captured_at": "2026-09-18T14:07:56.993192+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Redmond%2522%2520affordable%2520apartment&q=EgQUZutQGKHutdUGIjDW7cIF4odFr7i70fOg-INFFROceho7Err8PlNOk6CtaBIJbFnPAHd2bR-x-5R1aTAyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:41.400315+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Redmond",
       "query_term": "moderate income",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Redmond%2522%2520moderate%2520income%2520apartment&q=EgQUqxaiGL6LtdUGIjCmNTuoCnA7PBppJ7UoihfoHgDni6uPJeSiQb-u2TDvgrLgIiV4Y-Z3TLGb33BhCzMyAn",
-      "captured_at": "2026-09-18T14:07:58.284556+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Redmond%2522%2520moderate%2520income%2520apartment&q=EgQUZutQGKLutdUGIjDcFoH0WOrlxcyFNvplR_Do8Y-peye167F_iWHNplEuqsYuepchg_LKgnRzAHo4ai0yAn",
+      "captured_at": "2026-09-18T17:38:42.750190+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Bellevue",
       "query_term": "mfte",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bellevue%2522%2520mfte%2520apartment&q=EgQUqxaiGL-LtdUGIjDcIH6jys_cH8amr4u2tOckxbijlmHa-V9yIwsS-QimfH4O6iPqVKAYoqWvUvgdRjkyAnJSWgFD",
-      "captured_at": "2026-09-18T14:07:59.706294+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bellevue%2522%2520mfte%2520apartment&q=EgQUZutQGKPutdUGIjDFbI4btcpHW23oxx86rajGnMMxldk4ZH_5UKxmw1tgz8ygj5TxuUEiqP5vOflJPQgyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:44.031958+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Bellevue",
       "query_term": "arch",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bellevue%2522%2520arch%2520apartment&q=EgQUqxaiGMCLtdUGIjBnbg43eF_cC7SPnshUUH7sq2i8QoMo-M7eyly-3wNIwiO9JLw1CzvX33mikNM15MYyAnJSWgFD",
-      "captured_at": "2026-09-18T14:08:01.238432+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bellevue%2522%2520arch%2520apartment&q=EgQUZutQGKXutdUGIjDAHLnhRanXgMTsNAiekLbodRQpBOjHqCeVHujToLcwlo6H5HhQ-wWwbX9044FeYnEyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:45.495537+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Bellevue",
       "query_term": "income restricted",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bellevue%2522%2520income%2520restricted%2520apartment&q=EgQUqxaiGMKLtdUGIjDZMwT4MXljvsIxQHZIxvqwyfMm0qMtyhP1mXGA0AiU29oopY1nrF4_djL9yGzKKrA",
-      "captured_at": "2026-09-18T14:08:02.733752+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bellevue%2522%2520income%2520restricted%2520apartment&q=EgQUZutQGKbutdUGIjAot2GqEW7BLRnFOGuh3EE5QOg9p_WVUBRKTg0WzJ84nC2vr_rzgHDiIUUxn0kWiZ0",
+      "captured_at": "2026-09-18T17:38:46.875738+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Bellevue",
       "query_term": "affordable",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bellevue%2522%2520affordable%2520apartment&q=EgQUqxaiGMOLtdUGIjBaqcRMU66xJIML_bKa3V02suMW3HtXfwEthJ8tHvfGjoX7Qy2d2uN6SAc-_ly7KSsyAnJSWgFD",
-      "captured_at": "2026-09-18T14:08:04.246526+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bellevue%2522%2520affordable%2520apartment&q=EgQUZutQGKfutdUGIjBorCf5quSflKX1wNIGrSlNqo5Q9GMPEu1to9Wlb3-c4MjmU3exH-m_9vfue8xWTO0yAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:48.213172+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Bellevue",
       "query_term": "moderate income",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bellevue%2522%2520moderate%2520income%2520apartment&q=EgQUqxaiGMWLtdUGIjANcUCLky2ibhlMqogCaJ74p-khp7WxSvb4v2rVKmv49AMboyA4S9gKvS_Z3e2huXoyA",
-      "captured_at": "2026-09-18T14:08:05.756748+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bellevue%2522%2520moderate%2520income%2520apartment&q=EgQUZutQGKnutdUGIjCcCNAvUyyhDSQrkQSCkzZW6D18u5AwQmTL0mFp5itBvi_rk_hXvxnaPWRlNwJ0DEIyA",
+      "captured_at": "2026-09-18T17:38:49.708449+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Bothell",
       "query_term": "mfte",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bothell%2522%2520mfte%2520apartment&q=EgQUqxaiGMaLtdUGIjAQqViOsVCSKUGkquBFIXcQ8gqCthknQT-1EeRq8eZKSHPDPTwza8PU3ik8gDks05EyAnJSWgFD",
-      "captured_at": "2026-09-18T14:08:07.137046+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bothell%2522%2520mfte%2520apartment&q=EgQUZutQGKrutdUGIjDzRfAk-l6ygWk8KvXV27HOl2Edlhs9Ukvzq-1J4Q2jo_VmlfzIW0849v9H3DbmDrsyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:51.110099+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Bothell",
       "query_term": "arch",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bothell%2522%2520arch%2520apartment&q=EgQUqxaiGMiLtdUGIjDXEsjY92A_D_HZWF3L6O_FfWnvtdlzm5KXsbxIwWKan2nns7Yg14MF0A91pQO8Gq4yAnJSWgFD",
-      "captured_at": "2026-09-18T14:08:08.381749+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bothell%2522%2520arch%2520apartment&q=EgQUZutQGKzutdUGIjByFfKoCKRa_1UG90H0wovXPi3b35luQ-AKEYPoplOx_9Xja5GqHk26vjHtbvHgQ1IyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:52.571340+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Bothell",
       "query_term": "income restricted",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bothell%2522%2520income%2520restricted%2520apartment&q=EgQUqxaiGMmLtdUGIjCfQdV10CA5WOZwxYmnh2ssdHf_3nyCPocf1rn3ZHLLXvucaqcBfhhaWQcfZIJA38oy",
-      "captured_at": "2026-09-18T14:08:09.799862+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bothell%2522%2520income%2520restricted%2520apartment&q=EgQUZutQGK3utdUGIjAIPhsNpqw51OvqK8Ag0HQbyNwcVCWe7XkNsVFpSvLJnkXfZ19vjgeSEOCOGhiCnZIy",
+      "captured_at": "2026-09-18T17:38:54.044245+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Bothell",
       "query_term": "affordable",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bothell%2522%2520affordable%2520apartment&q=EgQUqxaiGMqLtdUGIjDs_42nVPVkopu056GZ8iI9EEEjUQNzkqgFMbUYftDVtg0udV99zXt6eP3afVbtKKYyAnJSWgFD",
-      "captured_at": "2026-09-18T14:08:11.051293+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bothell%2522%2520affordable%2520apartment&q=EgQUZutQGK_utdUGIjB3DfU0qp4z1_d-rz44fGWj4rKXjW3jeqOAXJ6eDPTnlFyk3XpK3dmVbMKBUQCszF0yAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:55.366611+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Bothell",
       "query_term": "moderate income",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bothell%2522%2520moderate%2520income%2520apartment&q=EgQUqxaiGMyLtdUGIjAGYlijD0G_PRXv7HbRPXGsFoEiUDLnj5pOOioWqtXRsjBnlYDfQhYdK1lHVdMf0UYyAn",
-      "captured_at": "2026-09-18T14:08:12.460669+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Bothell%2522%2520moderate%2520income%2520apartment&q=EgQUZutQGLDutdUGIjCtIEhMzcXjPTPl2hO7qDtlVbCAl-KTq6NUpYEds5-2v5lud8PaDmsMQkGkGjrlWokyAn",
+      "captured_at": "2026-09-18T17:38:56.827670+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Kirkland",
       "query_term": "mfte",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Kirkland%2522%2520mfte%2520apartment&q=EgQUqxaiGM2LtdUGIjC5xl_jC__E9ZC55BGsuc_nx_k1dOq-IIQAbtsD0NWGVnKLEkJomopB78x93pL_68UyAnJSWgFD",
-      "captured_at": "2026-09-18T14:08:13.783612+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Kirkland%2522%2520mfte%2520apartment&q=EgQUZutQGLHutdUGIjCSNLLc58zKGkpCKB2OIZN8gBeaALnuEtNyae2WehQJxZd8wJsIoApFZDsWADfGfdoyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:58.258636+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Kirkland",
       "query_term": "arch",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Kirkland%2522%2520arch%2520apartment&q=EgQUqxaiGM6LtdUGIjBWd4r7OKBSQkkBa6LPqT-_jkjttLRz7OYyL-lk_jVe5NhRafSItZ4UUWrZeBJD4nUyAnJSWgFD",
-      "captured_at": "2026-09-18T14:08:15.154367+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Kirkland%2522%2520arch%2520apartment&q=EgQUZutQGLPutdUGIjD11ZTpQEde7ZvDZkss5VDK9m5vF9Ei_MGo9sRUoKSxQQNy_8VpFGGusbei6c3kJ_QyAnJSWgFD",
+      "captured_at": "2026-09-18T17:38:59.608942+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Kirkland",
       "query_term": "income restricted",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Kirkland%2522%2520income%2520restricted%2520apartment&q=EgQUqxaiGNCLtdUGIjDIeS70181UNoZRRDFVXCpNtVYBDRnCpwCsx8hX1vLn9JwWdLP5mscfqVXwm-4NzKo",
-      "captured_at": "2026-09-18T14:08:16.522436+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Kirkland%2522%2520income%2520restricted%2520apartment&q=EgQUZutQGLTutdUGIjALenhs-BvzfNaTbFHCg6KckDWfu8vYnTngL6WXq1i8ZrTA-m57KQIhlKfSh8_zqfA",
+      "captured_at": "2026-09-18T17:39:00.903625+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Kirkland",
       "query_term": "affordable",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Kirkland%2522%2520affordable%2520apartment&q=EgQUqxaiGNGLtdUGIjATJr8GFfEXOFy7RM7O0fyUSvnv5nSpna9UZBm-3cGMvBOkw2zJxarO65QqPuSDqO0yAnJSWgFD",
-      "captured_at": "2026-09-18T14:08:17.971249+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Kirkland%2522%2520affordable%2520apartment&q=EgQUZutQGLXutdUGIjAbDQ_bfCNxN4ZYBMXj4v3n5Dj6Dc3wMkpni0udZbtvLg8achea8SnpCA2BYBd59lMyAnJSWgFD",
+      "captured_at": "2026-09-18T17:39:02.267732+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Kirkland",
       "query_term": "moderate income",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Kirkland%2522%2520moderate%2520income%2520apartment&q=EgQUqxaiGNKLtdUGIjD2olM1T7T7jJE32HjEQ-wXS758y-9cuDS4yKQVmAZ3tR5bI2oXbbPee1HGKydBSfgyA",
-      "captured_at": "2026-09-18T14:08:19.263433+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Kirkland%2522%2520moderate%2520income%2520apartment&q=EgQUZutQGLfutdUGIjBAX1Ov9xGa1f3kJAleOsj5gOMLaqNoBaeywmMHpfASVcBeIOclOuFiql61XsN4cgwyA",
+      "captured_at": "2026-09-18T17:39:03.576470+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Woodinville",
       "query_term": "mfte",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Woodinville%2522%2520mfte%2520apartment&q=EgQUqxaiGNSLtdUGIjBSWechk3O2ANKxULbFnOE1lK85g51urCR11K7f9tMKhOiLoxjhuYsndInVaEZZhUUyAnJSWgFD",
-      "captured_at": "2026-09-18T14:08:20.791905+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Woodinville%2522%2520mfte%2520apartment&q=EgQUZutQGLjutdUGIjDCJH6BBATQs9nCRXcG6JnPXQs5k266Dfi0MFb9AU_3Ecjnv4wWzM83G_NjPDfx8k0yAnJSWgFD",
+      "captured_at": "2026-09-18T17:39:04.956279+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Woodinville",
       "query_term": "arch",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Woodinville%2522%2520arch%2520apartment&q=EgQUqxaiGNWLtdUGIjA3DLrLs0dnlZ-bFoBYYOuZWSF6t-RpDyWuvi4ASrzJg3_pTg7PW3xqHXzLWqkF1cUyAnJSWgFD",
-      "captured_at": "2026-09-18T14:08:22.305063+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Woodinville%2522%2520arch%2520apartment&q=EgQUZutQGLnutdUGIjAyFYXJDlO9PWWlMv_JYQdkdNZF0ZcykDAlDAgc2SsqpF5hAxgv---7ewdhp_zKd_IyAnJSWgFD",
+      "captured_at": "2026-09-18T17:39:06.325978+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Woodinville",
       "query_term": "income restricted",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Woodinville%2522%2520income%2520restricted%2520apartment&q=EgQUqxaiGNeLtdUGIjDGw_s59HUGjbQ0IJZ9Bgnp3XwA9YONQ7CF7nY0En-XGUmrEPXb1L8KPdXnWkud",
-      "captured_at": "2026-09-18T14:08:23.702302+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Woodinville%2522%2520income%2520restricted%2520apartment&q=EgQUZutQGLvutdUGIjBbht9dEQdDXrokN4VTbbyPT816hCT6IAyq4UWwz_PDGUxGtS0pTB3RWlk7NOKh",
+      "captured_at": "2026-09-18T17:39:07.600620+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Woodinville",
       "query_term": "affordable",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Woodinville%2522%2520affordable%2520apartment&q=EgQUqxaiGNiLtdUGIjC0b0zSxzE1eSYJV8_87o1RGr8DvP9TyDiTByGgKuXmyTZ74IV8oqyS_hcs1aT35SQyAnJSWgF",
-      "captured_at": "2026-09-18T14:08:25.067488+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Woodinville%2522%2520affordable%2520apartment&q=EgQUZutQGLzutdUGIjBrTwOF9BdmJajIq1amUrqQWyVReNSIByTe7URmg6lhspUtaoTtIohTHlaPK05O840yAnJSWgF",
+      "captured_at": "2026-09-18T17:39:09.119264+00:00"
     },
     {
       "source": "Apartment Finder",
       "city": "Woodinville",
       "query_term": "moderate income",
       "status": "error",
-      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Woodinville%2522%2520moderate%2520income%2520apartment&q=EgQUqxaiGNqLtdUGIjDtHDwjX8a4PXUS_WFMD0tJd4D4cF5Ygh3tZHQ1SaaFHNECUYzhu6_Zv52fcaT8c8",
-      "captured_at": "2026-09-18T14:08:26.611252+00:00"
+      "error": "429 Client Error: Too Many Requests for url: https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dsite%253Aapartmentfinder.com%2B%2522Woodinville%2522%2520moderate%2520income%2520apartment&q=EgQUZutQGL7utdUGIjAbpdwAwkEODZ6PvQI9xBmL5H9i3c0I1CdoBjLU1ScZrxkg1YXGtY8CXrWNbi8lK6",
+      "captured_at": "2026-09-18T17:39:10.459516+00:00"
     }
   ]
 }
