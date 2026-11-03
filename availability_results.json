@@ -5,56 +5,16 @@
     "url": "https://www.888bellevue.com/",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.888bellevue.com/",
-      "https://www.888bellevue.com/floorplans"
-    ],
-    "checked_at": "2026-11-03T08:48:12.892878+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:25:09.145101+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "apply\\s+now",
-        "available\\s+now",
-        "available\\s+units?",
-        "check\\s+availability"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        2590.0,
-        2825.0,
-        3720.0,
-        3890.0,
-        3915.0,
-        4200.0,
-        4250.0,
-        4995.0,
-        5200.0
-      ],
-      "sqft": [
-        71.0,
-        92.0,
-        525.0,
-        578.0,
-        726.0,
-        765.0,
-        800.0
-      ],
-      "features": [],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
-    "min_rent": 2590.0,
-    "max_rent": 5200.0,
-    "min_sqft": 71.0,
-    "max_sqft": 800.0,
-    "three_bedroom": false,
-    "den_flex": false,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.888bellevue.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -73,7 +33,7 @@
       "https://www.alley111.com/contact-us",
       "https://www.alley111.com/floor-plans?bedroom=studio"
     ],
-    "checked_at": "2026-11-03T08:48:17.023729+00:00",
+    "checked_at": "2026-11-03T17:25:09.283529+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -117,7 +77,7 @@
       "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-bellevue-park/location",
       "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-bellevue-park/contact"
     ],
-    "checked_at": "2026-11-03T08:48:22.892479+00:00",
+    "checked_at": "2026-11-03T17:25:15.481120+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -155,7 +115,6 @@
         6593.0
       ],
       "sqft": [
-        245.0,
         478.0,
         628.0,
         958.0
@@ -170,7 +129,7 @@
     "error": null,
     "min_rent": 500.0,
     "max_rent": 6593.0,
-    "min_sqft": 245.0,
+    "min_sqft": 478.0,
     "max_sqft": 958.0,
     "three_bedroom": true,
     "den_flex": true,
@@ -193,7 +152,7 @@
       "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-spring-district/location",
       "https://www.amli.com/apartments/seattle/bellevue-apartments/amli-spring-district/contact"
     ],
-    "checked_at": "2026-11-03T08:48:30.790777+00:00",
+    "checked_at": "2026-11-03T17:25:25.898067+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -272,7 +231,7 @@
       "https://www.avaloncommunities.com/about-us/",
       "https://www.avaloncommunities.com/about-us/esg/"
     ],
-    "checked_at": "2026-11-03T08:48:38.471389+00:00",
+    "checked_at": "2026-11-03T17:25:33.601075+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [],
@@ -284,20 +243,20 @@
         "studio"
       ],
       "rents": [
-        2090.0,
-        2100.0,
-        2170.0,
-        2335.0,
-        2465.0,
-        2509.0,
-        3200.0,
-        3220.0,
-        3270.0,
-        3482.0,
-        3565.0,
-        3585.0,
-        3759.0,
-        4982.0
+        2120.0,
+        2135.0,
+        2205.0,
+        2385.0,
+        2500.0,
+        2549.0,
+        3235.0,
+        3244.0,
+        3305.0,
+        3422.0,
+        3600.0,
+        3635.0,
+        3799.0,
+        4922.0
       ],
       "sqft": [
         492.0,
@@ -310,8 +269,8 @@
       "program_signals": []
     },
     "error": null,
-    "min_rent": 2090.0,
-    "max_rent": 4982.0,
+    "min_rent": 2120.0,
+    "max_rent": 4922.0,
     "min_sqft": 492.0,
     "max_sqft": 820.0,
     "three_bedroom": true,
@@ -334,7 +293,7 @@
       "https://bellevue10.com/availability/",
       "https://bellevue10.com/apply-now"
     ],
-    "checked_at": "2026-11-03T08:48:46.278793+00:00",
+    "checked_at": "2026-11-03T17:25:40.954569+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -376,7 +335,7 @@
     "pages_checked": [
       "https://sites.google.com/view/bellevueheights/home"
     ],
-    "checked_at": "2026-11-03T08:48:51.133771+00:00",
+    "checked_at": "2026-11-03T17:25:46.418438+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [],
@@ -415,7 +374,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:48:53.585179+00:00",
+    "checked_at": "2026-11-03T17:25:48.536166+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -442,7 +401,7 @@
       "https://www.bellevueridgeapts.com/apartments/wa/bellevue/amenities",
       "https://www.bellevueridgeapts.com/apartments/wa/bellevue/pet-friendly"
     ],
-    "checked_at": "2026-11-03T08:48:53.680223+00:00",
+    "checked_at": "2026-11-03T17:25:48.715129+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [],
@@ -478,7 +437,7 @@
       "https://www.borgatabellevue.com/",
       "https://www.borgatabellevue.com/#1701050675"
     ],
-    "checked_at": "2026-11-03T08:48:59.159893+00:00",
+    "checked_at": "2026-11-03T17:25:54.461198+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -513,7 +472,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:49:01.859340+00:00",
+    "checked_at": "2026-11-03T17:25:57.126751+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -540,7 +499,7 @@
       "https://www.udr.com/leaseoll/floorplan/?pid=140",
       "https://www.udr.com/seattle-apartments/bellevue/brio/schedule-tour/"
     ],
-    "checked_at": "2026-11-03T08:49:02.344793+00:00",
+    "checked_at": "2026-11-03T17:25:58.143672+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -559,7 +518,7 @@
         2098.0,
         2968.0,
         3238.0,
-        3472.0,
+        3426.0,
         4305.0
       ],
       "sqft": [],
@@ -596,7 +555,7 @@
       "https://www.camdenliving.com/blog/workforce-dwelling-units-at-camden-blakeney",
       "https://www.camdenliving.com/blog/luxury-living-in-charlotte-at-camden-blakeney-apartments"
     ],
-    "checked_at": "2026-11-03T08:49:09.065316+00:00",
+    "checked_at": "2026-11-03T17:26:04.706843+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -640,7 +599,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:49:16.910660+00:00",
+    "checked_at": "2026-11-03T17:26:11.480233+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -660,44 +619,16 @@
     "url": "https://www.catalinabellevue.com",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.catalinabellevue.com/",
-      "https://www.catalinabellevue.com/floorplans",
-      "https://www.catalinabellevue.com/termsandconditions",
-      "https://www.catalinabellevue.com/privacypolicy"
-    ],
-    "checked_at": "2026-11-03T08:49:16.966179+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:26:11.625159+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        500.0,
-        600.0
-      ],
-      "sqft": [
-        9.0,
-        300.0,
-        700.0
-      ],
-      "features": [
-        "den"
-      ],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
-    "min_rent": 500.0,
-    "max_rent": 600.0,
-    "min_sqft": 9.0,
-    "max_sqft": 700.0,
-    "three_bedroom": false,
-    "den_flex": true,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.catalinabellevue.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -714,7 +645,7 @@
       "https://www.livestokely.com/floorplans",
       "https://www.livestokely.com/community"
     ],
-    "checked_at": "2026-11-03T08:49:25.137058+00:00",
+    "checked_at": "2026-11-03T17:26:11.945097+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -764,7 +695,7 @@
       "https://www.cityscapebellevue.com/#Floorplans",
       "https://www.cityscapebellevue.com/availability"
     ],
-    "checked_at": "2026-11-03T08:49:31.483088+00:00",
+    "checked_at": "2026-11-03T17:26:19.025738+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -817,42 +748,16 @@
     "url": "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/",
-      "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/#main-content",
-      "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/index",
-      "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/amenities",
-      "https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/petpolicy"
-    ],
-    "checked_at": "2026-11-03T08:49:35.343912+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:26:22.943508+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "studio"
-      ],
-      "rents": [
-        1599.0,
-        1718.0,
-        2075.0,
-        2269.0
-      ],
-      "sqft": [],
-      "features": [],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
-    "min_rent": 1599.0,
-    "max_rent": 2269.0,
-    "min_sqft": null,
-    "max_sqft": null,
-    "three_bedroom": false,
-    "den_flex": false,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://washington.weidner.com/apartments/wa/bellevue/colonial-square-3/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -865,7 +770,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:49:46.409910+00:00",
+    "checked_at": "2026-11-03T17:26:23.184615+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -886,7 +791,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:49:46.419611+00:00",
+    "checked_at": "2026-11-03T17:26:23.229285+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -906,50 +811,16 @@
     "url": "https://www.excaliburbellevue.com",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.excaliburbellevue.com/",
-      "https://www.excaliburbellevue.com/floorplans",
-      "https://www.excaliburbellevue.com/termsandconditions",
-      "https://www.excaliburbellevue.com/privacypolicy"
-    ],
-    "checked_at": "2026-11-03T08:49:46.467214+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:26:23.300779+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "available\\s+now",
-        "check\\s+availability",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        1495.0,
-        2075.0,
-        2295.0
-      ],
-      "sqft": [
-        373.0,
-        592.0,
-        688.0,
-        777.0,
-        864.0,
-        865.0
-      ],
-      "features": [],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
-    "min_rent": 1495.0,
-    "max_rent": 2295.0,
-    "min_sqft": 373.0,
-    "max_sqft": 865.0,
-    "three_bedroom": false,
-    "den_flex": false,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.excaliburbellevue.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -964,7 +835,7 @@
     "pages_checked": [
       "https://www.bellevuedowntown.com/go/the-carlyle-condominiums"
     ],
-    "checked_at": "2026-11-03T08:49:56.282336+00:00",
+    "checked_at": "2026-11-03T17:26:23.467341+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [],
@@ -998,7 +869,7 @@
       "https://hydesquare.com/",
       "https://hydesquare.com/floorplans/"
     ],
-    "checked_at": "2026-11-03T08:49:57.696790+00:00",
+    "checked_at": "2026-11-03T17:26:25.138029+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [],
@@ -1111,7 +982,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:50:00.919556+00:00",
+    "checked_at": "2026-11-03T17:26:28.349942+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -1131,69 +1002,16 @@
     "url": "https://www.rentatlux.com",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.rentatlux.com/",
-      "https://www.rentatlux.com/floorplans",
-      "https://www.rentatlux.com/communityevents"
-    ],
-    "checked_at": "2026-11-03T08:50:00.975145+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:26:28.404304+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "apply\\s+now",
-        "available\\s+now",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        1945.0,
-        2295.0,
-        2325.0,
-        2362.0,
-        2445.0,
-        2495.0,
-        2532.0,
-        2595.0,
-        2880.0,
-        3095.0,
-        3125.0,
-        3132.0,
-        3162.0,
-        3495.0,
-        3532.0,
-        6195.0,
-        6232.0
-      ],
-      "sqft": [
-        43.0,
-        68.0,
-        161.0,
-        392.0,
-        583.0,
-        722.0,
-        773.0,
-        787.0,
-        864.0,
-        967.0
-      ],
-      "features": [
-        "den"
-      ],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
-    "min_rent": 1945.0,
-    "max_rent": 6232.0,
-    "min_sqft": 43.0,
-    "max_sqft": 967.0,
-    "three_bedroom": false,
-    "den_flex": true,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.rentatlux.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -1205,85 +1023,16 @@
     "url": "https://www.madison-bellevue.com",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.madison-bellevue.com/",
-      "https://www.madison-bellevue.com/#nudgeTopExtra",
-      "https://www.madison-bellevue.com/floorplans",
-      "https://www.madison-bellevue.com/availableunits?beds=1&calledfrom=home",
-      "https://www.madison-bellevue.com/availableunits?beds=2&calledfrom=home"
-    ],
-    "checked_at": "2026-11-03T08:50:09.557473+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:26:28.753269+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "apply\\s+now",
-        "available\\s+now",
-        "check\\s+availability",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br"
-      ],
-      "rents": [
-        2075.0,
-        2095.0,
-        2100.0,
-        2145.0,
-        2150.0,
-        2205.0,
-        2225.0,
-        2245.0,
-        2375.0,
-        2395.0,
-        2400.0,
-        2885.0,
-        2915.0,
-        2925.0,
-        2935.0,
-        2965.0,
-        2985.0,
-        2995.0
-      ],
-      "sqft": [
-        1.0,
-        102.0,
-        103.0,
-        105.0,
-        109.0,
-        201.0,
-        202.0,
-        203.0,
-        204.0,
-        207.0,
-        208.0,
-        301.0,
-        306.0,
-        307.0,
-        308.0,
-        309.0,
-        311.0,
-        660.0,
-        724.0,
-        744.0,
-        748.0,
-        760.0,
-        785.0,
-        950.0,
-        986.0
-      ],
-      "features": [],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
-    "min_rent": 2075.0,
-    "max_rent": 2995.0,
-    "min_sqft": 1.0,
-    "max_sqft": 986.0,
-    "three_bedroom": false,
-    "den_flex": false,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.madison-bellevue.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -1299,7 +1048,7 @@
       "https://www.milanoapts.com/",
       "https://www.milanoapts.com/milano-apartments"
     ],
-    "checked_at": "2026-11-03T08:50:20.049456+00:00",
+    "checked_at": "2026-11-03T17:26:28.978983+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -1338,7 +1087,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:50:22.654487+00:00",
+    "checked_at": "2026-11-03T17:26:31.606783+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -1359,7 +1108,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:50:22.709767+00:00",
+    "checked_at": "2026-11-03T17:26:31.694726+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -1379,54 +1128,16 @@
     "url": "https://www.nuovobellevue.com/",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.nuovobellevue.com/",
-      "https://www.nuovobellevue.com/floorplans",
-      "https://www.nuovobellevue.com/termsandconditions",
-      "https://www.nuovobellevue.com/privacypolicy"
-    ],
-    "checked_at": "2026-11-03T08:50:22.735251+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:26:31.749099+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "apply\\s+now",
-        "available\\s+now",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        500.0,
-        2156.0,
-        2450.0,
-        2581.0,
-        3156.0
-      ],
-      "sqft": [
-        75.0,
-        566.0,
-        637.0,
-        1075.0
-      ],
-      "features": [
-        "home\\s+office"
-      ],
-      "program_signals": [
-        "inclusionary"
-      ]
+      "rents": []
     },
-    "error": null,
-    "min_rent": 500.0,
-    "max_rent": 3156.0,
-    "min_sqft": 75.0,
-    "max_sqft": 1075.0,
-    "three_bedroom": false,
-    "den_flex": true,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.nuovobellevue.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -1442,7 +1153,7 @@
       "https://www.park88.com/",
       "https://www.park88.com/availability"
     ],
-    "checked_at": "2026-11-03T08:50:30.512386+00:00",
+    "checked_at": "2026-11-03T17:26:31.890915+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -1485,7 +1196,7 @@
       "https://www.rentparkbellevue.com/",
       "https://www.rentparkbellevue.com/floor-plans"
     ],
-    "checked_at": "2026-11-03T08:50:33.459819+00:00",
+    "checked_at": "2026-11-03T17:26:34.832749+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -1529,7 +1240,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:50:36.005073+00:00",
+    "checked_at": "2026-11-03T17:26:37.498174+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -1555,7 +1266,7 @@
       "https://www.liveatpolarisateastgate.com/floorplans/",
       "https://www.liveatpolarisateastgate.com/sisters/"
     ],
-    "checked_at": "2026-11-03T08:50:36.148166+00:00",
+    "checked_at": "2026-11-03T17:26:37.561345+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -1611,7 +1322,7 @@
       "https://www.redmondparkapts.com/floor-plans/",
       "https://www.redmondparkapts.com/floor-plans/site-plan/"
     ],
-    "checked_at": "2026-11-03T08:50:41.213443+00:00",
+    "checked_at": "2026-11-03T17:26:42.559638+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -1679,48 +1390,16 @@
     "url": "https://www.sirgallahadbellevue.com",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.sirgallahadbellevue.com/",
-      "https://www.sirgallahadbellevue.com/floorplans",
-      "https://www.sirgallahadbellevue.com/termsandconditions",
-      "https://www.sirgallahadbellevue.com/privacypolicy"
-    ],
-    "checked_at": "2026-11-03T08:50:55.780797+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:27:00.394743+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "available\\s+now",
-        "check\\s+availability",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        1847.0,
-        2175.0,
-        2567.0
-      ],
-      "sqft": [
-        420.0,
-        461.0,
-        563.0,
-        761.0
-      ],
-      "features": [],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
-    "min_rent": 1847.0,
-    "max_rent": 2567.0,
-    "min_sqft": 420.0,
-    "max_sqft": 761.0,
-    "three_bedroom": false,
-    "den_flex": false,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.sirgallahadbellevue.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -1732,119 +1411,16 @@
     "url": "https://somatowersapts.com/",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.somatowersapts.com/",
-      "https://www.somatowersapts.com/floorplans"
-    ],
-    "checked_at": "2026-11-03T08:51:02.943632+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:27:00.613162+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "apply\\s+now",
-        "available\\s+now",
-        "check\\s+availability",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "4br",
-        "studio"
-      ],
-      "rents": [
-        1825.0,
-        1831.0,
-        1921.0,
-        1945.0,
-        1951.0,
-        1984.0,
-        2115.0,
-        2204.0,
-        2210.0,
-        2319.0,
-        2417.0,
-        2423.0,
-        2459.0,
-        2465.0,
-        2678.0,
-        2827.0,
-        3541.0,
-        3547.0,
-        3895.0,
-        3901.0,
-        4012.0,
-        4074.0,
-        4079.0,
-        4080.0,
-        4085.0,
-        4308.0,
-        4341.0,
-        4434.0,
-        4440.0,
-        5142.0,
-        5148.0
-      ],
-      "sqft": [
-        48.0,
-        51.0,
-        90.0,
-        107.0,
-        114.0,
-        116.0,
-        130.0,
-        141.0,
-        145.0,
-        158.0,
-        219.0,
-        260.0,
-        275.0,
-        383.0,
-        432.0,
-        436.0,
-        466.0,
-        468.0,
-        474.0,
-        475.0,
-        493.0,
-        505.0,
-        529.0,
-        534.0,
-        551.0,
-        560.0,
-        572.0,
-        592.0,
-        615.0,
-        633.0,
-        657.0,
-        661.0,
-        662.0,
-        696.0,
-        701.0,
-        707.0,
-        714.0,
-        733.0,
-        737.0,
-        959.0,
-        975.0,
-        977.0,
-        978.0
-      ],
-      "features": [
-        "loft"
-      ],
-      "program_signals": [
-        "arch"
-      ]
+      "rents": []
     },
-    "error": null,
-    "min_rent": 1825.0,
-    "max_rent": 5148.0,
-    "min_sqft": 48.0,
-    "max_sqft": 978.0,
-    "three_bedroom": false,
-    "den_flex": true,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.somatowersapts.com",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -1863,7 +1439,7 @@
       "https://www.livestokely.com/floorplans/#floor-3",
       "https://www.livestokely.com/floorplans/#floor-4"
     ],
-    "checked_at": "2026-11-03T08:51:09.051698+00:00",
+    "checked_at": "2026-11-03T17:27:01.360794+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -1915,7 +1491,7 @@
       "https://www.livesummitredmond.com/apartments/wa/redmond/photo-gallery",
       "https://www.livesummitredmond.com/apartments/wa/redmond/virtual-tour"
     ],
-    "checked_at": "2026-11-03T08:51:24.604195+00:00",
+    "checked_at": "2026-11-03T17:27:17.338172+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -1958,7 +1534,7 @@
       "https://www.udr.com/leaseoll/floorplan/?pid=35370",
       "https://www.udr.com/seattle-apartments/bellevue/ten20/schedule-tour/"
     ],
-    "checked_at": "2026-11-03T08:51:30.171913+00:00",
+    "checked_at": "2026-11-03T17:27:22.942480+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -2006,7 +1582,7 @@
       "https://www.udr.com/seattle-apartments/bellevue/ashton-bellevue/faq/qualification-requirements/",
       "https://www.udr.com/leaseoll/floorplan/?pid=35369"
     ],
-    "checked_at": "2026-11-03T08:51:36.556314+00:00",
+    "checked_at": "2026-11-03T17:27:34.747287+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -2026,7 +1602,7 @@
         2968.0,
         3069.0,
         3238.0,
-        3472.0,
+        3426.0,
         4895.0
       ],
       "sqft": [],
@@ -2055,7 +1631,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:51:44.128364+00:00",
+    "checked_at": "2026-11-03T17:27:41.319463+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -2079,7 +1655,7 @@
       "https://www.themeydenbellevue.com/floor-plans/",
       "https://www.themeydenbellevue.com/floor-plans/"
     ],
-    "checked_at": "2026-11-03T08:51:44.178093+00:00",
+    "checked_at": "2026-11-03T17:27:41.376009+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -2118,7 +1694,7 @@
     "pages_checked": [
       "https://www.rentparkbellevue.com/floor-plans"
     ],
-    "checked_at": "2026-11-03T08:51:46.499082+00:00",
+    "checked_at": "2026-11-03T17:27:43.832644+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -2155,89 +1731,16 @@
     "url": "https://www.theregentatbellevueway.com/floorplans",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.theregentatbellevueway.com/floorplans",
-      "https://www.theregentatbellevueway.com/floorplans#main-content",
-      "https://www.theregentatbellevueway.com/floorplans/1-bedroom-1-bath",
-      "https://www.theregentatbellevueway.com/floorplans/1-bedroom-1.5-bath-townhome",
-      "https://www.theregentatbellevueway.com/floorplans/1-bedroom-1-bath-%2B-den"
-    ],
-    "checked_at": "2026-11-03T08:51:47.815465+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:27:45.325971+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "available\\s+now",
-        "available\\s+units?",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "3br"
-      ],
-      "rents": [
-        2054.0,
-        2062.0,
-        2295.0,
-        2300.0,
-        2303.0,
-        2308.0,
-        2330.0,
-        2338.0,
-        2365.0,
-        2373.0,
-        2395.0,
-        2403.0,
-        2470.0,
-        2478.0,
-        2695.0,
-        2703.0,
-        2964.0,
-        2972.0,
-        3034.0,
-        3042.0,
-        3377.0,
-        3613.0,
-        3635.0,
-        3640.0,
-        3647.0,
-        3700.0,
-        3733.0,
-        4256.0,
-        5260.0,
-        5633.0
-      ],
-      "sqft": [
-        50.0,
-        70.0,
-        78.0,
-        96.0,
-        100.0,
-        120.0,
-        121.0,
-        122.0,
-        145.0,
-        172.0,
-        864.0,
-        940.0,
-        972.0
-      ],
-      "features": [
-        "+\\s*den",
-        "den",
-        "townhome"
-      ],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
-    "min_rent": 2054.0,
-    "max_rent": 5633.0,
-    "min_sqft": 50.0,
-    "max_sqft": 972.0,
-    "three_bedroom": true,
-    "den_flex": true,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.theregentatbellevueway.com/floorplans",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -2250,7 +1753,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:51:57.711075+00:00",
+    "checked_at": "2026-11-03T17:27:45.595813+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -2274,7 +1777,7 @@
       "https://www.hollandresidential.com/wa/bellevue/vicino",
       "https://www.hollandresidential.com/equal-housing-opportunity"
     ],
-    "checked_at": "2026-11-03T08:51:57.764262+00:00",
+    "checked_at": "2026-11-03T17:27:45.646438+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -2311,104 +1814,16 @@
     "url": "https://www.vue22apts.com/",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.vue22apts.com/",
-      "https://www.vue22apts.com/floorplans",
-      "https://www.vue22apts.com/incomerestrictions",
-      "https://www.vue22apts.com/termsandconditions",
-      "https://www.vue22apts.com/privacypolicy"
-    ],
-    "checked_at": "2026-11-03T08:52:01.528329+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:27:49.891162+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "available\\s+now",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        1779.0,
-        1796.0,
-        1850.0,
-        1893.0,
-        1965.0,
-        1970.0,
-        1995.0,
-        2020.0,
-        2021.0,
-        2036.0,
-        2063.0,
-        2165.0,
-        2217.0,
-        2269.0,
-        2273.0,
-        2320.0,
-        2333.0,
-        2357.0,
-        2363.0,
-        2387.0,
-        2511.0,
-        2520.0,
-        2572.0,
-        2617.0,
-        2671.0,
-        2776.0,
-        2806.0,
-        3098.0,
-        3104.0,
-        3114.0,
-        3136.0,
-        3207.0,
-        3217.0,
-        3313.0,
-        3541.0,
-        3577.0,
-        10521.0,
-        11836.0,
-        13152.0,
-        14204.0
-      ],
-      "sqft": [
-        15.0,
-        28.0,
-        55.0,
-        92.0,
-        151.0,
-        442.0,
-        487.0,
-        542.0,
-        556.0,
-        571.0,
-        590.0,
-        644.0,
-        723.0,
-        743.0,
-        825.0,
-        880.0,
-        931.0,
-        976.0
-      ],
-      "features": [
-        "loft"
-      ],
-      "program_signals": [
-        "arch",
-        "inclusionary"
-      ]
+      "rents": []
     },
-    "error": null,
-    "min_rent": 1779.0,
-    "max_rent": 14204.0,
-    "min_sqft": 15.0,
-    "max_sqft": 976.0,
-    "three_bedroom": false,
-    "den_flex": true,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.vue22apts.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -2421,7 +1836,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:52:13.079998+00:00",
+    "checked_at": "2026-11-03T17:27:50.064180+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -2442,7 +1857,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:52:13.131784+00:00",
+    "checked_at": "2026-11-03T17:27:50.152891+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -2469,7 +1884,7 @@
       "https://www.archhousing.org/upcomingunitsunderconstruction",
       "https://www.archhousing.org/apply-to-homebuying-process"
     ],
-    "checked_at": "2026-11-03T08:52:13.142922+00:00",
+    "checked_at": "2026-11-03T17:27:50.213711+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -2520,7 +1935,7 @@
       "https://kirklandboardwalk.com/floor-plans/",
       "https://kirklandboardwalk.com/neighborhood/"
     ],
-    "checked_at": "2026-11-03T08:52:19.922956+00:00",
+    "checked_at": "2026-11-03T17:27:56.992507+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -2577,7 +1992,7 @@
       "https://neiders.com/properties/nevada/?category=communities",
       "https://neiders.com/properties/arizona/?category=communities"
     ],
-    "checked_at": "2026-11-03T08:52:23.793401+00:00",
+    "checked_at": "2026-11-03T17:28:00.541330+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [],
@@ -2736,7 +2151,7 @@
       "https://www.liveatgrata.com/floorplans/",
       "https://www.liveatgrata.com/community_tour/"
     ],
-    "checked_at": "2026-11-03T08:52:30.440697+00:00",
+    "checked_at": "2026-11-03T17:28:06.371853+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -2795,53 +2210,16 @@
     "url": "https://www.liveatkirklandcrossing.com/",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.liveatkirklandcrossing.com/",
-      "https://www.liveatkirklandcrossing.com/floorplans",
-      "https://www.liveatkirklandcrossing.com/featuredfloorplans/featured-floor-plans",
-      "https://www.liveatkirklandcrossing.com/#fpaModal1"
-    ],
-    "checked_at": "2026-11-03T08:52:35.350746+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:28:11.360313+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "apply\\s+now",
-        "available\\s+now",
-        "available\\s+units?",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        500.0,
-        1830.0,
-        2200.0,
-        2295.0,
-        2325.0,
-        2450.0
-      ],
-      "sqft": [
-        149.0,
-        498.0,
-        555.0,
-        694.0,
-        748.0
-      ],
-      "features": [],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
-    "min_rent": 500.0,
-    "max_rent": 2450.0,
-    "min_sqft": 149.0,
-    "max_sqft": 748.0,
-    "three_bedroom": false,
-    "den_flex": false,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.liveatkirklandcrossing.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -2854,7 +2232,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:52:44.188608+00:00",
+    "checked_at": "2026-11-03T17:28:11.680770+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -2881,7 +2259,7 @@
       "https://www.windsorcommunities.com:443/careers/",
       "https://www.windsorcommunities.com:443/contact/"
     ],
-    "checked_at": "2026-11-03T08:52:44.360064+00:00",
+    "checked_at": "2026-11-03T17:28:12.043601+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -2897,9 +2275,9 @@
         "studio"
       ],
       "rents": [
-        1762.0,
-        3040.0,
-        3456.0
+        1759.0,
+        3039.0,
+        3454.0
       ],
       "sqft": [],
       "features": [
@@ -2908,8 +2286,8 @@
       "program_signals": []
     },
     "error": null,
-    "min_rent": 1762.0,
-    "max_rent": 3456.0,
+    "min_rent": 1759.0,
+    "max_rent": 3454.0,
     "min_sqft": null,
     "max_sqft": null,
     "three_bedroom": true,
@@ -2926,41 +2304,15 @@
     "url": "https://washington.weidner.com/apartments/wa/kirkland/uptown-at-kirkland-urban",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.uptownkirkland.com/",
-      "https://www.uptownkirkland.com/floor-plans/",
-      "https://www.uptownkirkland.com/floor-plans/?bedroom=studio",
-      "https://www.uptownkirkland.com/floor-plans/?bedroom=one",
-      "https://www.uptownkirkland.com/floor-plans/?bedroom=two"
-    ],
-    "checked_at": "2026-11-03T08:52:52.340366+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:28:20.450818+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "apply\\s+now",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "3br",
-        "studio"
-      ],
-      "rents": [],
-      "sqft": [],
-      "features": [
-        "townhome"
-      ],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
+    "error": "403 Client Error: Forbidden for url: https://washington.weidner.com/apartments/wa/kirkland/uptown-at-kirkland-urban",
     "min_rent": null,
     "max_rent": null,
-    "min_sqft": null,
-    "max_sqft": null,
-    "three_bedroom": true,
-    "den_flex": true,
     "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
@@ -2973,112 +2325,16 @@
     "url": "https://www.allezliving.com/",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.allezliving.com/",
-      "https://www.allezliving.com/floorplans"
-    ],
-    "checked_at": "2026-11-03T08:52:57.933038+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:28:20.510269+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "available\\s+now",
-        "check\\s+availability",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        1918.0,
-        2014.0,
-        2222.0,
-        2318.0,
-        2358.0,
-        2365.0,
-        2454.0,
-        2471.0,
-        2511.0,
-        2581.0,
-        2607.0,
-        2797.0,
-        2834.0,
-        2925.0,
-        2930.0,
-        3021.0,
-        3076.0,
-        3090.0,
-        3172.0,
-        3186.0,
-        3229.0,
-        3325.0,
-        3355.0,
-        3375.0,
-        3471.0,
-        3486.0,
-        3507.0,
-        3603.0,
-        3658.0,
-        3774.0
-      ],
-      "sqft": [
-        11.0,
-        17.0,
-        41.0,
-        120.0,
-        139.0,
-        231.0,
-        325.0,
-        544.0,
-        556.0,
-        601.0,
-        602.0,
-        620.0,
-        639.0,
-        675.0,
-        681.0,
-        682.0,
-        685.0,
-        696.0,
-        699.0,
-        712.0,
-        717.0,
-        729.0,
-        733.0,
-        736.0,
-        755.0,
-        780.0,
-        811.0,
-        833.0,
-        851.0,
-        886.0,
-        888.0,
-        932.0,
-        940.0,
-        962.0,
-        982.0,
-        992.0
-      ],
-      "features": [
-        "attached\\s+garage",
-        "den",
-        "loft"
-      ],
-      "program_signals": [
-        "arch",
-        "inclusionary"
-      ]
+      "rents": []
     },
-    "error": null,
-    "min_rent": 1918.0,
-    "max_rent": 3774.0,
-    "min_sqft": 11.0,
-    "max_sqft": 992.0,
-    "three_bedroom": false,
-    "den_flex": true,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.allezliving.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -3096,7 +2352,7 @@
       "https://ariaredmond.com/apartments/",
       "https://ariaredmond.com/amenities/"
     ],
-    "checked_at": "2026-11-03T08:53:03.576263+00:00",
+    "checked_at": "2026-11-03T17:28:20.738917+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -3145,7 +2401,7 @@
       "https://www.avaloncommunities.com/about-us/",
       "https://www.avaloncommunities.com/about-us/esg/"
     ],
-    "checked_at": "2026-11-03T08:53:10.653849+00:00",
+    "checked_at": "2026-11-03T17:28:28.184081+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [],
@@ -3156,19 +2412,19 @@
         "studio"
       ],
       "rents": [
-        1975.0,
-        2087.0,
-        2125.0,
-        2155.0,
-        2175.0,
-        2176.0,
-        3075.0,
-        3187.0,
+        1950.0,
+        2062.0,
+        2100.0,
+        2195.0,
+        2225.0,
+        2230.0,
+        3050.0,
+        3162.0,
         3200.0,
-        3255.0,
-        3425.0,
-        3426.0,
-        4745.0
+        3224.0,
+        3475.0,
+        3480.0,
+        4736.0
       ],
       "sqft": [
         462.0,
@@ -3176,7 +2432,7 @@
         521.0,
         560.0,
         598.0,
-        718.0
+        634.0
       ],
       "features": [
         "loft"
@@ -3184,10 +2440,10 @@
       "program_signals": []
     },
     "error": null,
-    "min_rent": 1975.0,
-    "max_rent": 4745.0,
+    "min_rent": 1950.0,
+    "max_rent": 4736.0,
     "min_sqft": 462.0,
-    "max_sqft": 718.0,
+    "max_sqft": 634.0,
     "three_bedroom": false,
     "den_flex": true,
     "budget_flag": true,
@@ -3209,7 +2465,7 @@
       "https://www.avaloncommunities.com/about-us/",
       "https://www.avaloncommunities.com/about-us/esg/"
     ],
-    "checked_at": "2026-11-03T08:53:18.127143+00:00",
+    "checked_at": "2026-11-03T17:28:35.373864+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [],
@@ -3222,22 +2478,24 @@
       ],
       "rents": [
         2240.0,
-        2365.0,
-        2600.0,
-        2625.0,
+        2550.0,
+        2575.0,
+        2590.0,
+        2670.0,
         2680.0,
-        3125.0,
-        3522.0,
-        3865.0,
-        4125.0,
-        4133.0,
-        4137.0,
-        4775.0
+        3090.0,
+        3515.0,
+        4075.0,
+        4079.0,
+        4083.0,
+        4090.0,
+        4170.0,
+        4740.0
       ],
       "sqft": [
         761.0,
         968.0,
-        1229.0
+        1132.0
       ],
       "features": [
         "townhome",
@@ -3247,9 +2505,9 @@
     },
     "error": null,
     "min_rent": 2240.0,
-    "max_rent": 4775.0,
+    "max_rent": 4740.0,
     "min_sqft": 761.0,
-    "max_sqft": 1229.0,
+    "max_sqft": 1132.0,
     "three_bedroom": true,
     "den_flex": true,
     "budget_flag": true,
@@ -3265,7 +2523,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:53:25.680217+00:00",
+    "checked_at": "2026-11-03T17:28:41.145983+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -3292,7 +2550,7 @@
       "https://www.avaloncommunities.com/about-us/",
       "https://www.avaloncommunities.com/about-us/esg/"
     ],
-    "checked_at": "2026-11-03T08:53:26.248663+00:00",
+    "checked_at": "2026-11-03T17:28:41.599245+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [],
@@ -3304,17 +2562,19 @@
         "studio"
       ],
       "rents": [
-        2325.0,
-        2365.0,
-        2568.0,
-        2802.0,
-        2841.0,
-        2951.0,
-        3608.0,
-        3818.0,
-        4235.0,
-        4341.0,
-        4451.0
+        2255.0,
+        2295.0,
+        2498.0,
+        2722.0,
+        2761.0,
+        2871.0,
+        3530.0,
+        3571.0,
+        3748.0,
+        4140.0,
+        4253.0,
+        4261.0,
+        4371.0
       ],
       "sqft": [
         763.0,
@@ -3328,8 +2588,8 @@
       "program_signals": []
     },
     "error": null,
-    "min_rent": 2325.0,
-    "max_rent": 4451.0,
+    "min_rent": 2255.0,
+    "max_rent": 4371.0,
     "min_sqft": 763.0,
     "max_sqft": 1053.0,
     "three_bedroom": true,
@@ -3351,7 +2611,7 @@
       "https://www.avignontownhomes.com/Floor-plans.aspx#main-content",
       "https://www.avignontownhomes.com/floor-plans.aspx"
     ],
-    "checked_at": "2026-11-03T08:53:32.373316+00:00",
+    "checked_at": "2026-11-03T17:28:48.311857+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -3397,7 +2657,7 @@
       "https://www.blackbirdredmond.com/apartments/wa/redmond/amenities",
       "https://www.blackbirdredmond.com/apartments/wa/redmond/pet-friendly"
     ],
-    "checked_at": "2026-11-03T08:53:35.650331+00:00",
+    "checked_at": "2026-11-03T17:28:52.386222+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -3444,7 +2704,7 @@
       "https://bonterraapartments.propertyware.com/owners.html",
       "https://bonterraapartments.propertyware.com/rentals.html"
     ],
-    "checked_at": "2026-11-03T08:53:41.136433+00:00",
+    "checked_at": "2026-11-03T17:28:58.063985+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -3483,7 +2743,7 @@
       "https://www.camdenliving.com/blog/workforce-dwelling-units-at-camden-blakeney",
       "https://www.camdenliving.com/blog/luxury-living-in-charlotte-at-camden-blakeney-apartments"
     ],
-    "checked_at": "2026-11-03T08:53:47.208486+00:00",
+    "checked_at": "2026-11-03T17:29:04.571095+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -3527,7 +2787,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:53:53.811920+00:00",
+    "checked_at": "2026-11-03T17:29:11.311721+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -3548,7 +2808,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:53:53.866650+00:00",
+    "checked_at": "2026-11-03T17:29:11.344512+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -3575,7 +2835,7 @@
       "https://www.thecore83.com/floor-plans/open-1x1/",
       "https://www.thecore83.com/floor-plans/1x1/"
     ],
-    "checked_at": "2026-11-03T08:53:53.937191+00:00",
+    "checked_at": "2026-11-03T17:29:11.381394+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -3627,107 +2887,16 @@
     "url": "https://www.cruatwillows.com/",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.cruatwillows.com/",
-      "https://www.cruatwillows.com/floorplans"
-    ],
-    "checked_at": "2026-11-03T08:53:59.580367+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:29:17.246054+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "available\\s+now",
-        "schedule\\s+a\\s+tour",
-        "view\\s+available"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        1691.0,
-        1699.0,
-        1712.0,
-        1720.0,
-        1864.0,
-        1888.0,
-        1896.0,
-        2043.0,
-        2051.0,
-        2055.0,
-        2080.0,
-        2100.0,
-        2108.0,
-        2224.0,
-        2286.0,
-        2375.0,
-        2383.0,
-        2440.0,
-        2448.0,
-        2584.0,
-        2654.0,
-        3018.0,
-        3026.0,
-        3045.0,
-        3053.0,
-        3188.0,
-        3196.0,
-        3271.0,
-        3279.0,
-        3281.0,
-        3355.0,
-        3504.0,
-        3586.0
-      ],
-      "sqft": [
-        53.0,
-        100.0,
-        101.0,
-        104.0,
-        177.0,
-        194.0,
-        248.0,
-        480.0,
-        529.0,
-        541.0,
-        545.0,
-        548.0,
-        598.0,
-        612.0,
-        616.0,
-        630.0,
-        631.0,
-        641.0,
-        713.0,
-        717.0,
-        721.0,
-        723.0,
-        740.0,
-        748.0,
-        757.0,
-        771.0,
-        798.0,
-        828.0,
-        829.0,
-        841.0,
-        862.0
-      ],
-      "features": [
-        "den"
-      ],
-      "program_signals": [
-        "arch"
-      ]
+      "rents": []
     },
-    "error": null,
-    "min_rent": 1691.0,
-    "max_rent": 3586.0,
-    "min_sqft": 53.0,
-    "max_sqft": 862.0,
-    "three_bedroom": false,
-    "den_flex": true,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.cruatwillows.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -3739,65 +2908,16 @@
     "url": "https://www.delanoredmond.com/",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.delanoredmond.com/",
-      "https://www.delanoredmond.com/leasingoffers",
-      "https://www.delanoredmond.com/floorplans",
-      "https://www.delanoredmond.com/#fpaModal1"
-    ],
-    "checked_at": "2026-11-03T08:54:10.072125+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:29:17.411677+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "available\\s+now",
-        "check\\s+availability",
-        "move[- ]?in\\s+(today|ready|now)",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        600.0,
-        1800.0,
-        1899.0,
-        1999.0,
-        2000.0,
-        2450.0,
-        2780.0,
-        3750.0
-      ],
-      "sqft": [
-        92.0,
-        302.0,
-        443.0,
-        561.0,
-        562.0,
-        575.0,
-        623.0,
-        723.0,
-        836.0,
-        839.0,
-        1092.0,
-        1302.0,
-        1562.0
-      ],
-      "features": [
-        "townhouse"
-      ],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
-    "min_rent": 600.0,
-    "max_rent": 3750.0,
-    "min_sqft": 92.0,
-    "max_sqft": 1562.0,
-    "three_bedroom": false,
-    "den_flex": true,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.delanoredmond.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -3810,7 +2930,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:54:18.320635+00:00",
+    "checked_at": "2026-11-03T17:29:17.644151+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -3834,7 +2954,7 @@
       "https://elanredmond.com/",
       "https://elanredmond.com/floorplans/"
     ],
-    "checked_at": "2026-11-03T08:54:18.916110+00:00",
+    "checked_at": "2026-11-03T17:29:18.291751+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -3848,14 +2968,14 @@
         "studio"
       ],
       "rents": [
-        1924.0,
+        1966.0,
         2085.0,
         2090.0,
-        2227.0,
+        2226.0,
         2319.0,
         2556.0,
         3431.0,
-        3631.0
+        3496.0
       ],
       "sqft": [
         525.0,
@@ -3876,8 +2996,8 @@
       ]
     },
     "error": null,
-    "min_rent": 1924.0,
-    "max_rent": 3631.0,
+    "min_rent": 1966.0,
+    "max_rent": 3496.0,
     "min_sqft": 525.0,
     "max_sqft": 1268.0,
     "three_bedroom": false,
@@ -3898,7 +3018,7 @@
       "https://elanredmond.com/",
       "https://elanredmond.com/floorplans/"
     ],
-    "checked_at": "2026-11-03T08:54:22.350263+00:00",
+    "checked_at": "2026-11-03T17:29:23.261397+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -3912,14 +3032,14 @@
         "studio"
       ],
       "rents": [
-        1924.0,
+        1966.0,
         2085.0,
         2090.0,
-        2227.0,
+        2226.0,
         2319.0,
         2556.0,
         3431.0,
-        3631.0
+        3496.0
       ],
       "sqft": [
         525.0,
@@ -3940,8 +3060,8 @@
       ]
     },
     "error": null,
-    "min_rent": 1924.0,
-    "max_rent": 3631.0,
+    "min_rent": 1966.0,
+    "max_rent": 3496.0,
     "min_sqft": 525.0,
     "max_sqft": 1268.0,
     "three_bedroom": false,
@@ -3965,7 +3085,7 @@
       "https://everlightapartments.com/amenities/",
       "https://everlightapartments.com/gallery/"
     ],
-    "checked_at": "2026-11-03T08:54:25.246019+00:00",
+    "checked_at": "2026-11-03T17:29:26.275189+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -4073,7 +3193,7 @@
       "https://www.bozzuto.com/contact-us",
       "https://www.bozzuto.com/apartments-for-rent/wa/redmond/the-heron-flats-and-lofts/floor-plans"
     ],
-    "checked_at": "2026-11-03T08:54:32.779052+00:00",
+    "checked_at": "2026-11-03T17:29:33.655362+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -4117,50 +3237,15 @@
     "url": "https://www.liveathue.com",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.liveathue.com/",
-      "https://www.liveathue.com/floorplans",
-      "https://www.liveathue.com/floorplans?gadid=null&device=c&network=g&keyword=hue%20apartments&adgroup=168110213466&campaign=21793878607&gclid=EAIaIQobChMI-oXt4_LmiQMVFc3CBB1VLQ_ZEAAYASAAEgLYUfD_BwE",
-      "https://www.liveathue.com/contactus?gadid=716240619492&device=c&network=g&keyword=hue%20apartments&adgroup=168110213466&campaign=21793878607&gclid=EAIaIQobChMI-oXt4_LmiQMVFc3CBB1VLQ_ZEAAYASAAEgLYUfD_BwE",
-      "https://www.liveathue.com/#fpaModal1"
-    ],
-    "checked_at": "2026-11-03T08:54:38.891334+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:29:39.351896+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "apply\\s+now",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [],
-      "sqft": [
-        426.0,
-        522.0,
-        557.0,
-        841.0,
-        965.0
-      ],
-      "features": [
-        "+\\s*den",
-        "den",
-        "w/\\s*den"
-      ],
-      "program_signals": [
-        "mfte"
-      ]
+      "rents": []
     },
-    "error": null,
+    "error": "403 Client Error: Forbidden for url: https://www.liveathue.com/",
     "min_rent": null,
     "max_rent": null,
-    "min_sqft": 426.0,
-    "max_sqft": 965.0,
-    "three_bedroom": false,
-    "den_flex": true,
     "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
@@ -4174,7 +3259,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:54:50.059845+00:00",
+    "checked_at": "2026-11-03T17:29:39.507809+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -4195,7 +3280,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:54:50.218978+00:00",
+    "checked_at": "2026-11-03T17:29:41.392110+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -4216,12 +3301,12 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:54:50.363266+00:00",
+    "checked_at": "2026-11-03T17:29:41.537413+00:00",
     "status": "error",
     "details": {
       "rents": []
     },
-    "error": "403 Client Error: Forbidden for url: https://www.lifestyleprism.com/2021/05/contact",
+    "error": "403 Client Error: Forbidden for url: https://www.lifestyleprism.com/2021/06/cosrx-snail-mucin",
     "min_rent": null,
     "max_rent": null,
     "budget_flag": false,
@@ -4237,7 +3322,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:54:51.096487+00:00",
+    "checked_at": "2026-11-03T17:29:43.119576+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -4258,7 +3343,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:54:51.280955+00:00",
+    "checked_at": "2026-11-03T17:29:43.486877+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -4284,7 +3369,7 @@
       "https://www.overlakestation.com/floorplans/#main_content",
       "https://www.overlakestation.com/floorplans/tour/"
     ],
-    "checked_at": "2026-11-03T08:54:51.371488+00:00",
+    "checked_at": "2026-11-03T17:29:43.532299+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [],
@@ -4328,7 +3413,7 @@
       "https://www.avaloncommunities.com/about-us/",
       "https://www.avaloncommunities.com/about-us/esg/"
     ],
-    "checked_at": "2026-11-03T08:54:56.219375+00:00",
+    "checked_at": "2026-11-03T17:29:48.198971+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [],
@@ -4340,17 +3425,19 @@
         "studio"
       ],
       "rents": [
-        2325.0,
-        2365.0,
-        2568.0,
-        2802.0,
-        2841.0,
-        2951.0,
-        3608.0,
-        3818.0,
-        4235.0,
-        4341.0,
-        4451.0
+        2255.0,
+        2295.0,
+        2498.0,
+        2722.0,
+        2761.0,
+        2871.0,
+        3530.0,
+        3571.0,
+        3748.0,
+        4140.0,
+        4253.0,
+        4261.0,
+        4371.0
       ],
       "sqft": [
         763.0,
@@ -4364,8 +3451,8 @@
       "program_signals": []
     },
     "error": null,
-    "min_rent": 2325.0,
-    "max_rent": 4451.0,
+    "min_rent": 2255.0,
+    "max_rent": 4371.0,
     "min_sqft": 763.0,
     "max_sqft": 1053.0,
     "three_bedroom": true,
@@ -4382,61 +3469,16 @@
     "url": "https://www.liveravello.com/",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.liveravello.com/",
-      "https://www.liveravello.com/floorplans",
-      "https://www.liveravello.com/featuredfloorplans/featured-floor-plans",
-      "https://www.liveravello.com/#fpaModal1"
-    ],
-    "checked_at": "2026-11-03T08:55:02.350622+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:29:54.584174+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "apply\\s+now",
-        "available\\s+units?",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        1850.0,
-        2110.0,
-        2495.0,
-        2575.0,
-        2580.0,
-        2650.0,
-        2995.0,
-        3080.0
-      ],
-      "sqft": [
-        21.0,
-        148.0,
-        516.0,
-        548.0,
-        637.0,
-        780.0,
-        828.0,
-        838.0,
-        907.0,
-        931.0,
-        970.0,
-        1021.0
-      ],
-      "features": [],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
-    "min_rent": 1850.0,
-    "max_rent": 3080.0,
-    "min_sqft": 21.0,
-    "max_sqft": 1021.0,
-    "three_bedroom": false,
-    "den_flex": false,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.liveravello.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -4449,7 +3491,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:55:10.787902+00:00",
+    "checked_at": "2026-11-03T17:29:54.717255+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -4476,7 +3518,7 @@
       "https://www.redmondplaceapts.com/apartments/wa/redmond/virtual-tour",
       "https://www.redmondplaceapts.com/apartments/wa/redmond/amenities"
     ],
-    "checked_at": "2026-11-03T08:55:10.829477+00:00",
+    "checked_at": "2026-11-03T17:29:54.751028+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -4513,7 +3555,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:55:16.381705+00:00",
+    "checked_at": "2026-11-03T17:30:00.484088+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -4534,7 +3576,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:55:16.429937+00:00",
+    "checked_at": "2026-11-03T17:30:00.516920+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -4555,7 +3597,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:55:16.469978+00:00",
+    "checked_at": "2026-11-03T17:30:00.557231+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -4582,7 +3624,7 @@
       "https://www.skylineredmond.com/apartments/wa/redmond/virtual-tour",
       "https://www.skylineredmond.com/apartments/wa/redmond/amenities"
     ],
-    "checked_at": "2026-11-03T08:55:16.565438+00:00",
+    "checked_at": "2026-11-03T17:30:01.003709+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -4623,7 +3665,7 @@
       "https://www.stationhouseredmond.com/apartments/wa/redmond/gallery",
       "https://www.stationhouseredmond.com/apartments/wa/redmond/virtual-tours"
     ],
-    "checked_at": "2026-11-03T08:55:22.038143+00:00",
+    "checked_at": "2026-11-03T17:30:06.760003+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -4663,7 +3705,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:55:27.430240+00:00",
+    "checked_at": "2026-11-03T17:30:12.383762+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -4687,7 +3729,7 @@
       "https://livetalisman.com/",
       "https://livetalisman.com/floorplans/"
     ],
-    "checked_at": "2026-11-03T08:55:27.486415+00:00",
+    "checked_at": "2026-11-03T17:30:12.529209+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -4809,70 +3851,16 @@
     "url": "https://www.thebondredmond.com/",
     "eligibility": "review",
     "exclude_reason": null,
-    "pages_checked": [
-      "https://www.thebondredmond.com/",
-      "https://www.thebondredmond.com/floorplans",
-      "https://www.thebondredmond.com/mapsanddirections",
-      "https://www.thebondredmond.com/termsandconditions",
-      "https://www.thebondredmond.com/privacypolicy"
-    ],
-    "checked_at": "2026-11-03T08:55:30.650203+00:00",
-    "status": "unknown",
+    "pages_checked": [],
+    "checked_at": "2026-11-03T17:30:15.791276+00:00",
+    "status": "error",
     "details": {
-      "availability_signals": [
-        "apply\\s+now",
-        "available\\s+now",
-        "available\\s+units?",
-        "schedule\\s+a\\s+tour"
-      ],
-      "waitlist_signals": [],
-      "bedroom_types": [
-        "1br",
-        "2br",
-        "studio"
-      ],
-      "rents": [
-        2310.0,
-        2343.0,
-        2374.0,
-        2407.0,
-        2840.0,
-        2873.0,
-        2951.0,
-        2984.0,
-        3125.0,
-        3158.0,
-        3298.0,
-        3331.0,
-        3811.0,
-        3892.0,
-        4538.0,
-        5583.0,
-        5876.0,
-        6058.0
-      ],
-      "sqft": [
-        93.0,
-        149.0,
-        705.0,
-        768.0,
-        853.0,
-        957.0
-      ],
-      "features": [
-        "+\\s*den",
-        "den"
-      ],
-      "program_signals": []
+      "rents": []
     },
-    "error": null,
-    "min_rent": 2310.0,
-    "max_rent": 6058.0,
-    "min_sqft": 93.0,
-    "max_sqft": 957.0,
-    "three_bedroom": false,
-    "den_flex": true,
-    "budget_flag": true,
+    "error": "403 Client Error: Forbidden for url: https://www.thebondredmond.com/",
+    "min_rent": null,
+    "max_rent": null,
+    "budget_flag": false,
     "quality_control": {
       "rent_filter": "plausible_monthly_rent_range",
       "availability_filter": "strong_current_availability_signal_required"
@@ -4885,7 +3873,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:55:40.567485+00:00",
+    "checked_at": "2026-11-03T17:30:15.969329+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -4906,7 +3894,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:55:41.877114+00:00",
+    "checked_at": "2026-11-03T17:30:19.232691+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -4933,7 +3921,7 @@
       "https://www.docksatredmond.com/apartments/wa/redmond/location",
       "https://www.docksatredmond.com/apartments/wa/redmond/residents"
     ],
-    "checked_at": "2026-11-03T08:55:42.032813+00:00",
+    "checked_at": "2026-11-03T17:30:19.442243+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -4975,7 +3963,7 @@
       "https://www.simpsonpropertygroup.com/apartments/redmond-washington/the-lodge-at-redmond-ridge/schedule-tour",
       "https://www.simpsonpropertygroup.com/apartments/redmond-washington/the-lodge-at-redmond-ridge/resident-portal"
     ],
-    "checked_at": "2026-11-03T08:55:47.376354+00:00",
+    "checked_at": "2026-11-03T17:30:24.957660+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -4995,17 +3983,18 @@
       "rents": [
         600.0,
         1886.0,
-        1914.0,
+        1929.0,
         2000.0,
-        2243.0,
-        2288.0,
-        2442.0,
-        2823.0,
+        2251.0,
+        2281.0,
+        2296.0,
+        2458.0,
+        2833.0,
         2956.0,
         2971.0,
         2981.0,
-        3836.0,
-        4082.0
+        3889.0,
+        4107.0
       ],
       "sqft": [
         51.0,
@@ -5029,7 +4018,7 @@
     },
     "error": null,
     "min_rent": 600.0,
-    "max_rent": 4082.0,
+    "max_rent": 4107.0,
     "min_sqft": 51.0,
     "max_sqft": 1691.0,
     "three_bedroom": true,
@@ -5053,7 +4042,7 @@
       "https://www.theluke.com/apartments/wa/redmond/gallery",
       "https://www.theluke.com/apartments/wa/redmond/location"
     ],
-    "checked_at": "2026-11-03T08:55:53.633999+00:00",
+    "checked_at": "2026-11-03T17:30:31.873412+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -5093,7 +4082,7 @@
       "https://thespokeredmond.com/",
       "https://thespokeredmond.com/floorplans/"
     ],
-    "checked_at": "2026-11-03T08:55:59.254941+00:00",
+    "checked_at": "2026-11-03T17:30:37.440710+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -5135,7 +4124,7 @@
       "https://triangleredmond.com/floorplans/",
       "https://triangleredmond.com/p/income-requirements/"
     ],
-    "checked_at": "2026-11-03T08:56:01.815188+00:00",
+    "checked_at": "2026-11-03T17:30:40.805125+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -5261,7 +4250,7 @@
       "https://www.townsideflats.com/floorplans/one-bedroom",
       "https://www.townsideflats.com/floorplans/one-bedroom/1x1-620-sq-ft"
     ],
-    "checked_at": "2026-11-03T08:56:06.547584+00:00",
+    "checked_at": "2026-11-03T17:30:47.150136+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -5312,7 +4301,7 @@
       "https://triangleredmond.com/p/1-bedroom-apartments/",
       "https://triangleredmond.com/amenities/"
     ],
-    "checked_at": "2026-11-03T08:56:16.570495+00:00",
+    "checked_at": "2026-11-03T17:30:56.216058+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
@@ -5433,7 +4422,7 @@
     "eligibility": "review",
     "exclude_reason": null,
     "pages_checked": [],
-    "checked_at": "2026-11-03T08:56:25.164329+00:00",
+    "checked_at": "2026-11-03T17:31:04.765864+00:00",
     "status": "error",
     "details": {
       "rents": []
@@ -5457,7 +4446,7 @@
       "https://www.eastrailflatswoodinville.com/",
       "https://www.eastrailflatswoodinville.com/floorplans/"
     ],
-    "checked_at": "2026-11-03T08:56:25.213016+00:00",
+    "checked_at": "2026-11-03T17:31:04.886560+00:00",
     "status": "unknown",
     "details": {
       "availability_signals": [
